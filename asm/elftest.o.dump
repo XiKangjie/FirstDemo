@@ -1,0 +1,91 @@
+
+elftest.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <main>:
+main():
+   0:	55                   	push   %rbp
+   1:	48 89 e5             	mov    %rsp,%rbp
+   4:	48 83 ec 10          	sub    $0x10,%rsp
+   8:	8b 05 00 00 00 00    	mov    0x0(%rip),%eax        # e <main+0xe>
+   e:	89 c2                	mov    %eax,%edx
+  10:	8b 05 00 00 00 00    	mov    0x0(%rip),%eax        # 16 <main+0x16>
+  16:	8d 04 02             	lea    (%rdx,%rax,1),%eax
+  19:	88 45 ff             	mov    %al,-0x1(%rbp)
+  1c:	0f be 55 ff          	movsbl -0x1(%rbp),%edx
+  20:	b8 00 00 00 00       	mov    $0x0,%eax
+  25:	89 d6                	mov    %edx,%esi
+  27:	48 89 c7             	mov    %rax,%rdi
+  2a:	b8 00 00 00 00       	mov    $0x0,%eax
+  2f:	e8 00 00 00 00       	callq  34 <main+0x34>
+  34:	b8 00 00 00 00       	mov    $0x0,%eax
+  39:	c9                   	leaveq 
+  3a:	c3                   	retq   
+
+Disassembly of section .data:
+
+0000000000000000 <d>:
+   0:	01 00                	add    %eax,(%rax)
+	...
+
+Disassembly of section .rodata:
+
+0000000000000000 <N>:
+   0:	30 00                	xor    %al,(%rax)
+   2:	00 00                	add    %al,(%rax)
+   4:	43 68 61 72 20 69    	rex.XB pushq $0x69207261
+   a:	73 20                	jae    2c <N+0x2c>
+   c:	25                   	.byte 0x25
+   d:	63 0a                	movslq (%rdx),%ecx
+	...
+
+Disassembly of section .comment:
+
+0000000000000000 <.comment>:
+   0:	00 47 43             	add    %al,0x43(%rdi)
+   3:	43 3a 20             	rex.XB cmp (%r8),%spl
+   6:	28 47 65             	sub    %al,0x65(%rdi)
+   9:	6e                   	outsb  %ds:(%rsi),(%dx)
+   a:	74 6f                	je     7b <main+0x7b>
+   c:	6f                   	outsl  %ds:(%rsi),(%dx)
+   d:	20 34 2e             	and    %dh,(%rsi,%rbp,1)
+  10:	35 2e 33 2d 72       	xor    $0x722d332e,%eax
+  15:	32 20                	xor    (%rax),%ah
+  17:	70 31                	jo     4a <main+0x4a>
+  19:	2e                   	cs
+  1a:	35 2c 20 70 69       	xor    $0x6970202c,%eax
+  1f:	65                   	gs
+  20:	2d 30 2e 34 2e       	sub    $0x2e342e30,%eax
+  25:	37                   	(bad)  
+  26:	29 20                	sub    %esp,(%rax)
+  28:	34 2e                	xor    $0x2e,%al
+  2a:	35                   	.byte 0x35
+  2b:	2e 33 00             	xor    %cs:(%rax),%eax
+
+Disassembly of section .eh_frame:
+
+0000000000000000 <.eh_frame>:
+   0:	14 00                	adc    $0x0,%al
+   2:	00 00                	add    %al,(%rax)
+   4:	00 00                	add    %al,(%rax)
+   6:	00 00                	add    %al,(%rax)
+   8:	01 7a 52             	add    %edi,0x52(%rdx)
+   b:	00 01                	add    %al,(%rcx)
+   d:	78 10                	js     1f <.eh_frame+0x1f>
+   f:	01 1b                	add    %ebx,(%rbx)
+  11:	0c 07                	or     $0x7,%al
+  13:	08 90 01 00 00 1c    	or     %dl,0x1c000001(%rax)
+  19:	00 00                	add    %al,(%rax)
+  1b:	00 1c 00             	add    %bl,(%rax,%rax,1)
+  1e:	00 00                	add    %al,(%rax)
+  20:	00 00                	add    %al,(%rax)
+  22:	00 00                	add    %al,(%rax)
+  24:	3b 00                	cmp    (%rax),%eax
+  26:	00 00                	add    %al,(%rax)
+  28:	00 41 0e             	add    %al,0xe(%rcx)
+  2b:	10 43 86             	adc    %al,-0x7a(%rbx)
+  2e:	02 0d 06 76 0c 07    	add    0x70c7606(%rip),%cl        # 70c763a <main+0x70c763a>
+  34:	08 00                	or     %al,(%rax)
+	...
