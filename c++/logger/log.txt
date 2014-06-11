@@ -1,0 +1,14 @@
+2014-04-23 09:14:27 [test.cpp:38--main()]	error
+2014-04-23 09:14:27 [#0][test.cpp:36--main()]	checkpoint 2
+2014-04-23 09:14:27 [#1][test.cpp:34--main()]	checkpoint 1
+2014-04-23 09:14:27 [test.cpp:28--func4()]	error in func4
+2014-04-23 09:14:27 [#0][test.cpp:16--func2()]	checkpoint func2 123.234
+2014-04-23 09:14:27 [#1][test.cpp:10--functionnnn1()]	checkpoint func1 1232341234234
+2014-04-23 09:14:27 [#2][test.cpp:34--main()]	checkpoint 1
+2014-04-23 09:53:59 [test.cpp:38--main()]	error
+2014-04-23 09:53:59 [#0][test.cpp:36--main()]	checkpoint 2
+2014-04-23 09:53:59 [#1][test.cpp:34--main()]	checkpoint 1
+2014-04-23 09:53:59 [test.cpp:28--func4()]	error in func4
+2014-04-23 09:53:59 [#0][test.cpp:16--func2()]	checkpoint func2 123.234
+2014-04-23 09:53:59 [#1][test.cpp:10--functionnnn1()]	checkpoint func1 1232341234234
+2014-04-23 09:53:59 [#2][test.cpp:34--main()]	checkpoint 1

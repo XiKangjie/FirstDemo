@@ -1,0 +1,49 @@
+2014-04-23 10:53:40 [test.cpp:38--main()]	error
+2014-04-23 10:53:40 [#0][test.cpp:36--main()]	checkpoint 2
+2014-04-23 10:53:40 [#1][test.cpp:34--main()]	checkpoint 1
+2014-04-23 10:53:40 [test.cpp:28--func4()]	error in func4
+2014-04-23 10:53:40 [#0][test.cpp:16--func2()]	checkpoint func2 123.234
+2014-04-23 10:53:40 [#1][test.cpp:10--functionnnn1()]	checkpoint func1 1232341234234
+2014-04-23 10:53:40 [#2][test.cpp:34--main()]	checkpoint 1
+2014-04-25 18:42:48 [test.cpp:38--main()]	error
+2014-04-25 18:42:48 [#0][test.cpp:36--main()]	checkpoint 2
+2014-04-25 18:42:48 [#1][test.cpp:34--main()]	checkpoint 1
+2014-04-25 18:42:48 [test.cpp:28--func4()]	error in func4
+2014-04-25 18:42:48 [#0][test.cpp:16--func2()]	checkpoint func2 123.234
+2014-04-25 18:42:48 [#1][test.cpp:10--functionnnn1()]	checkpoint func1 1232341234234
+2014-04-25 18:42:48 [#2][test.cpp:34--main()]	checkpoint 1
+2014-04-25 18:42:52 [test.cpp:38--main()]	error
+2014-04-25 18:42:52 [#0][test.cpp:36--main()]	checkpoint 2
+2014-04-25 18:42:52 [#1][test.cpp:34--main()]	checkpoint 1
+2014-04-25 18:42:52 [test.cpp:28--func4()]	error in func4
+2014-04-25 18:42:52 [#0][test.cpp:16--func2()]	checkpoint func2 123.234
+2014-04-25 18:42:52 [#1][test.cpp:10--functionnnn1()]	checkpoint func1 1232341234234
+2014-04-25 18:42:52 [#2][test.cpp:34--main()]	checkpoint 1
+2014-04-25 19:11:45 [test.cpp:38--main()]	error
+2014-04-25 19:11:45 [#0][test.cpp:36--main()]	checkpoint 2
+2014-04-25 19:11:45 [#1][test.cpp:34--main()]	checkpoint 1
+2014-04-25 19:11:45 [test.cpp:28--func4()]	error in func4
+2014-04-25 19:11:45 [#0][test.cpp:16--func2()]	checkpoint func2 123.234
+2014-04-25 19:11:45 [#1][test.cpp:10--functionnnn1()]	checkpoint func1 1232341234234
+2014-04-25 19:11:45 [#2][test.cpp:34--main()]	checkpoint 1
+2014-04-28 13:57:48 [test.cpp:38--main()] -- error
+2014-04-28 13:57:48 [#0][test.cpp:36--main()] -- checkpoint 2
+2014-04-28 13:57:48 [#1][test.cpp:34--main()] -- checkpoint 1
+2014-04-28 13:57:48 [test.cpp:28--func4()] -- error in func4
+2014-04-28 13:57:48 [#0][test.cpp:16--func2()] -- checkpoint func2 123.234
+2014-04-28 13:57:48 [#1][test.cpp:10--functionnnn1()] -- checkpoint func1 1232341234234
+2014-04-28 13:57:48 [#2][test.cpp:34--main()] -- checkpoint 1
+2014-04-28 13:58:54 [test.cpp:38--main()] ---- error
+2014-04-28 13:58:54 [#0][test.cpp:36--main()] ---- checkpoint 2
+2014-04-28 13:58:54 [#1][test.cpp:34--main()] ---- checkpoint 1
+2014-04-28 13:58:54 [test.cpp:28--func4()] ---- error in func4
+2014-04-28 13:58:54 [#0][test.cpp:16--func2()] ---- checkpoint func2 123.234
+2014-04-28 13:58:54 [#1][test.cpp:10--functionnnn1()] ---- checkpoint func1 1232341234234
+2014-04-28 13:58:54 [#2][test.cpp:34--main()] ---- checkpoint 1
+2014-04-28 13:59:29 [test.cpp:38--main()] --- error
+2014-04-28 13:59:29 [#0][test.cpp:36--main()] --- checkpoint 2
+2014-04-28 13:59:29 [#1][test.cpp:34--main()] --- checkpoint 1
+2014-04-28 13:59:29 [test.cpp:28--func4()] --- error in func4
+2014-04-28 13:59:29 [#0][test.cpp:16--func2()] --- checkpoint func2 123.234
+2014-04-28 13:59:29 [#1][test.cpp:10--functionnnn1()] --- checkpoint func1 1232341234234
+2014-04-28 13:59:29 [#2][test.cpp:34--main()] --- checkpoint 1
