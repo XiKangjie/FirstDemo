@@ -5,7 +5,11 @@ using namespace std;
 int main()
 {
     vector<int> v;
-    v.push_back(1);
+    cout << "size: " << sizeof(v) << endl;      // 24
+    for (int i = 0; i < 10; i++) {
+        v.push_back(i);
+    }
+    cout << "size: " << sizeof(v) << endl;      // 24
 
     if(!v.empty())
         cout << v.at(0) << endl;
@@ -14,20 +18,16 @@ int main()
     v.push_back(30);
 
     vector<int>::iterator it;
-    for(it = v.begin(); it != v.end(); it++)
+    for(it = v.begin(); it != v.end();)
     {
         if(*it == 1)
         {
             cout << "erase 1" << endl;
-            v.erase(it);
+            it = v.erase(it);
         }
         else
-            cout << *it << endl;
+            cout << *(it++) << endl;
     }
-    // output
-    // 1
-    // erase 1
-    // 30
 
     return 0;
 }
