@@ -5,13 +5,23 @@ using namespace std;
 int main()
 {
     std::hash_map<int, int> m;
-
-    m[1] = 101;
-    m[2] = 102;
-    m[3] = 103;
-    m[12] = 112;
-
     cout << "bucket_count: " << m.bucket_count() << endl;
+
+    for (int i = 1; i <= 4; i++) {
+        m[i] = i;
+    }
+    cout << "bucket_count: " << m.bucket_count() << endl;
+    cout << "size: " << sizeof(m) << endl;      // 56
+    m.clear();
+    cout << "size: " << sizeof(m) << endl;      // 56
+    
+    for (int i = 5; i <= 70; i++) {
+        m[i] = i;
+    }
+    cout << "bucket_count: " << m.bucket_count() << endl;
+    cout << "size: " << sizeof(m) << endl;      // 56
+    m.clear();
+    cout << "size: " << sizeof(m) << endl;      // 56
 
     hash_multimap<int, int> mm;
     typedef hash_multimap<int, int>::value_type VALUE;
