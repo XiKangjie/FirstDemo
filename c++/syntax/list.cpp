@@ -9,11 +9,14 @@ int main()
     
     for (int i = 0; i < 10; i++) {
         myints.push_back(i);
-        cout << "1. size: " << myints.size() << endl;
+        int listsize = myints.size();
+        cout << "1. size: " << listsize << endl;
     }
 
     myints.clear();
-    cout << "3. size: " << myints.size() << endl;
+    if (myints.empty()) {       // more efficient than myints.size() == 0
+        cout << "2. size: " << myints.size() << endl;
+    }
 
     return 0;
 }

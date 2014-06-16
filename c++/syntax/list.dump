@@ -1,0 +1,3023 @@
+
+list:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+0000000000400dd8 <_init>:
+_init():
+  400dd8:	48 83 ec 08          	sub    $0x8,%rsp
+  400ddc:	e8 9b 01 00 00       	callq  400f7c <_start+0x2c>
+  400de1:	e8 0c 02 00 00       	callq  400ff2 <_start+0xa2>
+  400de6:	e8 7d 1d 00 00       	callq  402b68 <__libc_csu_fini+0x2>
+  400deb:	48 83 c4 08          	add    $0x8,%rsp
+  400def:	c3                   	retq   
+
+Disassembly of section .plt:
+
+0000000000400df0 <__cxa_begin_catch@plt-0x10>:
+  400df0:	ff 35 fa 31 20 00    	pushq  0x2031fa(%rip)        # 603ff0 <_GLOBAL_OFFSET_TABLE_+0x8>
+  400df6:	ff 25 fc 31 20 00    	jmpq   *0x2031fc(%rip)        # 603ff8 <_GLOBAL_OFFSET_TABLE_+0x10>
+  400dfc:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000400e00 <__cxa_begin_catch@plt>:
+  400e00:	ff 25 fa 31 20 00    	jmpq   *0x2031fa(%rip)        # 604000 <_GLOBAL_OFFSET_TABLE_+0x18>
+  400e06:	68 00 00 00 00       	pushq  $0x0
+  400e0b:	e9 e0 ff ff ff       	jmpq   400df0 <_init+0x18>
+
+0000000000400e10 <pthread_spin_init@plt>:
+  400e10:	ff 25 f2 31 20 00    	jmpq   *0x2031f2(%rip)        # 604008 <_GLOBAL_OFFSET_TABLE_+0x20>
+  400e16:	68 01 00 00 00       	pushq  $0x1
+  400e1b:	e9 d0 ff ff ff       	jmpq   400df0 <_init+0x18>
+
+0000000000400e20 <stlp_std::locale::_M_use_facet(stlp_std::locale::id const&) const@plt>:
+  400e20:	ff 25 ea 31 20 00    	jmpq   *0x2031ea(%rip)        # 604010 <_GLOBAL_OFFSET_TABLE_+0x28>
+  400e26:	68 02 00 00 00       	pushq  $0x2
+  400e2b:	e9 c0 ff ff ff       	jmpq   400df0 <_init+0x18>
+
+0000000000400e30 <__libc_start_main@plt>:
+  400e30:	ff 25 e2 31 20 00    	jmpq   *0x2031e2(%rip)        # 604018 <_GLOBAL_OFFSET_TABLE_+0x30>
+  400e36:	68 03 00 00 00       	pushq  $0x3
+  400e3b:	e9 b0 ff ff ff       	jmpq   400df0 <_init+0x18>
+
+0000000000400e40 <__cxa_atexit@plt>:
+  400e40:	ff 25 da 31 20 00    	jmpq   *0x2031da(%rip)        # 604020 <_GLOBAL_OFFSET_TABLE_+0x38>
+  400e46:	68 04 00 00 00       	pushq  $0x4
+  400e4b:	e9 a0 ff ff ff       	jmpq   400df0 <_init+0x18>
+
+0000000000400e50 <std::uncaught_exception()@plt>:
+  400e50:	ff 25 d2 31 20 00    	jmpq   *0x2031d2(%rip)        # 604028 <_GLOBAL_OFFSET_TABLE_+0x40>
+  400e56:	68 05 00 00 00       	pushq  $0x5
+  400e5b:	e9 90 ff ff ff       	jmpq   400df0 <_init+0x18>
+
+0000000000400e60 <free@plt>:
+  400e60:	ff 25 ca 31 20 00    	jmpq   *0x2031ca(%rip)        # 604030 <_GLOBAL_OFFSET_TABLE_+0x48>
+  400e66:	68 06 00 00 00       	pushq  $0x6
+  400e6b:	e9 80 ff ff ff       	jmpq   400df0 <_init+0x18>
+
+0000000000400e70 <strlen@plt>:
+  400e70:	ff 25 c2 31 20 00    	jmpq   *0x2031c2(%rip)        # 604038 <_GLOBAL_OFFSET_TABLE_+0x50>
+  400e76:	68 07 00 00 00       	pushq  $0x7
+  400e7b:	e9 70 ff ff ff       	jmpq   400df0 <_init+0x18>
+
+0000000000400e80 <__cxa_allocate_exception@plt>:
+  400e80:	ff 25 ba 31 20 00    	jmpq   *0x2031ba(%rip)        # 604040 <_GLOBAL_OFFSET_TABLE_+0x58>
+  400e86:	68 08 00 00 00       	pushq  $0x8
+  400e8b:	e9 60 ff ff ff       	jmpq   400df0 <_init+0x18>
+
+0000000000400e90 <__gxx_personality_v0@plt>:
+  400e90:	ff 25 b2 31 20 00    	jmpq   *0x2031b2(%rip)        # 604048 <_GLOBAL_OFFSET_TABLE_+0x60>
+  400e96:	68 09 00 00 00       	pushq  $0x9
+  400e9b:	e9 50 ff ff ff       	jmpq   400df0 <_init+0x18>
+
+0000000000400ea0 <stlp_std::locale::~locale()@plt>:
+  400ea0:	ff 25 aa 31 20 00    	jmpq   *0x2031aa(%rip)        # 604050 <_GLOBAL_OFFSET_TABLE_+0x68>
+  400ea6:	68 0a 00 00 00       	pushq  $0xa
+  400eab:	e9 40 ff ff ff       	jmpq   400df0 <_init+0x18>
+
+0000000000400eb0 <stlp_std::priv::_GetFacetId(stlp_std::num_put<char, stlp_std::ostreambuf_iterator<char, stlp_std::char_traits<char> > > const*)@plt>:
+  400eb0:	ff 25 a2 31 20 00    	jmpq   *0x2031a2(%rip)        # 604058 <_GLOBAL_OFFSET_TABLE_+0x70>
+  400eb6:	68 0b 00 00 00       	pushq  $0xb
+  400ebb:	e9 30 ff ff ff       	jmpq   400df0 <_init+0x18>
+
+0000000000400ec0 <__cxa_throw@plt>:
+  400ec0:	ff 25 9a 31 20 00    	jmpq   *0x20319a(%rip)        # 604060 <_GLOBAL_OFFSET_TABLE_+0x78>
+  400ec6:	68 0c 00 00 00       	pushq  $0xc
+  400ecb:	e9 20 ff ff ff       	jmpq   400df0 <_init+0x18>
+
+0000000000400ed0 <__cxa_end_catch@plt>:
+  400ed0:	ff 25 92 31 20 00    	jmpq   *0x203192(%rip)        # 604068 <_GLOBAL_OFFSET_TABLE_+0x80>
+  400ed6:	68 0d 00 00 00       	pushq  $0xd
+  400edb:	e9 10 ff ff ff       	jmpq   400df0 <_init+0x18>
+
+0000000000400ee0 <stlp_std::ios_base::_M_throw_failure()@plt>:
+  400ee0:	ff 25 8a 31 20 00    	jmpq   *0x20318a(%rip)        # 604070 <_GLOBAL_OFFSET_TABLE_+0x88>
+  400ee6:	68 0e 00 00 00       	pushq  $0xe
+  400eeb:	e9 00 ff ff ff       	jmpq   400df0 <_init+0x18>
+
+0000000000400ef0 <pthread_spin_destroy@plt>:
+  400ef0:	ff 25 82 31 20 00    	jmpq   *0x203182(%rip)        # 604078 <_GLOBAL_OFFSET_TABLE_+0x90>
+  400ef6:	68 0f 00 00 00       	pushq  $0xf
+  400efb:	e9 f0 fe ff ff       	jmpq   400df0 <_init+0x18>
+
+0000000000400f00 <__cxa_rethrow@plt>:
+  400f00:	ff 25 7a 31 20 00    	jmpq   *0x20317a(%rip)        # 604080 <_GLOBAL_OFFSET_TABLE_+0x98>
+  400f06:	68 10 00 00 00       	pushq  $0x10
+  400f0b:	e9 e0 fe ff ff       	jmpq   400df0 <_init+0x18>
+
+0000000000400f10 <std::bad_alloc::~bad_alloc()@plt>:
+  400f10:	ff 25 72 31 20 00    	jmpq   *0x203172(%rip)        # 604088 <_GLOBAL_OFFSET_TABLE_+0xa0>
+  400f16:	68 11 00 00 00       	pushq  $0x11
+  400f1b:	e9 d0 fe ff ff       	jmpq   400df0 <_init+0x18>
+
+0000000000400f20 <_Unwind_Resume@plt>:
+  400f20:	ff 25 6a 31 20 00    	jmpq   *0x20316a(%rip)        # 604090 <_GLOBAL_OFFSET_TABLE_+0xa8>
+  400f26:	68 12 00 00 00       	pushq  $0x12
+  400f2b:	e9 c0 fe ff ff       	jmpq   400df0 <_init+0x18>
+
+0000000000400f30 <stlp_std::__malloc_alloc::allocate(unsigned long)@plt>:
+  400f30:	ff 25 62 31 20 00    	jmpq   *0x203162(%rip)        # 604098 <_GLOBAL_OFFSET_TABLE_+0xb0>
+  400f36:	68 13 00 00 00       	pushq  $0x13
+  400f3b:	e9 b0 fe ff ff       	jmpq   400df0 <_init+0x18>
+
+0000000000400f40 <stlp_std::locale::locale(stlp_std::locale const&)@plt>:
+  400f40:	ff 25 5a 31 20 00    	jmpq   *0x20315a(%rip)        # 6040a0 <_GLOBAL_OFFSET_TABLE_+0xb8>
+  400f46:	68 14 00 00 00       	pushq  $0x14
+  400f4b:	e9 a0 fe ff ff       	jmpq   400df0 <_init+0x18>
+
+Disassembly of section .text:
+
+0000000000400f50 <_start>:
+_start():
+  400f50:	31 ed                	xor    %ebp,%ebp
+  400f52:	49 89 d1             	mov    %rdx,%r9
+  400f55:	5e                   	pop    %rsi
+  400f56:	48 89 e2             	mov    %rsp,%rdx
+  400f59:	48 83 e4 f0          	and    $0xfffffffffffffff0,%rsp
+  400f5d:	50                   	push   %rax
+  400f5e:	54                   	push   %rsp
+  400f5f:	49 c7 c0 66 2b 40 00 	mov    $0x402b66,%r8
+  400f66:	48 c7 c1 0c 2b 40 00 	mov    $0x402b0c,%rcx
+  400f6d:	48 c7 c7 14 10 40 00 	mov    $0x401014,%rdi
+  400f74:	e8 b7 fe ff ff       	callq  400e30 <__libc_start_main@plt>
+  400f79:	f4                   	hlt    
+  400f7a:	90                   	nop
+  400f7b:	90                   	nop
+  400f7c:	48 83 ec 08          	sub    $0x8,%rsp
+  400f80:	48 8b 05 59 30 20 00 	mov    0x203059(%rip),%rax        # 603fe0 <_DYNAMIC+0x1f0>
+  400f87:	48 85 c0             	test   %rax,%rax
+  400f8a:	74 02                	je     400f8e <_start+0x3e>
+  400f8c:	ff d0                	callq  *%rax
+  400f8e:	48 83 c4 08          	add    $0x8,%rsp
+  400f92:	c3                   	retq   
+  400f93:	90                   	nop
+  400f94:	55                   	push   %rbp
+  400f95:	48 89 e5             	mov    %rsp,%rbp
+  400f98:	53                   	push   %rbx
+  400f99:	48 83 ec 08          	sub    $0x8,%rsp
+  400f9d:	80 3d 44 32 20 00 00 	cmpb   $0x0,0x203244(%rip)        # 6041e8 <vtable for std::bad_alloc+0x28>
+  400fa4:	75 45                	jne    400feb <_start+0x9b>
+  400fa6:	48 8b 05 43 32 20 00 	mov    0x203243(%rip),%rax        # 6041f0 <vtable for std::bad_alloc+0x30>
+  400fad:	bb e0 3d 60 00       	mov    $0x603de0,%ebx
+  400fb2:	48 81 eb d8 3d 60 00 	sub    $0x603dd8,%rbx
+  400fb9:	48 c1 fb 03          	sar    $0x3,%rbx
+  400fbd:	48 83 eb 01          	sub    $0x1,%rbx
+  400fc1:	48 39 d8             	cmp    %rbx,%rax
+  400fc4:	73 1e                	jae    400fe4 <_start+0x94>
+  400fc6:	48 83 c0 01          	add    $0x1,%rax
+  400fca:	48 89 05 1f 32 20 00 	mov    %rax,0x20321f(%rip)        # 6041f0 <vtable for std::bad_alloc+0x30>
+  400fd1:	ff 14 c5 d8 3d 60 00 	callq  *0x603dd8(,%rax,8)
+  400fd8:	48 8b 05 11 32 20 00 	mov    0x203211(%rip),%rax        # 6041f0 <vtable for std::bad_alloc+0x30>
+  400fdf:	48 39 d8             	cmp    %rbx,%rax
+  400fe2:	72 e2                	jb     400fc6 <_start+0x76>
+  400fe4:	c6 05 fd 31 20 00 01 	movb   $0x1,0x2031fd(%rip)        # 6041e8 <vtable for std::bad_alloc+0x28>
+  400feb:	48 83 c4 08          	add    $0x8,%rsp
+  400fef:	5b                   	pop    %rbx
+  400ff0:	5d                   	pop    %rbp
+  400ff1:	c3                   	retq   
+  400ff2:	55                   	push   %rbp
+  400ff3:	48 89 e5             	mov    %rsp,%rbp
+  400ff6:	48 83 3d ea 2d 20 00 	cmpq   $0x0,0x202dea(%rip)        # 603de8 <__DTOR_END__+0x8>
+  400ffd:	00 
+  400ffe:	74 12                	je     401012 <_start+0xc2>
+  401000:	b8 00 00 00 00       	mov    $0x0,%eax
+  401005:	48 85 c0             	test   %rax,%rax
+  401008:	74 08                	je     401012 <_start+0xc2>
+  40100a:	bf e8 3d 60 00       	mov    $0x603de8,%edi
+  40100f:	5d                   	pop    %rbp
+  401010:	ff e0                	jmpq   *%rax
+  401012:	5d                   	pop    %rbp
+  401013:	c3                   	retq   
+
+0000000000401014 <main>:
+main():
+/home/xikangjie/demo/c++/syntax/list.cpp:6
+  401014:	55                   	push   %rbp
+  401015:	48 89 e5             	mov    %rsp,%rbp
+  401018:	53                   	push   %rbx
+  401019:	48 83 ec 38          	sub    $0x38,%rsp
+/home/xikangjie/demo/c++/syntax/list.cpp:7
+  40101d:	48 8d 45 eb          	lea    -0x15(%rbp),%rax
+  401021:	48 89 c7             	mov    %rax,%rdi
+  401024:	e8 4b 04 00 00       	callq  401474 <stlp_std::allocator<int>::allocator()>
+  401029:	48 8d 55 eb          	lea    -0x15(%rbp),%rdx
+  40102d:	48 8d 45 d0          	lea    -0x30(%rbp),%rax
+  401031:	48 89 d6             	mov    %rdx,%rsi
+  401034:	48 89 c7             	mov    %rax,%rdi
+  401037:	e8 5c 04 00 00       	callq  401498 <stlp_std::list<int, stlp_std::allocator<int> >::list(stlp_std::allocator<int> const&)>
+  40103c:	48 8d 45 eb          	lea    -0x15(%rbp),%rax
+  401040:	48 89 c7             	mov    %rax,%rdi
+  401043:	e8 46 04 00 00       	callq  40148e <stlp_std::allocator<int>::~allocator()>
+/home/xikangjie/demo/c++/syntax/list.cpp:8
+  401048:	48 8d 45 d0          	lea    -0x30(%rbp),%rax
+  40104c:	48 89 c7             	mov    %rax,%rdi
+  40104f:	e8 ae 04 00 00       	callq  401502 <stlp_std::list<int, stlp_std::allocator<int> >::size() const>
+  401054:	48 89 c3             	mov    %rax,%rbx
+  401057:	be b0 2b 40 00       	mov    $0x402bb0,%esi
+  40105c:	bf e0 40 60 00       	mov    $0x6040e0,%edi
+  401061:	e8 72 04 00 00       	callq  4014d8 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >& stlp_std::operator<< <stlp_std::char_traits<char> >(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >&, char const*)>
+  401066:	48 89 de             	mov    %rbx,%rsi
+  401069:	48 89 c7             	mov    %rax,%rdi
+  40106c:	e8 d3 04 00 00       	callq  401544 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::operator<<(unsigned long)>
+  401071:	be 69 15 40 00       	mov    $0x401569,%esi
+  401076:	48 89 c7             	mov    %rax,%rdi
+  401079:	e8 3e 05 00 00       	callq  4015bc <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::operator<<(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >& (*)(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >&))>
+/home/xikangjie/demo/c++/syntax/list.cpp:10
+  40107e:	c7 45 cc 00 00 00 00 	movl   $0x0,-0x34(%rbp)
+  401085:	eb 54                	jmp    4010db <main+0xc7>
+/home/xikangjie/demo/c++/syntax/list.cpp:11
+  401087:	48 8d 55 cc          	lea    -0x34(%rbp),%rdx
+  40108b:	48 8d 45 d0          	lea    -0x30(%rbp),%rax
+  40108f:	48 89 d6             	mov    %rdx,%rsi
+  401092:	48 89 c7             	mov    %rax,%rdi
+  401095:	e8 42 05 00 00       	callq  4015dc <stlp_std::list<int, stlp_std::allocator<int> >::push_back(int const&)>
+/home/xikangjie/demo/c++/syntax/list.cpp:12
+  40109a:	48 8d 45 d0          	lea    -0x30(%rbp),%rax
+  40109e:	48 89 c7             	mov    %rax,%rdi
+  4010a1:	e8 5c 04 00 00       	callq  401502 <stlp_std::list<int, stlp_std::allocator<int> >::size() const>
+  4010a6:	89 45 ec             	mov    %eax,-0x14(%rbp)
+/home/xikangjie/demo/c++/syntax/list.cpp:13
+  4010a9:	be ba 2b 40 00       	mov    $0x402bba,%esi
+  4010ae:	bf e0 40 60 00       	mov    $0x6040e0,%edi
+  4010b3:	e8 20 04 00 00       	callq  4014d8 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >& stlp_std::operator<< <stlp_std::char_traits<char> >(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >&, char const*)>
+  4010b8:	8b 55 ec             	mov    -0x14(%rbp),%edx
+  4010bb:	89 d6                	mov    %edx,%esi
+  4010bd:	48 89 c7             	mov    %rax,%rdi
+  4010c0:	e8 5d 05 00 00       	callq  401622 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::operator<<(int)>
+  4010c5:	be 69 15 40 00       	mov    $0x401569,%esi
+  4010ca:	48 89 c7             	mov    %rax,%rdi
+  4010cd:	e8 ea 04 00 00       	callq  4015bc <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::operator<<(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >& (*)(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >&))>
+/home/xikangjie/demo/c++/syntax/list.cpp:10
+  4010d2:	8b 45 cc             	mov    -0x34(%rbp),%eax
+  4010d5:	83 c0 01             	add    $0x1,%eax
+  4010d8:	89 45 cc             	mov    %eax,-0x34(%rbp)
+  4010db:	8b 45 cc             	mov    -0x34(%rbp),%eax
+  4010de:	83 f8 09             	cmp    $0x9,%eax
+  4010e1:	0f 9e c0             	setle  %al
+  4010e4:	84 c0                	test   %al,%al
+  4010e6:	75 9f                	jne    401087 <main+0x73>
+/home/xikangjie/demo/c++/syntax/list.cpp:16
+  4010e8:	48 8d 45 d0          	lea    -0x30(%rbp),%rax
+  4010ec:	48 89 c7             	mov    %rax,%rdi
+  4010ef:	e8 88 05 00 00       	callq  40167c <stlp_std::priv::_List_base<int, stlp_std::allocator<int> >::clear()>
+/home/xikangjie/demo/c++/syntax/list.cpp:17
+  4010f4:	48 8d 45 d0          	lea    -0x30(%rbp),%rax
+  4010f8:	48 89 c7             	mov    %rax,%rdi
+  4010fb:	e8 fc 05 00 00       	callq  4016fc <stlp_std::priv::_List_base<int, stlp_std::allocator<int> >::empty() const>
+  401100:	84 c0                	test   %al,%al
+  401102:	74 36                	je     40113a <main+0x126>
+/home/xikangjie/demo/c++/syntax/list.cpp:18
+  401104:	48 8d 45 d0          	lea    -0x30(%rbp),%rax
+  401108:	48 89 c7             	mov    %rax,%rdi
+  40110b:	e8 f2 03 00 00       	callq  401502 <stlp_std::list<int, stlp_std::allocator<int> >::size() const>
+  401110:	48 89 c3             	mov    %rax,%rbx
+  401113:	be c4 2b 40 00       	mov    $0x402bc4,%esi
+  401118:	bf e0 40 60 00       	mov    $0x6040e0,%edi
+  40111d:	e8 b6 03 00 00       	callq  4014d8 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >& stlp_std::operator<< <stlp_std::char_traits<char> >(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >&, char const*)>
+  401122:	48 89 de             	mov    %rbx,%rsi
+  401125:	48 89 c7             	mov    %rax,%rdi
+  401128:	e8 17 04 00 00       	callq  401544 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::operator<<(unsigned long)>
+  40112d:	be 69 15 40 00       	mov    $0x401569,%esi
+  401132:	48 89 c7             	mov    %rax,%rdi
+  401135:	e8 82 04 00 00       	callq  4015bc <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::operator<<(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >& (*)(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >&))>
+/home/xikangjie/demo/c++/syntax/list.cpp:21
+  40113a:	bb 00 00 00 00       	mov    $0x0,%ebx
+/home/xikangjie/demo/c++/syntax/list.cpp:7
+  40113f:	48 8d 45 d0          	lea    -0x30(%rbp),%rax
+  401143:	48 89 c7             	mov    %rax,%rdi
+  401146:	e8 73 03 00 00       	callq  4014be <stlp_std::list<int, stlp_std::allocator<int> >::~list()>
+  40114b:	89 d8                	mov    %ebx,%eax
+/home/xikangjie/demo/c++/syntax/list.cpp:22
+  40114d:	48 83 c4 38          	add    $0x38,%rsp
+  401151:	5b                   	pop    %rbx
+  401152:	c9                   	leaveq 
+  401153:	c3                   	retq   
+  401154:	48 89 c3             	mov    %rax,%rbx
+/home/xikangjie/demo/c++/syntax/list.cpp:7
+  401157:	48 8d 45 eb          	lea    -0x15(%rbp),%rax
+  40115b:	48 89 c7             	mov    %rax,%rdi
+  40115e:	e8 2b 03 00 00       	callq  40148e <stlp_std::allocator<int>::~allocator()>
+  401163:	48 89 d8             	mov    %rbx,%rax
+  401166:	48 89 c7             	mov    %rax,%rdi
+  401169:	e8 b2 fd ff ff       	callq  400f20 <_Unwind_Resume@plt>
+  40116e:	48 89 c3             	mov    %rax,%rbx
+  401171:	48 8d 45 d0          	lea    -0x30(%rbp),%rax
+  401175:	48 89 c7             	mov    %rax,%rdi
+  401178:	e8 41 03 00 00       	callq  4014be <stlp_std::list<int, stlp_std::allocator<int> >::~list()>
+  40117d:	48 89 d8             	mov    %rbx,%rax
+  401180:	48 89 c7             	mov    %rax,%rdi
+  401183:	e8 98 fd ff ff       	callq  400f20 <_Unwind_Resume@plt>
+
+0000000000401188 <__static_initialization_and_destruction_0(int, int)>:
+__static_initialization_and_destruction_0():
+/home/xikangjie/demo/c++/syntax/list.cpp:22
+  401188:	55                   	push   %rbp
+  401189:	48 89 e5             	mov    %rsp,%rbp
+  40118c:	48 83 ec 10          	sub    $0x10,%rsp
+  401190:	89 7d fc             	mov    %edi,-0x4(%rbp)
+  401193:	89 75 f8             	mov    %esi,-0x8(%rbp)
+  401196:	83 7d fc 01          	cmpl   $0x1,-0x4(%rbp)
+  40119a:	75 3e                	jne    4011da <__static_initialization_and_destruction_0(int, int)+0x52>
+  40119c:	81 7d f8 ff ff 00 00 	cmpl   $0xffff,-0x8(%rbp)
+  4011a3:	75 35                	jne    4011da <__static_initialization_and_destruction_0(int, int)+0x52>
+/usr/include/stlport/stl/_threads.h:504
+  4011a5:	b8 00 42 60 00       	mov    $0x604200,%eax
+  4011aa:	0f b6 00             	movzbl (%rax),%eax
+  4011ad:	84 c0                	test   %al,%al
+  4011af:	75 29                	jne    4011da <__static_initialization_and_destruction_0(int, int)+0x52>
+  4011b1:	b8 00 42 60 00       	mov    $0x604200,%eax
+  4011b6:	c6 00 01             	movb   $0x1,(%rax)
+  4011b9:	bf f8 41 60 00       	mov    $0x6041f8,%edi
+  4011be:	e8 dd 00 00 00       	callq  4012a0 <stlp_std::_STLP_mutex::_STLP_mutex()>
+  4011c3:	b8 c6 12 40 00       	mov    $0x4012c6,%eax
+  4011c8:	ba b0 40 60 00       	mov    $0x6040b0,%edx
+  4011cd:	be f8 41 60 00       	mov    $0x6041f8,%esi
+  4011d2:	48 89 c7             	mov    %rax,%rdi
+  4011d5:	e8 66 fc ff ff       	callq  400e40 <__cxa_atexit@plt>
+/home/xikangjie/demo/c++/syntax/list.cpp:22
+  4011da:	c9                   	leaveq 
+  4011db:	c3                   	retq   
+
+00000000004011dc <global constructors keyed to main>:
+_GLOBAL__I_main():
+  4011dc:	55                   	push   %rbp
+  4011dd:	48 89 e5             	mov    %rsp,%rbp
+  4011e0:	be ff ff 00 00       	mov    $0xffff,%esi
+  4011e5:	bf 01 00 00 00       	mov    $0x1,%edi
+  4011ea:	e8 99 ff ff ff       	callq  401188 <__static_initialization_and_destruction_0(int, int)>
+  4011ef:	c9                   	leaveq 
+  4011f0:	c3                   	retq   
+  4011f1:	90                   	nop
+
+00000000004011f2 <std::exception::exception()>:
+exception():
+/usr/lib/gcc/x86_64-pc-linux-gnu/4.5.3/include/g++-v4/exception:64
+  4011f2:	55                   	push   %rbp
+  4011f3:	48 89 e5             	mov    %rsp,%rbp
+  4011f6:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  4011fa:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4011fe:	48 c7 00 90 41 60 00 	movq   $0x604190,(%rax)
+  401205:	c9                   	leaveq 
+  401206:	c3                   	retq   
+_ZNSt9exceptionC1Ev():
+  401207:	90                   	nop
+
+0000000000401208 <std::bad_alloc::bad_alloc()>:
+bad_alloc():
+/usr/lib/gcc/x86_64-pc-linux-gnu/4.5.3/include/g++-v4/new:59
+  401208:	55                   	push   %rbp
+  401209:	48 89 e5             	mov    %rsp,%rbp
+  40120c:	48 83 ec 10          	sub    $0x10,%rsp
+  401210:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  401214:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  401218:	48 89 c7             	mov    %rax,%rdi
+  40121b:	e8 d2 ff ff ff       	callq  4011f2 <std::exception::exception()>
+  401220:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  401224:	48 c7 00 d0 41 60 00 	movq   $0x6041d0,(%rax)
+  40122b:	c9                   	leaveq 
+  40122c:	c3                   	retq   
+
+000000000040122d <stlp_std::char_traits<char>::to_int_type(char const&)>:
+_ZN8stlp_std11char_traitsIcE11to_int_typeERKc():
+/usr/include/stlport/stl/char_traits.h:222
+  40122d:	55                   	push   %rbp
+  40122e:	48 89 e5             	mov    %rsp,%rbp
+  401231:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+/usr/include/stlport/stl/char_traits.h:223
+  401235:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  401239:	0f b6 00             	movzbl (%rax),%eax
+  40123c:	0f b6 c0             	movzbl %al,%eax
+  40123f:	c9                   	leaveq 
+  401240:	c3                   	retq   
+
+0000000000401241 <stlp_std::char_traits<char>::length(char const*)>:
+_ZN8stlp_std11char_traitsIcE6lengthEPKc():
+/usr/include/stlport/stl/char_traits.h:228
+  401241:	55                   	push   %rbp
+  401242:	48 89 e5             	mov    %rsp,%rbp
+  401245:	48 83 ec 10          	sub    $0x10,%rsp
+  401249:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+/usr/include/stlport/stl/char_traits.h:229
+  40124d:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  401251:	48 89 c7             	mov    %rax,%rdi
+  401254:	e8 17 fc ff ff       	callq  400e70 <strlen@plt>
+  401259:	c9                   	leaveq 
+  40125a:	c3                   	retq   
+  40125b:	90                   	nop
+
+000000000040125c <stlp_std::_STLP_mutex_base::_M_initialize()>:
+_ZN8stlp_std16_STLP_mutex_base13_M_initializeEv():
+/usr/include/stlport/stl/_threads.h:315
+  40125c:	55                   	push   %rbp
+  40125d:	48 89 e5             	mov    %rsp,%rbp
+  401260:	48 83 ec 10          	sub    $0x10,%rsp
+  401264:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  401268:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  40126c:	be 00 00 00 00       	mov    $0x0,%esi
+  401271:	48 89 c7             	mov    %rax,%rdi
+  401274:	e8 97 fb ff ff       	callq  400e10 <pthread_spin_init@plt>
+  401279:	c9                   	leaveq 
+  40127a:	c3                   	retq   
+  40127b:	90                   	nop
+
+000000000040127c <stlp_std::_STLP_mutex_base::_M_destroy()>:
+_ZN8stlp_std16_STLP_mutex_base10_M_destroyEv():
+/usr/include/stlport/stl/_threads.h:316
+  40127c:	55                   	push   %rbp
+  40127d:	48 89 e5             	mov    %rsp,%rbp
+  401280:	48 83 ec 10          	sub    $0x10,%rsp
+  401284:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  401288:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  40128c:	48 89 c7             	mov    %rax,%rdi
+  40128f:	e8 5c fc ff ff       	callq  400ef0 <pthread_spin_destroy@plt>
+  401294:	c9                   	leaveq 
+  401295:	c3                   	retq   
+
+0000000000401296 <stlp_std::_STLP_mutex_base::_STLP_mutex_base()>:
+_STLP_mutex_base():
+/usr/include/stlport/stl/_threads.h:275
+  401296:	55                   	push   %rbp
+  401297:	48 89 e5             	mov    %rsp,%rbp
+  40129a:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  40129e:	c9                   	leaveq 
+  40129f:	c3                   	retq   
+
+00000000004012a0 <stlp_std::_STLP_mutex::_STLP_mutex()>:
+_STLP_mutex():
+/usr/include/stlport/stl/_threads.h:410
+  4012a0:	55                   	push   %rbp
+  4012a1:	48 89 e5             	mov    %rsp,%rbp
+  4012a4:	48 83 ec 10          	sub    $0x10,%rsp
+  4012a8:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  4012ac:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4012b0:	48 89 c7             	mov    %rax,%rdi
+  4012b3:	e8 de ff ff ff       	callq  401296 <stlp_std::_STLP_mutex_base::_STLP_mutex_base()>
+  4012b8:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4012bc:	48 89 c7             	mov    %rax,%rdi
+  4012bf:	e8 98 ff ff ff       	callq  40125c <stlp_std::_STLP_mutex_base::_M_initialize()>
+  4012c4:	c9                   	leaveq 
+  4012c5:	c3                   	retq   
+
+00000000004012c6 <stlp_std::_STLP_mutex::~_STLP_mutex()>:
+~_STLP_mutex():
+/usr/include/stlport/stl/_threads.h:411
+  4012c6:	55                   	push   %rbp
+  4012c7:	48 89 e5             	mov    %rsp,%rbp
+  4012ca:	48 83 ec 10          	sub    $0x10,%rsp
+  4012ce:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  4012d2:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4012d6:	48 89 c7             	mov    %rax,%rdi
+  4012d9:	e8 9e ff ff ff       	callq  40127c <stlp_std::_STLP_mutex_base::_M_destroy()>
+  4012de:	c9                   	leaveq 
+  4012df:	c3                   	retq   
+
+00000000004012e0 <stlp_std::__malloc_alloc::deallocate(void*, unsigned long)>:
+_ZN8stlp_std14__malloc_alloc10deallocateEPvm():
+/usr/include/stlport/stl/_alloc.h:80
+  4012e0:	55                   	push   %rbp
+  4012e1:	48 89 e5             	mov    %rsp,%rbp
+  4012e4:	48 83 ec 10          	sub    $0x10,%rsp
+  4012e8:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  4012ec:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+  4012f0:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4012f4:	48 89 c7             	mov    %rax,%rdi
+  4012f7:	e8 64 fb ff ff       	callq  400e60 <free@plt>
+  4012fc:	c9                   	leaveq 
+  4012fd:	c3                   	retq   
+
+00000000004012fe <stlp_std::ios_base::flags() const>:
+_ZNK8stlp_std8ios_base5flagsEv():
+/usr/include/stlport/stl/_ios_base.h:107
+  4012fe:	55                   	push   %rbp
+  4012ff:	48 89 e5             	mov    %rsp,%rbp
+  401302:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  401306:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  40130a:	8b 40 08             	mov    0x8(%rax),%eax
+  40130d:	c9                   	leaveq 
+  40130e:	c3                   	retq   
+  40130f:	90                   	nop
+
+0000000000401310 <stlp_std::ios_base::width() const>:
+_ZNK8stlp_std8ios_base5widthEv():
+/usr/include/stlport/stl/_ios_base.h:134
+  401310:	55                   	push   %rbp
+  401311:	48 89 e5             	mov    %rsp,%rbp
+  401314:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  401318:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  40131c:	48 8b 40 28          	mov    0x28(%rax),%rax
+  401320:	c9                   	leaveq 
+  401321:	c3                   	retq   
+
+0000000000401322 <stlp_std::ios_base::width(long)>:
+_ZN8stlp_std8ios_base5widthEl():
+/usr/include/stlport/stl/_ios_base.h:135
+  401322:	55                   	push   %rbp
+  401323:	48 89 e5             	mov    %rsp,%rbp
+  401326:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+  40132a:	48 89 75 e0          	mov    %rsi,-0x20(%rbp)
+/usr/include/stlport/stl/_ios_base.h:136
+  40132e:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  401332:	48 8b 40 28          	mov    0x28(%rax),%rax
+  401336:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+/usr/include/stlport/stl/_ios_base.h:137
+  40133a:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  40133e:	48 8b 55 e0          	mov    -0x20(%rbp),%rdx
+  401342:	48 89 50 28          	mov    %rdx,0x28(%rax)
+/usr/include/stlport/stl/_ios_base.h:138
+  401346:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+/usr/include/stlport/stl/_ios_base.h:139
+  40134a:	c9                   	leaveq 
+  40134b:	c3                   	retq   
+
+000000000040134c <stlp_std::ios_base::getloc() const>:
+_ZNK8stlp_std8ios_base6getlocEv():
+/usr/include/stlport/stl/_ios_base.h:143
+  40134c:	55                   	push   %rbp
+  40134d:	48 89 e5             	mov    %rsp,%rbp
+  401350:	53                   	push   %rbx
+  401351:	48 83 ec 18          	sub    $0x18,%rsp
+  401355:	48 89 fb             	mov    %rdi,%rbx
+  401358:	48 89 75 e8          	mov    %rsi,-0x18(%rbp)
+  40135c:	48 89 d8             	mov    %rbx,%rax
+  40135f:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  401363:	48 83 c2 30          	add    $0x30,%rdx
+  401367:	48 89 d6             	mov    %rdx,%rsi
+  40136a:	48 89 c7             	mov    %rax,%rdi
+  40136d:	e8 ce fb ff ff       	callq  400f40 <stlp_std::locale::locale(stlp_std::locale const&)@plt>
+  401372:	48 89 d8             	mov    %rbx,%rax
+  401375:	48 89 d8             	mov    %rbx,%rax
+  401378:	48 83 c4 18          	add    $0x18,%rsp
+  40137c:	5b                   	pop    %rbx
+  40137d:	c9                   	leaveq 
+  40137e:	c3                   	retq   
+  40137f:	90                   	nop
+
+0000000000401380 <stlp_std::ios_base::rdstate() const>:
+_ZNK8stlp_std8ios_base7rdstateEv():
+/usr/include/stlport/stl/_ios_base.h:170
+  401380:	55                   	push   %rbp
+  401381:	48 89 e5             	mov    %rsp,%rbp
+  401384:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  401388:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  40138c:	8b 40 0c             	mov    0xc(%rax),%eax
+  40138f:	c9                   	leaveq 
+  401390:	c3                   	retq   
+  401391:	90                   	nop
+
+0000000000401392 <stlp_std::ios_base::good() const>:
+_ZNK8stlp_std8ios_base4goodEv():
+/usr/include/stlport/stl/_ios_base.h:172
+  401392:	55                   	push   %rbp
+  401393:	48 89 e5             	mov    %rsp,%rbp
+  401396:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  40139a:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  40139e:	8b 40 0c             	mov    0xc(%rax),%eax
+  4013a1:	85 c0                	test   %eax,%eax
+  4013a3:	0f 94 c0             	sete   %al
+  4013a6:	c9                   	leaveq 
+  4013a7:	c3                   	retq   
+
+00000000004013a8 <stlp_std::ios_base::_M_setstate_nothrow(int)>:
+_ZN8stlp_std8ios_base19_M_setstate_nothrowEi():
+/usr/include/stlport/stl/_ios_base.h:185
+  4013a8:	55                   	push   %rbp
+  4013a9:	48 89 e5             	mov    %rsp,%rbp
+  4013ac:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  4013b0:	89 75 f4             	mov    %esi,-0xc(%rbp)
+  4013b3:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4013b7:	8b 40 0c             	mov    0xc(%rax),%eax
+  4013ba:	89 c2                	mov    %eax,%edx
+  4013bc:	0b 55 f4             	or     -0xc(%rbp),%edx
+  4013bf:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4013c3:	89 50 0c             	mov    %edx,0xc(%rax)
+  4013c6:	c9                   	leaveq 
+  4013c7:	c3                   	retq   
+
+00000000004013c8 <stlp_std::ios_base::_M_clear_nothrow(int)>:
+_ZN8stlp_std8ios_base16_M_clear_nothrowEi():
+/usr/include/stlport/stl/_ios_base.h:186
+  4013c8:	55                   	push   %rbp
+  4013c9:	48 89 e5             	mov    %rsp,%rbp
+  4013cc:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  4013d0:	89 75 f4             	mov    %esi,-0xc(%rbp)
+  4013d3:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4013d7:	8b 55 f4             	mov    -0xc(%rbp),%edx
+  4013da:	89 50 0c             	mov    %edx,0xc(%rax)
+  4013dd:	c9                   	leaveq 
+  4013de:	c3                   	retq   
+  4013df:	90                   	nop
+
+00000000004013e0 <stlp_std::ios_base::_M_get_exception_mask() const>:
+_ZNK8stlp_std8ios_base21_M_get_exception_maskEv():
+/usr/include/stlport/stl/_ios_base.h:187
+  4013e0:	55                   	push   %rbp
+  4013e1:	48 89 e5             	mov    %rsp,%rbp
+  4013e4:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  4013e8:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4013ec:	8b 40 18             	mov    0x18(%rax),%eax
+  4013ef:	c9                   	leaveq 
+  4013f0:	c3                   	retq   
+  4013f1:	90                   	nop
+
+00000000004013f2 <stlp_std::ios_base::_M_check_exception_mask()>:
+_ZN8stlp_std8ios_base23_M_check_exception_maskEv():
+/usr/include/stlport/stl/_ios_base.h:189
+  4013f2:	55                   	push   %rbp
+  4013f3:	48 89 e5             	mov    %rsp,%rbp
+  4013f6:	48 83 ec 10          	sub    $0x10,%rsp
+  4013fa:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+/usr/include/stlport/stl/_ios_base.h:190
+  4013fe:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  401402:	8b 50 0c             	mov    0xc(%rax),%edx
+  401405:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  401409:	8b 40 18             	mov    0x18(%rax),%eax
+  40140c:	21 d0                	and    %edx,%eax
+  40140e:	85 c0                	test   %eax,%eax
+  401410:	74 0c                	je     40141e <stlp_std::ios_base::_M_check_exception_mask()+0x2c>
+/usr/include/stlport/stl/_ios_base.h:191
+  401412:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  401416:	48 89 c7             	mov    %rax,%rdi
+  401419:	e8 c2 fa ff ff       	callq  400ee0 <stlp_std::ios_base::_M_throw_failure()@plt>
+/usr/include/stlport/stl/_ios_base.h:192
+  40141e:	c9                   	leaveq 
+  40141f:	c3                   	retq   
+
+0000000000401420 <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::widen(char) const>:
+_ZNK8stlp_std9basic_iosIcNS_11char_traitsIcEEE5widenEc():
+/usr/include/stlport/stl/_ios.h:164
+  401420:	55                   	push   %rbp
+  401421:	48 89 e5             	mov    %rsp,%rbp
+  401424:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  401428:	89 f0                	mov    %esi,%eax
+  40142a:	88 45 f4             	mov    %al,-0xc(%rbp)
+/usr/include/stlport/stl/_ios.h:165
+  40142d:	0f b6 45 f4          	movzbl -0xc(%rbp),%eax
+/usr/include/stlport/stl/_ios.h:166
+  401431:	c9                   	leaveq 
+  401432:	c3                   	retq   
+  401433:	90                   	nop
+
+0000000000401434 <stlp_std::priv::_List_iterator_base::_List_iterator_base(stlp_std::priv::_List_node_base*)>:
+_List_iterator_base():
+/usr/include/stlport/stl/_list.h:89
+  401434:	55                   	push   %rbp
+  401435:	48 89 e5             	mov    %rsp,%rbp
+  401438:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  40143c:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+  401440:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  401444:	48 8b 55 f0          	mov    -0x10(%rbp),%rdx
+  401448:	48 89 10             	mov    %rdx,(%rax)
+  40144b:	c9                   	leaveq 
+  40144c:	c3                   	retq   
+_ZN8stlp_std4priv19_List_iterator_baseC1EPNS0_15_List_node_baseE():
+  40144d:	90                   	nop
+
+000000000040144e <stlp_std::priv::_List_iterator_base::_M_incr()>:
+_ZN8stlp_std4priv19_List_iterator_base7_M_incrEv():
+/usr/include/stlport/stl/_list.h:91
+  40144e:	55                   	push   %rbp
+  40144f:	48 89 e5             	mov    %rsp,%rbp
+  401452:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  401456:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  40145a:	48 8b 00             	mov    (%rax),%rax
+  40145d:	48 8b 10             	mov    (%rax),%rdx
+  401460:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  401464:	48 89 10             	mov    %rdx,(%rax)
+  401467:	c9                   	leaveq 
+  401468:	c3                   	retq   
+  401469:	90                   	nop
+
+000000000040146a <stlp_std::__stlport_class<stlp_std::allocator<int> >::__stlport_class()>:
+__stlport_class():
+/usr/include/stlport/stl/type_traits.h:572
+  40146a:	55                   	push   %rbp
+  40146b:	48 89 e5             	mov    %rsp,%rbp
+  40146e:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  401472:	c9                   	leaveq 
+  401473:	c3                   	retq   
+
+0000000000401474 <stlp_std::allocator<int>::allocator()>:
+allocator():
+/usr/include/stlport/stl/_alloc.h:289
+  401474:	55                   	push   %rbp
+  401475:	48 89 e5             	mov    %rsp,%rbp
+  401478:	48 83 ec 10          	sub    $0x10,%rsp
+  40147c:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  401480:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  401484:	48 89 c7             	mov    %rax,%rdi
+  401487:	e8 de ff ff ff       	callq  40146a <stlp_std::__stlport_class<stlp_std::allocator<int> >::__stlport_class()>
+  40148c:	c9                   	leaveq 
+  40148d:	c3                   	retq   
+
+000000000040148e <stlp_std::allocator<int>::~allocator()>:
+~allocator():
+/usr/include/stlport/stl/_alloc.h:297
+  40148e:	55                   	push   %rbp
+  40148f:	48 89 e5             	mov    %rsp,%rbp
+  401492:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  401496:	c9                   	leaveq 
+  401497:	c3                   	retq   
+
+0000000000401498 <stlp_std::list<int, stlp_std::allocator<int> >::list(stlp_std::allocator<int> const&)>:
+list():
+/usr/include/stlport/stl/_list.h:347
+  401498:	55                   	push   %rbp
+  401499:	48 89 e5             	mov    %rsp,%rbp
+  40149c:	48 83 ec 10          	sub    $0x10,%rsp
+  4014a0:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  4014a4:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+/usr/include/stlport/stl/_list.h:353
+  4014a8:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4014ac:	48 8b 55 f0          	mov    -0x10(%rbp),%rdx
+  4014b0:	48 89 d6             	mov    %rdx,%rsi
+  4014b3:	48 89 c7             	mov    %rax,%rdi
+  4014b6:	e8 77 02 00 00       	callq  401732 <stlp_std::priv::_List_base<int, stlp_std::allocator<int> >::_List_base(stlp_std::allocator<int> const&)>
+  4014bb:	c9                   	leaveq 
+  4014bc:	c3                   	retq   
+_ZN8stlp_std4listIiNS_9allocatorIiEEEC1ERKS2_():
+  4014bd:	90                   	nop
+
+00000000004014be <stlp_std::list<int, stlp_std::allocator<int> >::~list()>:
+~list():
+/usr/include/stlport/stl/_list.h:363
+  4014be:	55                   	push   %rbp
+  4014bf:	48 89 e5             	mov    %rsp,%rbp
+  4014c2:	48 83 ec 10          	sub    $0x10,%rsp
+  4014c6:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  4014ca:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4014ce:	48 89 c7             	mov    %rax,%rdi
+  4014d1:	e8 ca 02 00 00       	callq  4017a0 <stlp_std::priv::_List_base<int, stlp_std::allocator<int> >::~_List_base()>
+  4014d6:	c9                   	leaveq 
+  4014d7:	c3                   	retq   
+
+00000000004014d8 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >& stlp_std::operator<< <stlp_std::char_traits<char> >(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >&, char const*)>:
+_ZN8stlp_stdlsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc():
+/usr/include/stlport/stl/_ostream.h:332
+  4014d8:	55                   	push   %rbp
+  4014d9:	48 89 e5             	mov    %rsp,%rbp
+  4014dc:	48 83 ec 10          	sub    $0x10,%rsp
+  4014e0:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  4014e4:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+/usr/include/stlport/stl/_ostream.h:333
+  4014e8:	48 8b 55 f0          	mov    -0x10(%rbp),%rdx
+  4014ec:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4014f0:	48 89 d6             	mov    %rdx,%rsi
+  4014f3:	48 89 c7             	mov    %rax,%rdi
+  4014f6:	e8 eb 02 00 00       	callq  4017e6 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::_M_put_nowiden(char const*)>
+/usr/include/stlport/stl/_ostream.h:334
+  4014fb:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+/usr/include/stlport/stl/_ostream.h:335
+  4014ff:	c9                   	leaveq 
+  401500:	c3                   	retq   
+  401501:	90                   	nop
+
+0000000000401502 <stlp_std::list<int, stlp_std::allocator<int> >::size() const>:
+_ZNK8stlp_std4listIiNS_9allocatorIiEEE4sizeEv():
+/usr/include/stlport/stl/_list.h:379
+  401502:	55                   	push   %rbp
+  401503:	48 89 e5             	mov    %rsp,%rbp
+  401506:	53                   	push   %rbx
+  401507:	48 83 ec 28          	sub    $0x28,%rsp
+  40150b:	48 89 7d d8          	mov    %rdi,-0x28(%rbp)
+/usr/include/stlport/stl/_list.h:380
+  40150f:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  401513:	48 89 c7             	mov    %rax,%rdi
+  401516:	e8 07 06 00 00       	callq  401b22 <stlp_std::list<int, stlp_std::allocator<int> >::end() const>
+  40151b:	48 89 c3             	mov    %rax,%rbx
+  40151e:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  401522:	48 89 c7             	mov    %rax,%rdi
+  401525:	e8 d0 05 00 00       	callq  401afa <stlp_std::list<int, stlp_std::allocator<int> >::begin() const>
+  40152a:	48 89 de             	mov    %rbx,%rsi
+  40152d:	48 89 c7             	mov    %rax,%rdi
+  401530:	e8 12 06 00 00       	callq  401b47 <stlp_std::iterator_traits<stlp_std::priv::_List_iterator<int, stlp_std::_Const_traits<int> > >::difference_type stlp_std::distance<stlp_std::priv::_List_iterator<int, stlp_std::_Const_traits<int> > >(stlp_std::priv::_List_iterator<int, stlp_std::_Const_traits<int> >, stlp_std::priv::_List_iterator<int, stlp_std::_Const_traits<int> >)>
+  401535:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+/usr/include/stlport/stl/_list.h:381
+  401539:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+/usr/include/stlport/stl/_list.h:382
+  40153d:	48 83 c4 28          	add    $0x28,%rsp
+  401541:	5b                   	pop    %rbx
+  401542:	c9                   	leaveq 
+  401543:	c3                   	retq   
+
+0000000000401544 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::operator<<(unsigned long)>:
+_ZN8stlp_std13basic_ostreamIcNS_11char_traitsIcEEElsEm():
+/usr/include/stlport/stl/_ostream.c:262
+  401544:	55                   	push   %rbp
+  401545:	48 89 e5             	mov    %rsp,%rbp
+  401548:	48 83 ec 10          	sub    $0x10,%rsp
+  40154c:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  401550:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+/usr/include/stlport/stl/_ostream.c:263
+  401554:	48 8b 55 f0          	mov    -0x10(%rbp),%rdx
+  401558:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  40155c:	48 89 d6             	mov    %rdx,%rsi
+  40155f:	48 89 c7             	mov    %rax,%rdi
+  401562:	e8 09 06 00 00       	callq  401b70 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >& stlp_std::priv::__put_num<char, stlp_std::char_traits<char>, unsigned long>(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >&, unsigned long)>
+  401567:	c9                   	leaveq 
+  401568:	c3                   	retq   
+
+0000000000401569 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >& stlp_std::endl<char, stlp_std::char_traits<char> >(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >&)>:
+_ZN8stlp_std4endlIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_():
+/usr/include/stlport/stl/_ostream.h:357
+  401569:	55                   	push   %rbp
+  40156a:	48 89 e5             	mov    %rsp,%rbp
+  40156d:	48 83 ec 10          	sub    $0x10,%rsp
+  401571:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+/usr/include/stlport/stl/_ostream.h:358
+  401575:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+  401579:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  40157d:	48 8b 00             	mov    (%rax),%rax
+  401580:	48 83 e8 18          	sub    $0x18,%rax
+  401584:	48 8b 00             	mov    (%rax),%rax
+  401587:	48 8d 04 02          	lea    (%rdx,%rax,1),%rax
+  40158b:	be 0a 00 00 00       	mov    $0xa,%esi
+  401590:	48 89 c7             	mov    %rax,%rdi
+  401593:	e8 88 fe ff ff       	callq  401420 <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::widen(char) const>
+  401598:	0f be d0             	movsbl %al,%edx
+  40159b:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  40159f:	89 d6                	mov    %edx,%esi
+  4015a1:	48 89 c7             	mov    %rax,%rdi
+  4015a4:	e8 a9 07 00 00       	callq  401d52 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::put(char)>
+/usr/include/stlport/stl/_ostream.h:359
+  4015a9:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4015ad:	48 89 c7             	mov    %rax,%rdi
+  4015b0:	e8 a5 08 00 00       	callq  401e5a <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::flush()>
+/usr/include/stlport/stl/_ostream.h:360
+  4015b5:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+/usr/include/stlport/stl/_ostream.h:361
+  4015b9:	c9                   	leaveq 
+  4015ba:	c3                   	retq   
+  4015bb:	90                   	nop
+
+00000000004015bc <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::operator<<(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >& (*)(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >&))>:
+_ZN8stlp_std13basic_ostreamIcNS_11char_traitsIcEEElsEPFRS3_S4_E():
+/usr/include/stlport/stl/_ostream.h:78
+  4015bc:	55                   	push   %rbp
+  4015bd:	48 89 e5             	mov    %rsp,%rbp
+  4015c0:	48 83 ec 10          	sub    $0x10,%rsp
+  4015c4:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  4015c8:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+  4015cc:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4015d0:	48 8b 55 f0          	mov    -0x10(%rbp),%rdx
+  4015d4:	48 89 c7             	mov    %rax,%rdi
+  4015d7:	ff d2                	callq  *%rdx
+  4015d9:	c9                   	leaveq 
+  4015da:	c3                   	retq   
+  4015db:	90                   	nop
+
+00000000004015dc <stlp_std::list<int, stlp_std::allocator<int> >::push_back(int const&)>:
+_ZN8stlp_std4listIiNS_9allocatorIiEEE9push_backERKi():
+/usr/include/stlport/stl/_list.h:509
+  4015dc:	55                   	push   %rbp
+  4015dd:	48 89 e5             	mov    %rsp,%rbp
+  4015e0:	53                   	push   %rbx
+  4015e1:	48 83 ec 38          	sub    $0x38,%rsp
+  4015e5:	48 89 7d d8          	mov    %rdi,-0x28(%rbp)
+  4015e9:	48 89 75 d0          	mov    %rsi,-0x30(%rbp)
+  4015ed:	48 8d 45 e0          	lea    -0x20(%rbp),%rax
+  4015f1:	48 8b 55 d8          	mov    -0x28(%rbp),%rdx
+  4015f5:	48 89 d6             	mov    %rdx,%rsi
+  4015f8:	48 89 c7             	mov    %rax,%rdi
+  4015fb:	e8 e8 08 00 00       	callq  401ee8 <stlp_std::list<int, stlp_std::allocator<int> >::end()>
+  401600:	48 8d 45 c0          	lea    -0x40(%rbp),%rax
+  401604:	48 8b 4d d0          	mov    -0x30(%rbp),%rcx
+  401608:	48 8d 55 e0          	lea    -0x20(%rbp),%rdx
+  40160c:	48 8b 5d d8          	mov    -0x28(%rbp),%rbx
+  401610:	48 89 de             	mov    %rbx,%rsi
+  401613:	48 89 c7             	mov    %rax,%rdi
+  401616:	e8 fd 08 00 00       	callq  401f18 <stlp_std::list<int, stlp_std::allocator<int> >::insert(stlp_std::priv::_List_iterator<int, stlp_std::_Nonconst_traits<int> >, int const&)>
+  40161b:	48 83 c4 38          	add    $0x38,%rsp
+  40161f:	5b                   	pop    %rbx
+  401620:	c9                   	leaveq 
+  401621:	c3                   	retq   
+
+0000000000401622 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::operator<<(int)>:
+_ZN8stlp_std13basic_ostreamIcNS_11char_traitsIcEEElsEi():
+/usr/include/stlport/stl/_ostream.c:236
+  401622:	55                   	push   %rbp
+  401623:	48 89 e5             	mov    %rsp,%rbp
+  401626:	48 83 ec 20          	sub    $0x20,%rsp
+  40162a:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+  40162e:	89 75 e4             	mov    %esi,-0x1c(%rbp)
+/usr/include/stlport/stl/_ostream.c:239
+  401631:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  401635:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  401639:	48 8b 00             	mov    (%rax),%rax
+  40163c:	48 83 e8 18          	sub    $0x18,%rax
+  401640:	48 8b 00             	mov    (%rax),%rax
+  401643:	48 8d 04 02          	lea    (%rdx,%rax,1),%rax
+  401647:	48 89 c7             	mov    %rax,%rdi
+  40164a:	e8 af fc ff ff       	callq  4012fe <stlp_std::ios_base::flags() const>
+  40164f:	83 e0 38             	and    $0x38,%eax
+  401652:	83 f8 08             	cmp    $0x8,%eax
+  401655:	74 07                	je     40165e <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::operator<<(int)+0x3c>
+  401657:	8b 45 e4             	mov    -0x1c(%rbp),%eax
+  40165a:	89 c0                	mov    %eax,%eax
+  40165c:	eb 05                	jmp    401663 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::operator<<(int)+0x41>
+  40165e:	8b 45 e4             	mov    -0x1c(%rbp),%eax
+  401661:	48 98                	cltq   
+  401663:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+/usr/include/stlport/stl/_ostream.c:240
+  401667:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+  40166b:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  40166f:	48 89 d6             	mov    %rdx,%rsi
+  401672:	48 89 c7             	mov    %rax,%rdi
+  401675:	e8 31 09 00 00       	callq  401fab <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >& stlp_std::priv::__put_num<char, stlp_std::char_traits<char>, long>(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >&, long)>
+/usr/include/stlport/stl/_ostream.c:241
+  40167a:	c9                   	leaveq 
+  40167b:	c3                   	retq   
+
+000000000040167c <stlp_std::priv::_List_base<int, stlp_std::allocator<int> >::clear()>:
+_ZN8stlp_std4priv10_List_baseIiNS_9allocatorIiEEE5clearEv():
+/usr/include/stlport/stl/_list.c:66
+  40167c:	55                   	push   %rbp
+  40167d:	48 89 e5             	mov    %rsp,%rbp
+  401680:	48 83 ec 20          	sub    $0x20,%rsp
+  401684:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+/usr/include/stlport/stl/_list.c:67
+  401688:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  40168c:	48 8b 00             	mov    (%rax),%rax
+  40168f:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+/usr/include/stlport/stl/_list.c:68
+  401693:	eb 3b                	jmp    4016d0 <stlp_std::priv::_List_base<int, stlp_std::allocator<int> >::clear()+0x54>
+/usr/include/stlport/stl/_list.c:73
+  401695:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  401699:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
+/usr/include/stlport/stl/_list.c:74
+  40169d:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4016a1:	48 8b 00             	mov    (%rax),%rax
+  4016a4:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+/usr/include/stlport/stl/_list.c:75
+  4016a8:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  4016ac:	48 83 c0 10          	add    $0x10,%rax
+  4016b0:	48 89 c7             	mov    %rax,%rdi
+  4016b3:	e8 d5 0a 00 00       	callq  40218d <void stlp_std::_Destroy<int>(int*)>
+/usr/include/stlport/stl/_list.c:76
+  4016b8:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  4016bc:	48 8b 4d f0          	mov    -0x10(%rbp),%rcx
+  4016c0:	ba 01 00 00 00       	mov    $0x1,%edx
+  4016c5:	48 89 ce             	mov    %rcx,%rsi
+  4016c8:	48 89 c7             	mov    %rax,%rdi
+  4016cb:	e8 de 0a 00 00       	callq  4021ae <stlp_std::allocator<stlp_std::priv::_List_node<int> >::deallocate(stlp_std::priv::_List_node<int>*, unsigned long)>
+/usr/include/stlport/stl/_list.c:68
+  4016d0:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  4016d4:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4016d8:	48 39 c2             	cmp    %rax,%rdx
+  4016db:	0f 95 c0             	setne  %al
+  4016de:	84 c0                	test   %al,%al
+  4016e0:	75 b3                	jne    401695 <stlp_std::priv::_List_base<int, stlp_std::allocator<int> >::clear()+0x19>
+/usr/include/stlport/stl/_list.c:78
+  4016e2:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  4016e6:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  4016ea:	48 89 10             	mov    %rdx,(%rax)
+/usr/include/stlport/stl/_list.c:79
+  4016ed:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  4016f1:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  4016f5:	48 89 50 08          	mov    %rdx,0x8(%rax)
+/usr/include/stlport/stl/_list.c:80
+  4016f9:	c9                   	leaveq 
+  4016fa:	c3                   	retq   
+  4016fb:	90                   	nop
+
+00000000004016fc <stlp_std::priv::_List_base<int, stlp_std::allocator<int> >::empty() const>:
+_ZNK8stlp_std4priv10_List_baseIiNS_9allocatorIiEEE5emptyEv():
+/usr/include/stlport/stl/_list.h:208
+  4016fc:	55                   	push   %rbp
+  4016fd:	48 89 e5             	mov    %rsp,%rbp
+  401700:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  401704:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  401708:	48 8b 10             	mov    (%rax),%rdx
+  40170b:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  40170f:	48 39 c2             	cmp    %rax,%rdx
+  401712:	0f 94 c0             	sete   %al
+  401715:	c9                   	leaveq 
+  401716:	c3                   	retq   
+  401717:	90                   	nop
+
+0000000000401718 <stlp_std::priv::_STLP_alloc_proxy<stlp_std::priv::_List_node_base, stlp_std::priv::_List_node<int>, stlp_std::allocator<stlp_std::priv::_List_node<int> > >::~_STLP_alloc_proxy()>:
+~_STLP_alloc_proxy():
+/usr/include/stlport/stl/_alloc.h:472
+  401718:	55                   	push   %rbp
+  401719:	48 89 e5             	mov    %rsp,%rbp
+  40171c:	48 83 ec 10          	sub    $0x10,%rsp
+  401720:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  401724:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  401728:	48 89 c7             	mov    %rax,%rdi
+  40172b:	e8 e6 0a 00 00       	callq  402216 <stlp_std::allocator<stlp_std::priv::_List_node<int> >::~allocator()>
+  401730:	c9                   	leaveq 
+  401731:	c3                   	retq   
+
+0000000000401732 <stlp_std::priv::_List_base<int, stlp_std::allocator<int> >::_List_base(stlp_std::allocator<int> const&)>:
+_List_base():
+/usr/include/stlport/stl/_list.h:188
+  401732:	55                   	push   %rbp
+  401733:	48 89 e5             	mov    %rsp,%rbp
+  401736:	53                   	push   %rbx
+  401737:	48 83 ec 38          	sub    $0x38,%rsp
+  40173b:	48 89 7d c8          	mov    %rdi,-0x38(%rbp)
+  40173f:	48 89 75 c0          	mov    %rsi,-0x40(%rbp)
+  401743:	48 c7 45 d0 00 00 00 	movq   $0x0,-0x30(%rbp)
+  40174a:	00 
+  40174b:	48 c7 45 d8 00 00 00 	movq   $0x0,-0x28(%rbp)
+  401752:	00 
+  401753:	48 8b 55 c0          	mov    -0x40(%rbp),%rdx
+  401757:	48 8d 45 ef          	lea    -0x11(%rbp),%rax
+  40175b:	48 89 d6             	mov    %rdx,%rsi
+  40175e:	48 89 c7             	mov    %rax,%rdi
+  401761:	e8 92 0a 00 00       	callq  4021f8 <stlp_std::allocator<stlp_std::priv::_List_node<int> >::allocator<int>(stlp_std::allocator<int> const&)>
+  401766:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+  40176a:	48 8b 55 d0          	mov    -0x30(%rbp),%rdx
+  40176e:	48 8b 4d d8          	mov    -0x28(%rbp),%rcx
+  401772:	48 8d 5d ef          	lea    -0x11(%rbp),%rbx
+  401776:	48 89 de             	mov    %rbx,%rsi
+  401779:	48 89 c7             	mov    %rax,%rdi
+  40177c:	e8 9f 0a 00 00       	callq  402220 <stlp_std::priv::_STLP_alloc_proxy<stlp_std::priv::_List_node_base, stlp_std::priv::_List_node<int>, stlp_std::allocator<stlp_std::priv::_List_node<int> > >::_STLP_alloc_proxy(stlp_std::allocator<stlp_std::priv::_List_node<int> > const&, stlp_std::priv::_List_node_base)>
+  401781:	48 8d 45 ef          	lea    -0x11(%rbp),%rax
+  401785:	48 89 c7             	mov    %rax,%rdi
+  401788:	e8 89 0a 00 00       	callq  402216 <stlp_std::allocator<stlp_std::priv::_List_node<int> >::~allocator()>
+/usr/include/stlport/stl/_list.h:189
+  40178d:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+  401791:	48 89 c7             	mov    %rax,%rdi
+  401794:	e8 cb 0a 00 00       	callq  402264 <stlp_std::priv::_List_base<int, stlp_std::allocator<int> >::_M_empty_initialize()>
+  401799:	48 83 c4 38          	add    $0x38,%rsp
+  40179d:	5b                   	pop    %rbx
+  40179e:	c9                   	leaveq 
+  40179f:	c3                   	retq   
+
+00000000004017a0 <stlp_std::priv::_List_base<int, stlp_std::allocator<int> >::~_List_base()>:
+~_List_base():
+/usr/include/stlport/stl/_list.h:204
+  4017a0:	55                   	push   %rbp
+  4017a1:	48 89 e5             	mov    %rsp,%rbp
+  4017a4:	53                   	push   %rbx
+  4017a5:	48 83 ec 18          	sub    $0x18,%rsp
+  4017a9:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+/usr/include/stlport/stl/_list.h:205
+  4017ad:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  4017b1:	48 89 c7             	mov    %rax,%rdi
+  4017b4:	e8 c3 fe ff ff       	callq  40167c <stlp_std::priv::_List_base<int, stlp_std::allocator<int> >::clear()>
+  4017b9:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  4017bd:	48 89 c7             	mov    %rax,%rdi
+  4017c0:	e8 53 ff ff ff       	callq  401718 <stlp_std::priv::_STLP_alloc_proxy<stlp_std::priv::_List_node_base, stlp_std::priv::_List_node<int>, stlp_std::allocator<stlp_std::priv::_List_node<int> > >::~_STLP_alloc_proxy()>
+  4017c5:	48 83 c4 18          	add    $0x18,%rsp
+  4017c9:	5b                   	pop    %rbx
+  4017ca:	c9                   	leaveq 
+  4017cb:	c3                   	retq   
+  4017cc:	48 89 c3             	mov    %rax,%rbx
+  4017cf:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  4017d3:	48 89 c7             	mov    %rax,%rdi
+  4017d6:	e8 3d ff ff ff       	callq  401718 <stlp_std::priv::_STLP_alloc_proxy<stlp_std::priv::_List_node_base, stlp_std::priv::_List_node<int>, stlp_std::allocator<stlp_std::priv::_List_node<int> > >::~_STLP_alloc_proxy()>
+  4017db:	48 89 d8             	mov    %rbx,%rax
+  4017de:	48 89 c7             	mov    %rax,%rdi
+  4017e1:	e8 3a f7 ff ff       	callq  400f20 <_Unwind_Resume@plt>
+
+00000000004017e6 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::_M_put_nowiden(char const*)>:
+_ZN8stlp_std13basic_ostreamIcNS_11char_traitsIcEEE14_M_put_nowidenEPKc():
+/usr/include/stlport/stl/_ostream.c:331
+  4017e6:	55                   	push   %rbp
+  4017e7:	48 89 e5             	mov    %rsp,%rbp
+  4017ea:	53                   	push   %rbx
+  4017eb:	48 83 ec 48          	sub    $0x48,%rsp
+  4017ef:	48 89 7d b8          	mov    %rdi,-0x48(%rbp)
+  4017f3:	48 89 75 b0          	mov    %rsi,-0x50(%rbp)
+/usr/include/stlport/stl/_ostream.c:332
+  4017f7:	48 8b 55 b8          	mov    -0x48(%rbp),%rdx
+  4017fb:	48 8d 45 c0          	lea    -0x40(%rbp),%rax
+  4017ff:	48 89 d6             	mov    %rdx,%rsi
+  401802:	48 89 c7             	mov    %rax,%rdi
+  401805:	e8 7e 0a 00 00       	callq  402288 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::sentry::sentry(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >&)>
+/usr/include/stlport/stl/_ostream.c:333
+  40180a:	48 8d 45 c0          	lea    -0x40(%rbp),%rax
+  40180e:	48 89 c7             	mov    %rax,%rdi
+  401811:	e8 02 0b 00 00       	callq  402318 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::sentry::operator bool() const>
+  401816:	84 c0                	test   %al,%al
+  401818:	0f 84 72 02 00 00    	je     401a90 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::_M_put_nowiden(char const*)+0x2aa>
+/usr/include/stlport/stl/_ostream.c:334
+  40181e:	c6 45 ef 01          	movb   $0x1,-0x11(%rbp)
+/usr/include/stlport/stl/_ostream.c:335
+  401822:	48 8b 45 b0          	mov    -0x50(%rbp),%rax
+  401826:	48 89 c7             	mov    %rax,%rdi
+  401829:	e8 13 fa ff ff       	callq  401241 <stlp_std::char_traits<char>::length(char const*)>
+  40182e:	48 89 45 e0          	mov    %rax,-0x20(%rbp)
+/usr/include/stlport/stl/_ostream.c:336
+  401832:	48 8b 55 b8          	mov    -0x48(%rbp),%rdx
+  401836:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+  40183a:	48 8b 00             	mov    (%rax),%rax
+  40183d:	48 83 e8 18          	sub    $0x18,%rax
+  401841:	48 8b 00             	mov    (%rax),%rax
+  401844:	48 8d 04 02          	lea    (%rdx,%rax,1),%rax
+  401848:	48 89 c7             	mov    %rax,%rdi
+  40184b:	e8 c0 fa ff ff       	callq  401310 <stlp_std::ios_base::width() const>
+  401850:	48 3b 45 e0          	cmp    -0x20(%rbp),%rax
+  401854:	7e 24                	jle    40187a <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::_M_put_nowiden(char const*)+0x94>
+  401856:	48 8b 55 b8          	mov    -0x48(%rbp),%rdx
+  40185a:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+  40185e:	48 8b 00             	mov    (%rax),%rax
+  401861:	48 83 e8 18          	sub    $0x18,%rax
+  401865:	48 8b 00             	mov    (%rax),%rax
+  401868:	48 8d 04 02          	lea    (%rdx,%rax,1),%rax
+  40186c:	48 89 c7             	mov    %rax,%rdi
+  40186f:	e8 9c fa ff ff       	callq  401310 <stlp_std::ios_base::width() const>
+  401874:	48 2b 45 e0          	sub    -0x20(%rbp),%rax
+  401878:	eb 05                	jmp    40187f <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::_M_put_nowiden(char const*)+0x99>
+  40187a:	b8 00 00 00 00       	mov    $0x0,%eax
+  40187f:	48 89 45 d8          	mov    %rax,-0x28(%rbp)
+/usr/include/stlport/stl/_ostream.c:339
+  401883:	48 83 7d d8 00       	cmpq   $0x0,-0x28(%rbp)
+  401888:	75 40                	jne    4018ca <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::_M_put_nowiden(char const*)+0xe4>
+/usr/include/stlport/stl/_ostream.c:340
+  40188a:	48 8b 55 b8          	mov    -0x48(%rbp),%rdx
+  40188e:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+  401892:	48 8b 00             	mov    (%rax),%rax
+  401895:	48 83 e8 18          	sub    $0x18,%rax
+  401899:	48 8b 00             	mov    (%rax),%rax
+  40189c:	48 8d 04 02          	lea    (%rdx,%rax,1),%rax
+  4018a0:	48 89 c7             	mov    %rax,%rdi
+  4018a3:	e8 82 0a 00 00       	callq  40232a <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::rdbuf() const>
+  4018a8:	48 8b 55 e0          	mov    -0x20(%rbp),%rdx
+  4018ac:	48 8b 4d b0          	mov    -0x50(%rbp),%rcx
+  4018b0:	48 89 ce             	mov    %rcx,%rsi
+  4018b3:	48 89 c7             	mov    %rax,%rdi
+  4018b6:	e8 85 0a 00 00       	callq  402340 <stlp_std::basic_streambuf<char, stlp_std::char_traits<char> >::sputn(char const*, long)>
+  4018bb:	48 3b 45 e0          	cmp    -0x20(%rbp),%rax
+  4018bf:	0f 95 c0             	setne  %al
+  4018c2:	88 45 ef             	mov    %al,-0x11(%rbp)
+  4018c5:	e9 7a 01 00 00       	jmpq   401a44 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::_M_put_nowiden(char const*)+0x25e>
+/usr/include/stlport/stl/_ostream.c:341
+  4018ca:	48 8b 55 b8          	mov    -0x48(%rbp),%rdx
+  4018ce:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+  4018d2:	48 8b 00             	mov    (%rax),%rax
+  4018d5:	48 83 e8 18          	sub    $0x18,%rax
+  4018d9:	48 8b 00             	mov    (%rax),%rax
+  4018dc:	48 8d 04 02          	lea    (%rdx,%rax,1),%rax
+  4018e0:	48 89 c7             	mov    %rax,%rdi
+  4018e3:	e8 16 fa ff ff       	callq  4012fe <stlp_std::ios_base::flags() const>
+  4018e8:	83 e0 07             	and    $0x7,%eax
+  4018eb:	83 f8 01             	cmp    $0x1,%eax
+  4018ee:	0f 94 c0             	sete   %al
+  4018f1:	84 c0                	test   %al,%al
+  4018f3:	0f 84 a8 00 00 00    	je     4019a1 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::_M_put_nowiden(char const*)+0x1bb>
+/usr/include/stlport/stl/_ostream.c:342
+  4018f9:	48 8b 55 b8          	mov    -0x48(%rbp),%rdx
+  4018fd:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+  401901:	48 8b 00             	mov    (%rax),%rax
+  401904:	48 83 e8 18          	sub    $0x18,%rax
+  401908:	48 8b 00             	mov    (%rax),%rax
+  40190b:	48 8d 04 02          	lea    (%rdx,%rax,1),%rax
+  40190f:	48 89 c7             	mov    %rax,%rdi
+  401912:	e8 13 0a 00 00       	callq  40232a <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::rdbuf() const>
+  401917:	48 8b 55 e0          	mov    -0x20(%rbp),%rdx
+  40191b:	48 8b 4d b0          	mov    -0x50(%rbp),%rcx
+  40191f:	48 89 ce             	mov    %rcx,%rsi
+  401922:	48 89 c7             	mov    %rax,%rdi
+  401925:	e8 16 0a 00 00       	callq  402340 <stlp_std::basic_streambuf<char, stlp_std::char_traits<char> >::sputn(char const*, long)>
+  40192a:	48 3b 45 e0          	cmp    -0x20(%rbp),%rax
+  40192e:	0f 95 c0             	setne  %al
+  401931:	88 45 ef             	mov    %al,-0x11(%rbp)
+/usr/include/stlport/stl/_ostream.c:343
+  401934:	80 7d ef 00          	cmpb   $0x0,-0x11(%rbp)
+  401938:	75 53                	jne    40198d <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::_M_put_nowiden(char const*)+0x1a7>
+  40193a:	48 8b 55 b8          	mov    -0x48(%rbp),%rdx
+  40193e:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+  401942:	48 8b 00             	mov    (%rax),%rax
+  401945:	48 83 e8 18          	sub    $0x18,%rax
+  401949:	48 8b 00             	mov    (%rax),%rax
+  40194c:	48 8d 04 02          	lea    (%rdx,%rax,1),%rax
+  401950:	48 89 c7             	mov    %rax,%rdi
+  401953:	e8 26 0a 00 00       	callq  40237e <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::fill() const>
+  401958:	0f be d8             	movsbl %al,%ebx
+  40195b:	48 8b 55 b8          	mov    -0x48(%rbp),%rdx
+  40195f:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+  401963:	48 8b 00             	mov    (%rax),%rax
+  401966:	48 83 e8 18          	sub    $0x18,%rax
+  40196a:	48 8b 00             	mov    (%rax),%rax
+  40196d:	48 8d 04 02          	lea    (%rdx,%rax,1),%rax
+  401971:	48 89 c7             	mov    %rax,%rdi
+  401974:	e8 b1 09 00 00       	callq  40232a <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::rdbuf() const>
+  401979:	48 8b 55 d8          	mov    -0x28(%rbp),%rdx
+  40197d:	89 de                	mov    %ebx,%esi
+  40197f:	48 89 c7             	mov    %rax,%rdi
+  401982:	e8 09 0a 00 00       	callq  402390 <stlp_std::basic_streambuf<char, stlp_std::char_traits<char> >::_M_sputnc(char, long)>
+  401987:	48 3b 45 d8          	cmp    -0x28(%rbp),%rax
+  40198b:	74 07                	je     401994 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::_M_put_nowiden(char const*)+0x1ae>
+  40198d:	b8 01 00 00 00       	mov    $0x1,%eax
+  401992:	eb 05                	jmp    401999 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::_M_put_nowiden(char const*)+0x1b3>
+  401994:	b8 00 00 00 00       	mov    $0x0,%eax
+  401999:	88 45 ef             	mov    %al,-0x11(%rbp)
+  40199c:	e9 a3 00 00 00       	jmpq   401a44 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::_M_put_nowiden(char const*)+0x25e>
+/usr/include/stlport/stl/_ostream.c:347
+  4019a1:	48 8b 55 b8          	mov    -0x48(%rbp),%rdx
+  4019a5:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+  4019a9:	48 8b 00             	mov    (%rax),%rax
+  4019ac:	48 83 e8 18          	sub    $0x18,%rax
+  4019b0:	48 8b 00             	mov    (%rax),%rax
+  4019b3:	48 8d 04 02          	lea    (%rdx,%rax,1),%rax
+  4019b7:	48 89 c7             	mov    %rax,%rdi
+  4019ba:	e8 bf 09 00 00       	callq  40237e <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::fill() const>
+  4019bf:	0f be d8             	movsbl %al,%ebx
+  4019c2:	48 8b 55 b8          	mov    -0x48(%rbp),%rdx
+  4019c6:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+  4019ca:	48 8b 00             	mov    (%rax),%rax
+  4019cd:	48 83 e8 18          	sub    $0x18,%rax
+  4019d1:	48 8b 00             	mov    (%rax),%rax
+  4019d4:	48 8d 04 02          	lea    (%rdx,%rax,1),%rax
+  4019d8:	48 89 c7             	mov    %rax,%rdi
+  4019db:	e8 4a 09 00 00       	callq  40232a <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::rdbuf() const>
+  4019e0:	48 8b 55 d8          	mov    -0x28(%rbp),%rdx
+  4019e4:	89 de                	mov    %ebx,%esi
+  4019e6:	48 89 c7             	mov    %rax,%rdi
+  4019e9:	e8 a2 09 00 00       	callq  402390 <stlp_std::basic_streambuf<char, stlp_std::char_traits<char> >::_M_sputnc(char, long)>
+  4019ee:	48 3b 45 d8          	cmp    -0x28(%rbp),%rax
+  4019f2:	0f 95 c0             	setne  %al
+  4019f5:	88 45 ef             	mov    %al,-0x11(%rbp)
+/usr/include/stlport/stl/_ostream.c:348
+  4019f8:	80 7d ef 00          	cmpb   $0x0,-0x11(%rbp)
+  4019fc:	75 37                	jne    401a35 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::_M_put_nowiden(char const*)+0x24f>
+  4019fe:	48 8b 55 b8          	mov    -0x48(%rbp),%rdx
+  401a02:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+  401a06:	48 8b 00             	mov    (%rax),%rax
+  401a09:	48 83 e8 18          	sub    $0x18,%rax
+  401a0d:	48 8b 00             	mov    (%rax),%rax
+  401a10:	48 8d 04 02          	lea    (%rdx,%rax,1),%rax
+  401a14:	48 89 c7             	mov    %rax,%rdi
+  401a17:	e8 0e 09 00 00       	callq  40232a <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::rdbuf() const>
+  401a1c:	48 8b 55 e0          	mov    -0x20(%rbp),%rdx
+  401a20:	48 8b 4d b0          	mov    -0x50(%rbp),%rcx
+  401a24:	48 89 ce             	mov    %rcx,%rsi
+  401a27:	48 89 c7             	mov    %rax,%rdi
+  401a2a:	e8 11 09 00 00       	callq  402340 <stlp_std::basic_streambuf<char, stlp_std::char_traits<char> >::sputn(char const*, long)>
+  401a2f:	48 3b 45 e0          	cmp    -0x20(%rbp),%rax
+  401a33:	74 07                	je     401a3c <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::_M_put_nowiden(char const*)+0x256>
+  401a35:	b8 01 00 00 00       	mov    $0x1,%eax
+  401a3a:	eb 05                	jmp    401a41 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::_M_put_nowiden(char const*)+0x25b>
+  401a3c:	b8 00 00 00 00       	mov    $0x0,%eax
+  401a41:	88 45 ef             	mov    %al,-0x11(%rbp)
+/usr/include/stlport/stl/_ostream.c:351
+  401a44:	48 8b 55 b8          	mov    -0x48(%rbp),%rdx
+  401a48:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+  401a4c:	48 8b 00             	mov    (%rax),%rax
+  401a4f:	48 83 e8 18          	sub    $0x18,%rax
+  401a53:	48 8b 00             	mov    (%rax),%rax
+  401a56:	48 8d 04 02          	lea    (%rdx,%rax,1),%rax
+  401a5a:	be 00 00 00 00       	mov    $0x0,%esi
+  401a5f:	48 89 c7             	mov    %rax,%rdi
+  401a62:	e8 bb f8 ff ff       	callq  401322 <stlp_std::ios_base::width(long)>
+/usr/include/stlport/stl/_ostream.c:357
+  401a67:	80 7d ef 00          	cmpb   $0x0,-0x11(%rbp)
+  401a6b:	74 23                	je     401a90 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::_M_put_nowiden(char const*)+0x2aa>
+/usr/include/stlport/stl/_ostream.c:358
+  401a6d:	48 8b 55 b8          	mov    -0x48(%rbp),%rdx
+  401a71:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+  401a75:	48 8b 00             	mov    (%rax),%rax
+  401a78:	48 83 e8 18          	sub    $0x18,%rax
+  401a7c:	48 8b 00             	mov    (%rax),%rax
+  401a7f:	48 8d 04 02          	lea    (%rdx,%rax,1),%rax
+  401a83:	be 04 00 00 00       	mov    $0x4,%esi
+  401a88:	48 89 c7             	mov    %rax,%rdi
+  401a8b:	e8 7e 09 00 00       	callq  40240e <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::setstate(int)>
+/usr/include/stlport/stl/_ostream.c:332
+  401a90:	48 8d 45 c0          	lea    -0x40(%rbp),%rax
+  401a94:	48 89 c7             	mov    %rax,%rdi
+  401a97:	e8 1e 08 00 00       	callq  4022ba <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::sentry::~sentry()>
+/usr/include/stlport/stl/_ostream.c:360
+  401a9c:	48 83 c4 48          	add    $0x48,%rsp
+  401aa0:	5b                   	pop    %rbx
+  401aa1:	c9                   	leaveq 
+  401aa2:	c3                   	retq   
+  401aa3:	48 89 c3             	mov    %rax,%rbx
+/usr/include/stlport/stl/_ostream.c:353
+  401aa6:	e8 25 f4 ff ff       	callq  400ed0 <__cxa_end_catch@plt>
+  401aab:	eb 35                	jmp    401ae2 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::_M_put_nowiden(char const*)+0x2fc>
+  401aad:	48 89 c7             	mov    %rax,%rdi
+  401ab0:	e8 4b f3 ff ff       	callq  400e00 <__cxa_begin_catch@plt>
+/usr/include/stlport/stl/_ostream.c:354
+  401ab5:	48 8b 55 b8          	mov    -0x48(%rbp),%rdx
+  401ab9:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+  401abd:	48 8b 00             	mov    (%rax),%rax
+  401ac0:	48 83 e8 18          	sub    $0x18,%rax
+  401ac4:	48 8b 00             	mov    (%rax),%rax
+  401ac7:	48 8d 04 02          	lea    (%rdx,%rax,1),%rax
+  401acb:	be 01 00 00 00       	mov    $0x1,%esi
+  401ad0:	48 89 c7             	mov    %rax,%rdi
+  401ad3:	e8 f6 08 00 00       	callq  4023ce <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::_M_handle_exception(int)>
+/usr/include/stlport/stl/_ostream.c:353
+  401ad8:	e8 f3 f3 ff ff       	callq  400ed0 <__cxa_end_catch@plt>
+  401add:	eb 88                	jmp    401a67 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::_M_put_nowiden(char const*)+0x281>
+  401adf:	48 89 c3             	mov    %rax,%rbx
+/usr/include/stlport/stl/_ostream.c:332
+  401ae2:	48 8d 45 c0          	lea    -0x40(%rbp),%rax
+  401ae6:	48 89 c7             	mov    %rax,%rdi
+  401ae9:	e8 cc 07 00 00       	callq  4022ba <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::sentry::~sentry()>
+  401aee:	48 89 d8             	mov    %rbx,%rax
+  401af1:	48 89 c7             	mov    %rax,%rdi
+  401af4:	e8 27 f4 ff ff       	callq  400f20 <_Unwind_Resume@plt>
+  401af9:	90                   	nop
+
+0000000000401afa <stlp_std::list<int, stlp_std::allocator<int> >::begin() const>:
+_ZNK8stlp_std4listIiNS_9allocatorIiEEE5beginEv():
+/usr/include/stlport/stl/_list.h:368
+  401afa:	55                   	push   %rbp
+  401afb:	48 89 e5             	mov    %rsp,%rbp
+  401afe:	48 83 ec 20          	sub    $0x20,%rsp
+  401b02:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+  401b06:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  401b0a:	48 8b 10             	mov    (%rax),%rdx
+  401b0d:	48 8d 45 f0          	lea    -0x10(%rbp),%rax
+  401b11:	48 89 d6             	mov    %rdx,%rsi
+  401b14:	48 89 c7             	mov    %rax,%rdi
+  401b17:	e8 22 09 00 00       	callq  40243e <stlp_std::priv::_List_iterator<int, stlp_std::_Const_traits<int> >::_List_iterator(stlp_std::priv::_List_node_base*)>
+  401b1c:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  401b20:	c9                   	leaveq 
+  401b21:	c3                   	retq   
+
+0000000000401b22 <stlp_std::list<int, stlp_std::allocator<int> >::end() const>:
+_ZNK8stlp_std4listIiNS_9allocatorIiEEE3endEv():
+/usr/include/stlport/stl/_list.h:371
+  401b22:	55                   	push   %rbp
+  401b23:	48 89 e5             	mov    %rsp,%rbp
+  401b26:	48 83 ec 20          	sub    $0x20,%rsp
+  401b2a:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+  401b2e:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  401b32:	48 8d 45 f0          	lea    -0x10(%rbp),%rax
+  401b36:	48 89 d6             	mov    %rdx,%rsi
+  401b39:	48 89 c7             	mov    %rax,%rdi
+  401b3c:	e8 fd 08 00 00       	callq  40243e <stlp_std::priv::_List_iterator<int, stlp_std::_Const_traits<int> >::_List_iterator(stlp_std::priv::_List_node_base*)>
+  401b41:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  401b45:	c9                   	leaveq 
+  401b46:	c3                   	retq   
+
+0000000000401b47 <stlp_std::iterator_traits<stlp_std::priv::_List_iterator<int, stlp_std::_Const_traits<int> > >::difference_type stlp_std::distance<stlp_std::priv::_List_iterator<int, stlp_std::_Const_traits<int> > >(stlp_std::priv::_List_iterator<int, stlp_std::_Const_traits<int> >, stlp_std::priv::_List_iterator<int, stlp_std::_Const_traits<int> >)>:
+_ZN8stlp_std8distanceINS_4priv14_List_iteratorIiNS_13_Const_traitsIiEEEEEENS_15iterator_traitsIT_E15difference_typeES7_S7_():
+/usr/include/stlport/stl/_iterator_base.h:361
+  401b47:	55                   	push   %rbp
+  401b48:	48 89 e5             	mov    %rsp,%rbp
+  401b4b:	48 83 ec 30          	sub    $0x30,%rsp
+  401b4f:	48 89 7d e0          	mov    %rdi,-0x20(%rbp)
+  401b53:	48 89 75 d0          	mov    %rsi,-0x30(%rbp)
+/usr/include/stlport/stl/_iterator_base.h:362
+  401b57:	48 8d 55 ff          	lea    -0x1(%rbp),%rdx
+  401b5b:	48 8d 4d d0          	lea    -0x30(%rbp),%rcx
+  401b5f:	48 8d 45 e0          	lea    -0x20(%rbp),%rax
+  401b63:	48 89 ce             	mov    %rcx,%rsi
+  401b66:	48 89 c7             	mov    %rax,%rdi
+  401b69:	e8 f5 08 00 00       	callq  402463 <stlp_std::iterator_traits<stlp_std::priv::_List_iterator<int, stlp_std::_Const_traits<int> > >::difference_type stlp_std::priv::__distance<stlp_std::priv::_List_iterator<int, stlp_std::_Const_traits<int> > >(stlp_std::priv::_List_iterator<int, stlp_std::_Const_traits<int> > const&, stlp_std::priv::_List_iterator<int, stlp_std::_Const_traits<int> > const&, stlp_std::input_iterator_tag const&)>
+  401b6e:	c9                   	leaveq 
+  401b6f:	c3                   	retq   
+
+0000000000401b70 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >& stlp_std::priv::__put_num<char, stlp_std::char_traits<char>, unsigned long>(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >&, unsigned long)>:
+_ZN8stlp_std4priv9__put_numIcNS_11char_traitsIcEEmEERNS_13basic_ostreamIT_T0_EES8_T1_():
+/usr/include/stlport/stl/_ostream.c:194
+  401b70:	55                   	push   %rbp
+  401b71:	48 89 e5             	mov    %rsp,%rbp
+  401b74:	41 55                	push   %r13
+  401b76:	41 54                	push   %r12
+  401b78:	53                   	push   %rbx
+  401b79:	48 83 ec 68          	sub    $0x68,%rsp
+  401b7d:	48 89 7d 98          	mov    %rdi,-0x68(%rbp)
+  401b81:	48 89 75 90          	mov    %rsi,-0x70(%rbp)
+/usr/include/stlport/stl/_ostream.c:196
+  401b85:	48 8b 55 98          	mov    -0x68(%rbp),%rdx
+  401b89:	48 8d 45 a0          	lea    -0x60(%rbp),%rax
+  401b8d:	48 89 d6             	mov    %rdx,%rsi
+  401b90:	48 89 c7             	mov    %rax,%rdi
+  401b93:	e8 f0 06 00 00       	callq  402288 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::sentry::sentry(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >&)>
+/usr/include/stlport/stl/_ostream.c:197
+  401b98:	c6 45 df 01          	movb   $0x1,-0x21(%rbp)
+/usr/include/stlport/stl/_ostream.c:199
+  401b9c:	48 8d 45 a0          	lea    -0x60(%rbp),%rax
+  401ba0:	48 89 c7             	mov    %rax,%rdi
+  401ba3:	e8 70 07 00 00       	callq  402318 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::sentry::operator bool() const>
+  401ba8:	84 c0                	test   %al,%al
+  401baa:	0f 84 ee 00 00 00    	je     401c9e <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >& stlp_std::priv::__put_num<char, stlp_std::char_traits<char>, unsigned long>(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >&, unsigned long)+0x12e>
+/usr/include/stlport/stl/_ostream.c:202
+  401bb0:	48 8b 55 98          	mov    -0x68(%rbp),%rdx
+  401bb4:	48 8b 45 98          	mov    -0x68(%rbp),%rax
+  401bb8:	48 8b 00             	mov    (%rax),%rax
+  401bbb:	48 83 e8 18          	sub    $0x18,%rax
+  401bbf:	48 8b 00             	mov    (%rax),%rax
+  401bc2:	48 8d 04 02          	lea    (%rdx,%rax,1),%rax
+  401bc6:	48 89 c7             	mov    %rax,%rdi
+  401bc9:	e8 b0 07 00 00       	callq  40237e <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::fill() const>
+  401bce:	44 0f be e8          	movsbl %al,%r13d
+  401bd2:	48 8b 55 98          	mov    -0x68(%rbp),%rdx
+  401bd6:	48 8b 45 98          	mov    -0x68(%rbp),%rax
+  401bda:	48 8b 00             	mov    (%rax),%rax
+  401bdd:	48 83 e8 18          	sub    $0x18,%rax
+  401be1:	48 8b 00             	mov    (%rax),%rax
+  401be4:	4c 8d 24 02          	lea    (%rdx,%rax,1),%r12
+  401be8:	48 8b 55 98          	mov    -0x68(%rbp),%rdx
+  401bec:	48 8b 45 98          	mov    -0x68(%rbp),%rax
+  401bf0:	48 8b 00             	mov    (%rax),%rax
+  401bf3:	48 83 e8 18          	sub    $0x18,%rax
+  401bf7:	48 8b 00             	mov    (%rax),%rax
+  401bfa:	48 8d 04 02          	lea    (%rdx,%rax,1),%rax
+  401bfe:	48 89 c7             	mov    %rax,%rdi
+  401c01:	e8 24 07 00 00       	callq  40232a <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::rdbuf() const>
+  401c06:	48 89 c2             	mov    %rax,%rdx
+  401c09:	48 8d 45 c0          	lea    -0x40(%rbp),%rax
+  401c0d:	48 89 d6             	mov    %rdx,%rsi
+  401c10:	48 89 c7             	mov    %rax,%rdi
+  401c13:	e8 d6 08 00 00       	callq  4024ee <stlp_std::ostreambuf_iterator<char, stlp_std::char_traits<char> >::ostreambuf_iterator(stlp_std::basic_streambuf<char, stlp_std::char_traits<char> >*)>
+  401c18:	48 8b 55 98          	mov    -0x68(%rbp),%rdx
+  401c1c:	48 8b 45 98          	mov    -0x68(%rbp),%rax
+  401c20:	48 8b 00             	mov    (%rax),%rax
+  401c23:	48 83 e8 18          	sub    $0x18,%rax
+  401c27:	48 8b 00             	mov    (%rax),%rax
+  401c2a:	48 01 c2             	add    %rax,%rdx
+  401c2d:	48 8d 45 d0          	lea    -0x30(%rbp),%rax
+  401c31:	48 89 d6             	mov    %rdx,%rsi
+  401c34:	48 89 c7             	mov    %rax,%rdi
+  401c37:	e8 10 f7 ff ff       	callq  40134c <stlp_std::ios_base::getloc() const>
+  401c3c:	48 8d 45 d0          	lea    -0x30(%rbp),%rax
+  401c40:	48 89 c7             	mov    %rax,%rdi
+  401c43:	e8 72 08 00 00       	callq  4024ba <stlp_std::num_put<char, stlp_std::ostreambuf_iterator<char, stlp_std::char_traits<char> > > const& stlp_std::use_facet<stlp_std::num_put<char, stlp_std::ostreambuf_iterator<char, stlp_std::char_traits<char> > > >(stlp_std::locale const&)>
+  401c48:	48 8b 4d 90          	mov    -0x70(%rbp),%rcx
+  401c4c:	48 8b 5d c0          	mov    -0x40(%rbp),%rbx
+  401c50:	8b 55 c8             	mov    -0x38(%rbp),%edx
+  401c53:	49 89 c9             	mov    %rcx,%r9
+  401c56:	45 89 e8             	mov    %r13d,%r8d
+  401c59:	4c 89 e1             	mov    %r12,%rcx
+  401c5c:	48 89 de             	mov    %rbx,%rsi
+  401c5f:	48 89 c7             	mov    %rax,%rdi
+  401c62:	e8 bf 08 00 00       	callq  402526 <stlp_std::num_put<char, stlp_std::ostreambuf_iterator<char, stlp_std::char_traits<char> > >::put(stlp_std::ostreambuf_iterator<char, stlp_std::char_traits<char> >, stlp_std::ios_base&, char, unsigned long) const>
+  401c67:	48 89 c1             	mov    %rax,%rcx
+  401c6a:	89 d0                	mov    %edx,%eax
+  401c6c:	48 89 4d 80          	mov    %rcx,-0x80(%rbp)
+  401c70:	89 45 88             	mov    %eax,-0x78(%rbp)
+  401c73:	48 8b 45 80          	mov    -0x80(%rbp),%rax
+  401c77:	48 89 45 b0          	mov    %rax,-0x50(%rbp)
+  401c7b:	48 8b 45 88          	mov    -0x78(%rbp),%rax
+  401c7f:	48 89 45 b8          	mov    %rax,-0x48(%rbp)
+  401c83:	48 8d 45 b0          	lea    -0x50(%rbp),%rax
+  401c87:	48 89 c7             	mov    %rax,%rdi
+  401c8a:	e8 1d 09 00 00       	callq  4025ac <stlp_std::ostreambuf_iterator<char, stlp_std::char_traits<char> >::failed() const>
+  401c8f:	88 45 df             	mov    %al,-0x21(%rbp)
+  401c92:	48 8d 45 d0          	lea    -0x30(%rbp),%rax
+  401c96:	48 89 c7             	mov    %rax,%rdi
+  401c99:	e8 02 f2 ff ff       	callq  400ea0 <stlp_std::locale::~locale()@plt>
+/usr/include/stlport/stl/_ostream.c:210
+  401c9e:	80 7d df 00          	cmpb   $0x0,-0x21(%rbp)
+  401ca2:	74 23                	je     401cc7 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >& stlp_std::priv::__put_num<char, stlp_std::char_traits<char>, unsigned long>(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >&, unsigned long)+0x157>
+/usr/include/stlport/stl/_ostream.c:211
+  401ca4:	48 8b 55 98          	mov    -0x68(%rbp),%rdx
+  401ca8:	48 8b 45 98          	mov    -0x68(%rbp),%rax
+  401cac:	48 8b 00             	mov    (%rax),%rax
+  401caf:	48 83 e8 18          	sub    $0x18,%rax
+  401cb3:	48 8b 00             	mov    (%rax),%rax
+  401cb6:	48 8d 04 02          	lea    (%rdx,%rax,1),%rax
+  401cba:	be 01 00 00 00       	mov    $0x1,%esi
+  401cbf:	48 89 c7             	mov    %rax,%rdi
+  401cc2:	e8 47 07 00 00       	callq  40240e <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::setstate(int)>
+/usr/include/stlport/stl/_ostream.c:212
+  401cc7:	48 8b 5d 98          	mov    -0x68(%rbp),%rbx
+/usr/include/stlport/stl/_ostream.c:196
+  401ccb:	48 8d 45 a0          	lea    -0x60(%rbp),%rax
+  401ccf:	48 89 c7             	mov    %rax,%rdi
+  401cd2:	e8 e3 05 00 00       	callq  4022ba <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::sentry::~sentry()>
+  401cd7:	48 89 d8             	mov    %rbx,%rax
+/usr/include/stlport/stl/_ostream.c:213
+  401cda:	48 83 c4 68          	add    $0x68,%rsp
+  401cde:	5b                   	pop    %rbx
+  401cdf:	41 5c                	pop    %r12
+  401ce1:	41 5d                	pop    %r13
+  401ce3:	c9                   	leaveq 
+  401ce4:	c3                   	retq   
+  401ce5:	48 89 c3             	mov    %rax,%rbx
+/usr/include/stlport/stl/_ostream.c:202
+  401ce8:	48 8d 45 d0          	lea    -0x30(%rbp),%rax
+  401cec:	48 89 c7             	mov    %rax,%rdi
+  401cef:	e8 ac f1 ff ff       	callq  400ea0 <stlp_std::locale::~locale()@plt>
+  401cf4:	48 89 d8             	mov    %rbx,%rax
+/usr/include/stlport/stl/_ostream.c:206
+  401cf7:	48 89 c7             	mov    %rax,%rdi
+  401cfa:	e8 01 f1 ff ff       	callq  400e00 <__cxa_begin_catch@plt>
+/usr/include/stlport/stl/_ostream.c:207
+  401cff:	48 8b 55 98          	mov    -0x68(%rbp),%rdx
+  401d03:	48 8b 45 98          	mov    -0x68(%rbp),%rax
+  401d07:	48 8b 00             	mov    (%rax),%rax
+  401d0a:	48 83 e8 18          	sub    $0x18,%rax
+  401d0e:	48 8b 00             	mov    (%rax),%rax
+  401d11:	48 8d 04 02          	lea    (%rdx,%rax,1),%rax
+  401d15:	be 01 00 00 00       	mov    $0x1,%esi
+  401d1a:	48 89 c7             	mov    %rax,%rdi
+  401d1d:	e8 ac 06 00 00       	callq  4023ce <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::_M_handle_exception(int)>
+  401d22:	eb 0a                	jmp    401d2e <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >& stlp_std::priv::__put_num<char, stlp_std::char_traits<char>, unsigned long>(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >&, unsigned long)+0x1be>
+  401d24:	48 89 c3             	mov    %rax,%rbx
+/usr/include/stlport/stl/_ostream.c:206
+  401d27:	e8 a4 f1 ff ff       	callq  400ed0 <__cxa_end_catch@plt>
+  401d2c:	eb 0d                	jmp    401d3b <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >& stlp_std::priv::__put_num<char, stlp_std::char_traits<char>, unsigned long>(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >&, unsigned long)+0x1cb>
+  401d2e:	e8 9d f1 ff ff       	callq  400ed0 <__cxa_end_catch@plt>
+  401d33:	e9 66 ff ff ff       	jmpq   401c9e <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >& stlp_std::priv::__put_num<char, stlp_std::char_traits<char>, unsigned long>(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >&, unsigned long)+0x12e>
+  401d38:	48 89 c3             	mov    %rax,%rbx
+/usr/include/stlport/stl/_ostream.c:196
+  401d3b:	48 8d 45 a0          	lea    -0x60(%rbp),%rax
+  401d3f:	48 89 c7             	mov    %rax,%rdi
+  401d42:	e8 73 05 00 00       	callq  4022ba <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::sentry::~sentry()>
+  401d47:	48 89 d8             	mov    %rbx,%rax
+  401d4a:	48 89 c7             	mov    %rax,%rdi
+  401d4d:	e8 ce f1 ff ff       	callq  400f20 <_Unwind_Resume@plt>
+
+0000000000401d52 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::put(char)>:
+_ZN8stlp_std13basic_ostreamIcNS_11char_traitsIcEEE3putEc():
+/usr/include/stlport/stl/_ostream.c:408
+  401d52:	55                   	push   %rbp
+  401d53:	48 89 e5             	mov    %rsp,%rbp
+  401d56:	53                   	push   %rbx
+  401d57:	48 83 ec 38          	sub    $0x38,%rsp
+  401d5b:	48 89 7d c8          	mov    %rdi,-0x38(%rbp)
+  401d5f:	89 f0                	mov    %esi,%eax
+  401d61:	88 45 c4             	mov    %al,-0x3c(%rbp)
+/usr/include/stlport/stl/_ostream.c:409
+  401d64:	48 8b 55 c8          	mov    -0x38(%rbp),%rdx
+  401d68:	48 8d 45 d0          	lea    -0x30(%rbp),%rax
+  401d6c:	48 89 d6             	mov    %rdx,%rsi
+  401d6f:	48 89 c7             	mov    %rax,%rdi
+  401d72:	e8 11 05 00 00       	callq  402288 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::sentry::sentry(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >&)>
+/usr/include/stlport/stl/_ostream.c:410
+  401d77:	c6 45 ef 01          	movb   $0x1,-0x11(%rbp)
+/usr/include/stlport/stl/_ostream.c:412
+  401d7b:	48 8d 45 d0          	lea    -0x30(%rbp),%rax
+  401d7f:	48 89 c7             	mov    %rax,%rdi
+  401d82:	e8 91 05 00 00       	callq  402318 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::sentry::operator bool() const>
+  401d87:	84 c0                	test   %al,%al
+  401d89:	74 36                	je     401dc1 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::put(char)+0x6f>
+/usr/include/stlport/stl/_ostream.c:414
+  401d8b:	0f be 5d c4          	movsbl -0x3c(%rbp),%ebx
+  401d8f:	48 8b 55 c8          	mov    -0x38(%rbp),%rdx
+  401d93:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+  401d97:	48 8b 00             	mov    (%rax),%rax
+  401d9a:	48 83 e8 18          	sub    $0x18,%rax
+  401d9e:	48 8b 00             	mov    (%rax),%rax
+  401da1:	48 8d 04 02          	lea    (%rdx,%rax,1),%rax
+  401da5:	48 89 c7             	mov    %rax,%rdi
+  401da8:	e8 7d 05 00 00       	callq  40232a <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::rdbuf() const>
+  401dad:	89 de                	mov    %ebx,%esi
+  401daf:	48 89 c7             	mov    %rax,%rdi
+  401db2:	e8 0b 08 00 00       	callq  4025c2 <stlp_std::basic_streambuf<char, stlp_std::char_traits<char> >::sputc(char)>
+  401db7:	89 c7                	mov    %eax,%edi
+  401db9:	e8 80 08 00 00       	callq  40263e <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::_S_eof(int)>
+  401dbe:	88 45 ef             	mov    %al,-0x11(%rbp)
+/usr/include/stlport/stl/_ostream.c:421
+  401dc1:	80 7d ef 00          	cmpb   $0x0,-0x11(%rbp)
+  401dc5:	74 23                	je     401dea <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::put(char)+0x98>
+/usr/include/stlport/stl/_ostream.c:422
+  401dc7:	48 8b 55 c8          	mov    -0x38(%rbp),%rdx
+  401dcb:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+  401dcf:	48 8b 00             	mov    (%rax),%rax
+  401dd2:	48 83 e8 18          	sub    $0x18,%rax
+  401dd6:	48 8b 00             	mov    (%rax),%rax
+  401dd9:	48 8d 04 02          	lea    (%rdx,%rax,1),%rax
+  401ddd:	be 01 00 00 00       	mov    $0x1,%esi
+  401de2:	48 89 c7             	mov    %rax,%rdi
+  401de5:	e8 24 06 00 00       	callq  40240e <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::setstate(int)>
+/usr/include/stlport/stl/_ostream.c:424
+  401dea:	48 8b 5d c8          	mov    -0x38(%rbp),%rbx
+/usr/include/stlport/stl/_ostream.c:409
+  401dee:	48 8d 45 d0          	lea    -0x30(%rbp),%rax
+  401df2:	48 89 c7             	mov    %rax,%rdi
+  401df5:	e8 c0 04 00 00       	callq  4022ba <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::sentry::~sentry()>
+  401dfa:	48 89 d8             	mov    %rbx,%rax
+/usr/include/stlport/stl/_ostream.c:425
+  401dfd:	48 83 c4 38          	add    $0x38,%rsp
+  401e01:	5b                   	pop    %rbx
+  401e02:	c9                   	leaveq 
+  401e03:	c3                   	retq   
+  401e04:	48 89 c3             	mov    %rax,%rbx
+/usr/include/stlport/stl/_ostream.c:416
+  401e07:	e8 c4 f0 ff ff       	callq  400ed0 <__cxa_end_catch@plt>
+  401e0c:	eb 35                	jmp    401e43 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::put(char)+0xf1>
+  401e0e:	48 89 c7             	mov    %rax,%rdi
+  401e11:	e8 ea ef ff ff       	callq  400e00 <__cxa_begin_catch@plt>
+/usr/include/stlport/stl/_ostream.c:417
+  401e16:	48 8b 55 c8          	mov    -0x38(%rbp),%rdx
+  401e1a:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+  401e1e:	48 8b 00             	mov    (%rax),%rax
+  401e21:	48 83 e8 18          	sub    $0x18,%rax
+  401e25:	48 8b 00             	mov    (%rax),%rax
+  401e28:	48 8d 04 02          	lea    (%rdx,%rax,1),%rax
+  401e2c:	be 01 00 00 00       	mov    $0x1,%esi
+  401e31:	48 89 c7             	mov    %rax,%rdi
+  401e34:	e8 95 05 00 00       	callq  4023ce <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::_M_handle_exception(int)>
+/usr/include/stlport/stl/_ostream.c:416
+  401e39:	e8 92 f0 ff ff       	callq  400ed0 <__cxa_end_catch@plt>
+  401e3e:	eb 81                	jmp    401dc1 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::put(char)+0x6f>
+  401e40:	48 89 c3             	mov    %rax,%rbx
+/usr/include/stlport/stl/_ostream.c:409
+  401e43:	48 8d 45 d0          	lea    -0x30(%rbp),%rax
+  401e47:	48 89 c7             	mov    %rax,%rdi
+  401e4a:	e8 6b 04 00 00       	callq  4022ba <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::sentry::~sentry()>
+  401e4f:	48 89 d8             	mov    %rbx,%rax
+  401e52:	48 89 c7             	mov    %rax,%rdi
+  401e55:	e8 c6 f0 ff ff       	callq  400f20 <_Unwind_Resume@plt>
+
+0000000000401e5a <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::flush()>:
+_ZN8stlp_std13basic_ostreamIcNS_11char_traitsIcEEE5flushEv():
+/usr/include/stlport/stl/_ostream.h:134
+  401e5a:	55                   	push   %rbp
+  401e5b:	48 89 e5             	mov    %rsp,%rbp
+  401e5e:	48 83 ec 10          	sub    $0x10,%rsp
+  401e62:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+/usr/include/stlport/stl/_ostream.h:135
+  401e66:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+  401e6a:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  401e6e:	48 8b 00             	mov    (%rax),%rax
+  401e71:	48 83 e8 18          	sub    $0x18,%rax
+  401e75:	48 8b 00             	mov    (%rax),%rax
+  401e78:	48 8d 04 02          	lea    (%rdx,%rax,1),%rax
+  401e7c:	48 89 c7             	mov    %rax,%rdi
+  401e7f:	e8 a6 04 00 00       	callq  40232a <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::rdbuf() const>
+  401e84:	48 85 c0             	test   %rax,%rax
+  401e87:	0f 95 c0             	setne  %al
+  401e8a:	84 c0                	test   %al,%al
+  401e8c:	74 53                	je     401ee1 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::flush()+0x87>
+/usr/include/stlport/stl/_ostream.h:136
+  401e8e:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+  401e92:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  401e96:	48 8b 00             	mov    (%rax),%rax
+  401e99:	48 83 e8 18          	sub    $0x18,%rax
+  401e9d:	48 8b 00             	mov    (%rax),%rax
+  401ea0:	48 8d 04 02          	lea    (%rdx,%rax,1),%rax
+  401ea4:	48 89 c7             	mov    %rax,%rdi
+  401ea7:	e8 7e 04 00 00       	callq  40232a <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::rdbuf() const>
+  401eac:	48 89 c7             	mov    %rax,%rdi
+  401eaf:	e8 b2 07 00 00       	callq  402666 <stlp_std::basic_streambuf<char, stlp_std::char_traits<char> >::pubsync()>
+  401eb4:	83 f8 ff             	cmp    $0xffffffffffffffff,%eax
+  401eb7:	0f 94 c0             	sete   %al
+  401eba:	84 c0                	test   %al,%al
+  401ebc:	74 23                	je     401ee1 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::flush()+0x87>
+/usr/include/stlport/stl/_ostream.h:137
+  401ebe:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+  401ec2:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  401ec6:	48 8b 00             	mov    (%rax),%rax
+  401ec9:	48 83 e8 18          	sub    $0x18,%rax
+  401ecd:	48 8b 00             	mov    (%rax),%rax
+  401ed0:	48 8d 04 02          	lea    (%rdx,%rax,1),%rax
+  401ed4:	be 01 00 00 00       	mov    $0x1,%esi
+  401ed9:	48 89 c7             	mov    %rax,%rdi
+  401edc:	e8 2d 05 00 00       	callq  40240e <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::setstate(int)>
+/usr/include/stlport/stl/_ostream.h:138
+  401ee1:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+/usr/include/stlport/stl/_ostream.h:139
+  401ee5:	c9                   	leaveq 
+  401ee6:	c3                   	retq   
+  401ee7:	90                   	nop
+
+0000000000401ee8 <stlp_std::list<int, stlp_std::allocator<int> >::end()>:
+_ZN8stlp_std4listIiNS_9allocatorIiEEE3endEv():
+/usr/include/stlport/stl/_list.h:370
+  401ee8:	55                   	push   %rbp
+  401ee9:	48 89 e5             	mov    %rsp,%rbp
+  401eec:	53                   	push   %rbx
+  401eed:	48 83 ec 18          	sub    $0x18,%rsp
+  401ef1:	48 89 fb             	mov    %rdi,%rbx
+  401ef4:	48 89 75 e8          	mov    %rsi,-0x18(%rbp)
+  401ef8:	48 89 d8             	mov    %rbx,%rax
+  401efb:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  401eff:	48 89 d6             	mov    %rdx,%rsi
+  401f02:	48 89 c7             	mov    %rax,%rdi
+  401f05:	e8 82 07 00 00       	callq  40268c <stlp_std::priv::_List_iterator<int, stlp_std::_Nonconst_traits<int> >::_List_iterator(stlp_std::priv::_List_node_base*)>
+  401f0a:	48 89 d8             	mov    %rbx,%rax
+  401f0d:	48 89 d8             	mov    %rbx,%rax
+  401f10:	48 83 c4 18          	add    $0x18,%rsp
+  401f14:	5b                   	pop    %rbx
+  401f15:	c9                   	leaveq 
+  401f16:	c3                   	retq   
+  401f17:	90                   	nop
+
+0000000000401f18 <stlp_std::list<int, stlp_std::allocator<int> >::insert(stlp_std::priv::_List_iterator<int, stlp_std::_Nonconst_traits<int> >, int const&)>:
+_ZN8stlp_std4listIiNS_9allocatorIiEEE6insertENS_4priv14_List_iteratorIiNS_16_Nonconst_traitsIiEEEERKi():
+/usr/include/stlport/stl/_list.h:420
+  401f18:	55                   	push   %rbp
+  401f19:	48 89 e5             	mov    %rsp,%rbp
+  401f1c:	53                   	push   %rbx
+  401f1d:	48 83 ec 48          	sub    $0x48,%rsp
+  401f21:	48 89 fb             	mov    %rdi,%rbx
+  401f24:	48 89 75 c8          	mov    %rsi,-0x38(%rbp)
+  401f28:	48 89 55 c0          	mov    %rdx,-0x40(%rbp)
+  401f2c:	48 89 4d b8          	mov    %rcx,-0x48(%rbp)
+/usr/include/stlport/stl/_list.h:425
+  401f30:	48 8b 55 b8          	mov    -0x48(%rbp),%rdx
+  401f34:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+  401f38:	48 89 d6             	mov    %rdx,%rsi
+  401f3b:	48 89 c7             	mov    %rax,%rdi
+  401f3e:	e8 6f 07 00 00       	callq  4026b2 <stlp_std::list<int, stlp_std::allocator<int> >::_M_create_node(int const&)>
+  401f43:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+/usr/include/stlport/stl/_list.h:426
+  401f47:	48 8b 45 c0          	mov    -0x40(%rbp),%rax
+  401f4b:	48 8b 00             	mov    (%rax),%rax
+  401f4e:	48 89 45 e0          	mov    %rax,-0x20(%rbp)
+/usr/include/stlport/stl/_list.h:427
+  401f52:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  401f56:	48 8b 40 08          	mov    0x8(%rax),%rax
+  401f5a:	48 89 45 d8          	mov    %rax,-0x28(%rbp)
+/usr/include/stlport/stl/_list.h:428
+  401f5e:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  401f62:	48 8b 55 e0          	mov    -0x20(%rbp),%rdx
+  401f66:	48 89 10             	mov    %rdx,(%rax)
+/usr/include/stlport/stl/_list.h:429
+  401f69:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  401f6d:	48 8b 55 d8          	mov    -0x28(%rbp),%rdx
+  401f71:	48 89 50 08          	mov    %rdx,0x8(%rax)
+/usr/include/stlport/stl/_list.h:430
+  401f75:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  401f79:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  401f7d:	48 89 10             	mov    %rdx,(%rax)
+/usr/include/stlport/stl/_list.h:431
+  401f80:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  401f84:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  401f88:	48 89 50 08          	mov    %rdx,0x8(%rax)
+/usr/include/stlport/stl/_list.h:432
+  401f8c:	48 89 d8             	mov    %rbx,%rax
+  401f8f:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  401f93:	48 89 d6             	mov    %rdx,%rsi
+  401f96:	48 89 c7             	mov    %rax,%rdi
+  401f99:	e8 ee 06 00 00       	callq  40268c <stlp_std::priv::_List_iterator<int, stlp_std::_Nonconst_traits<int> >::_List_iterator(stlp_std::priv::_List_node_base*)>
+/usr/include/stlport/stl/_list.h:433
+  401f9e:	48 89 d8             	mov    %rbx,%rax
+  401fa1:	48 89 d8             	mov    %rbx,%rax
+  401fa4:	48 83 c4 48          	add    $0x48,%rsp
+  401fa8:	5b                   	pop    %rbx
+  401fa9:	c9                   	leaveq 
+  401faa:	c3                   	retq   
+
+0000000000401fab <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >& stlp_std::priv::__put_num<char, stlp_std::char_traits<char>, long>(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >&, long)>:
+_ZN8stlp_std4priv9__put_numIcNS_11char_traitsIcEElEERNS_13basic_ostreamIT_T0_EES8_T1_():
+/usr/include/stlport/stl/_ostream.c:194
+  401fab:	55                   	push   %rbp
+  401fac:	48 89 e5             	mov    %rsp,%rbp
+  401faf:	41 55                	push   %r13
+  401fb1:	41 54                	push   %r12
+  401fb3:	53                   	push   %rbx
+  401fb4:	48 83 ec 68          	sub    $0x68,%rsp
+  401fb8:	48 89 7d 98          	mov    %rdi,-0x68(%rbp)
+  401fbc:	48 89 75 90          	mov    %rsi,-0x70(%rbp)
+/usr/include/stlport/stl/_ostream.c:196
+  401fc0:	48 8b 55 98          	mov    -0x68(%rbp),%rdx
+  401fc4:	48 8d 45 a0          	lea    -0x60(%rbp),%rax
+  401fc8:	48 89 d6             	mov    %rdx,%rsi
+  401fcb:	48 89 c7             	mov    %rax,%rdi
+  401fce:	e8 b5 02 00 00       	callq  402288 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::sentry::sentry(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >&)>
+/usr/include/stlport/stl/_ostream.c:197
+  401fd3:	c6 45 df 01          	movb   $0x1,-0x21(%rbp)
+/usr/include/stlport/stl/_ostream.c:199
+  401fd7:	48 8d 45 a0          	lea    -0x60(%rbp),%rax
+  401fdb:	48 89 c7             	mov    %rax,%rdi
+  401fde:	e8 35 03 00 00       	callq  402318 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::sentry::operator bool() const>
+  401fe3:	84 c0                	test   %al,%al
+  401fe5:	0f 84 ee 00 00 00    	je     4020d9 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >& stlp_std::priv::__put_num<char, stlp_std::char_traits<char>, long>(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >&, long)+0x12e>
+/usr/include/stlport/stl/_ostream.c:202
+  401feb:	48 8b 55 98          	mov    -0x68(%rbp),%rdx
+  401fef:	48 8b 45 98          	mov    -0x68(%rbp),%rax
+  401ff3:	48 8b 00             	mov    (%rax),%rax
+  401ff6:	48 83 e8 18          	sub    $0x18,%rax
+  401ffa:	48 8b 00             	mov    (%rax),%rax
+  401ffd:	48 8d 04 02          	lea    (%rdx,%rax,1),%rax
+  402001:	48 89 c7             	mov    %rax,%rdi
+  402004:	e8 75 03 00 00       	callq  40237e <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::fill() const>
+  402009:	44 0f be e8          	movsbl %al,%r13d
+  40200d:	48 8b 55 98          	mov    -0x68(%rbp),%rdx
+  402011:	48 8b 45 98          	mov    -0x68(%rbp),%rax
+  402015:	48 8b 00             	mov    (%rax),%rax
+  402018:	48 83 e8 18          	sub    $0x18,%rax
+  40201c:	48 8b 00             	mov    (%rax),%rax
+  40201f:	4c 8d 24 02          	lea    (%rdx,%rax,1),%r12
+  402023:	48 8b 55 98          	mov    -0x68(%rbp),%rdx
+  402027:	48 8b 45 98          	mov    -0x68(%rbp),%rax
+  40202b:	48 8b 00             	mov    (%rax),%rax
+  40202e:	48 83 e8 18          	sub    $0x18,%rax
+  402032:	48 8b 00             	mov    (%rax),%rax
+  402035:	48 8d 04 02          	lea    (%rdx,%rax,1),%rax
+  402039:	48 89 c7             	mov    %rax,%rdi
+  40203c:	e8 e9 02 00 00       	callq  40232a <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::rdbuf() const>
+  402041:	48 89 c2             	mov    %rax,%rdx
+  402044:	48 8d 45 c0          	lea    -0x40(%rbp),%rax
+  402048:	48 89 d6             	mov    %rdx,%rsi
+  40204b:	48 89 c7             	mov    %rax,%rdi
+  40204e:	e8 9b 04 00 00       	callq  4024ee <stlp_std::ostreambuf_iterator<char, stlp_std::char_traits<char> >::ostreambuf_iterator(stlp_std::basic_streambuf<char, stlp_std::char_traits<char> >*)>
+  402053:	48 8b 55 98          	mov    -0x68(%rbp),%rdx
+  402057:	48 8b 45 98          	mov    -0x68(%rbp),%rax
+  40205b:	48 8b 00             	mov    (%rax),%rax
+  40205e:	48 83 e8 18          	sub    $0x18,%rax
+  402062:	48 8b 00             	mov    (%rax),%rax
+  402065:	48 01 c2             	add    %rax,%rdx
+  402068:	48 8d 45 d0          	lea    -0x30(%rbp),%rax
+  40206c:	48 89 d6             	mov    %rdx,%rsi
+  40206f:	48 89 c7             	mov    %rax,%rdi
+  402072:	e8 d5 f2 ff ff       	callq  40134c <stlp_std::ios_base::getloc() const>
+  402077:	48 8d 45 d0          	lea    -0x30(%rbp),%rax
+  40207b:	48 89 c7             	mov    %rax,%rdi
+  40207e:	e8 37 04 00 00       	callq  4024ba <stlp_std::num_put<char, stlp_std::ostreambuf_iterator<char, stlp_std::char_traits<char> > > const& stlp_std::use_facet<stlp_std::num_put<char, stlp_std::ostreambuf_iterator<char, stlp_std::char_traits<char> > > >(stlp_std::locale const&)>
+  402083:	48 8b 4d 90          	mov    -0x70(%rbp),%rcx
+  402087:	48 8b 5d c0          	mov    -0x40(%rbp),%rbx
+  40208b:	8b 55 c8             	mov    -0x38(%rbp),%edx
+  40208e:	49 89 c9             	mov    %rcx,%r9
+  402091:	45 89 e8             	mov    %r13d,%r8d
+  402094:	4c 89 e1             	mov    %r12,%rcx
+  402097:	48 89 de             	mov    %rbx,%rsi
+  40209a:	48 89 c7             	mov    %rax,%rdi
+  40209d:	e8 90 06 00 00       	callq  402732 <stlp_std::num_put<char, stlp_std::ostreambuf_iterator<char, stlp_std::char_traits<char> > >::put(stlp_std::ostreambuf_iterator<char, stlp_std::char_traits<char> >, stlp_std::ios_base&, char, long) const>
+  4020a2:	48 89 c1             	mov    %rax,%rcx
+  4020a5:	89 d0                	mov    %edx,%eax
+  4020a7:	48 89 4d 80          	mov    %rcx,-0x80(%rbp)
+  4020ab:	89 45 88             	mov    %eax,-0x78(%rbp)
+  4020ae:	48 8b 45 80          	mov    -0x80(%rbp),%rax
+  4020b2:	48 89 45 b0          	mov    %rax,-0x50(%rbp)
+  4020b6:	48 8b 45 88          	mov    -0x78(%rbp),%rax
+  4020ba:	48 89 45 b8          	mov    %rax,-0x48(%rbp)
+  4020be:	48 8d 45 b0          	lea    -0x50(%rbp),%rax
+  4020c2:	48 89 c7             	mov    %rax,%rdi
+  4020c5:	e8 e2 04 00 00       	callq  4025ac <stlp_std::ostreambuf_iterator<char, stlp_std::char_traits<char> >::failed() const>
+  4020ca:	88 45 df             	mov    %al,-0x21(%rbp)
+  4020cd:	48 8d 45 d0          	lea    -0x30(%rbp),%rax
+  4020d1:	48 89 c7             	mov    %rax,%rdi
+  4020d4:	e8 c7 ed ff ff       	callq  400ea0 <stlp_std::locale::~locale()@plt>
+/usr/include/stlport/stl/_ostream.c:210
+  4020d9:	80 7d df 00          	cmpb   $0x0,-0x21(%rbp)
+  4020dd:	74 23                	je     402102 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >& stlp_std::priv::__put_num<char, stlp_std::char_traits<char>, long>(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >&, long)+0x157>
+/usr/include/stlport/stl/_ostream.c:211
+  4020df:	48 8b 55 98          	mov    -0x68(%rbp),%rdx
+  4020e3:	48 8b 45 98          	mov    -0x68(%rbp),%rax
+  4020e7:	48 8b 00             	mov    (%rax),%rax
+  4020ea:	48 83 e8 18          	sub    $0x18,%rax
+  4020ee:	48 8b 00             	mov    (%rax),%rax
+  4020f1:	48 8d 04 02          	lea    (%rdx,%rax,1),%rax
+  4020f5:	be 01 00 00 00       	mov    $0x1,%esi
+  4020fa:	48 89 c7             	mov    %rax,%rdi
+  4020fd:	e8 0c 03 00 00       	callq  40240e <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::setstate(int)>
+/usr/include/stlport/stl/_ostream.c:212
+  402102:	48 8b 5d 98          	mov    -0x68(%rbp),%rbx
+/usr/include/stlport/stl/_ostream.c:196
+  402106:	48 8d 45 a0          	lea    -0x60(%rbp),%rax
+  40210a:	48 89 c7             	mov    %rax,%rdi
+  40210d:	e8 a8 01 00 00       	callq  4022ba <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::sentry::~sentry()>
+  402112:	48 89 d8             	mov    %rbx,%rax
+/usr/include/stlport/stl/_ostream.c:213
+  402115:	48 83 c4 68          	add    $0x68,%rsp
+  402119:	5b                   	pop    %rbx
+  40211a:	41 5c                	pop    %r12
+  40211c:	41 5d                	pop    %r13
+  40211e:	c9                   	leaveq 
+  40211f:	c3                   	retq   
+  402120:	48 89 c3             	mov    %rax,%rbx
+/usr/include/stlport/stl/_ostream.c:202
+  402123:	48 8d 45 d0          	lea    -0x30(%rbp),%rax
+  402127:	48 89 c7             	mov    %rax,%rdi
+  40212a:	e8 71 ed ff ff       	callq  400ea0 <stlp_std::locale::~locale()@plt>
+  40212f:	48 89 d8             	mov    %rbx,%rax
+/usr/include/stlport/stl/_ostream.c:206
+  402132:	48 89 c7             	mov    %rax,%rdi
+  402135:	e8 c6 ec ff ff       	callq  400e00 <__cxa_begin_catch@plt>
+/usr/include/stlport/stl/_ostream.c:207
+  40213a:	48 8b 55 98          	mov    -0x68(%rbp),%rdx
+  40213e:	48 8b 45 98          	mov    -0x68(%rbp),%rax
+  402142:	48 8b 00             	mov    (%rax),%rax
+  402145:	48 83 e8 18          	sub    $0x18,%rax
+  402149:	48 8b 00             	mov    (%rax),%rax
+  40214c:	48 8d 04 02          	lea    (%rdx,%rax,1),%rax
+  402150:	be 01 00 00 00       	mov    $0x1,%esi
+  402155:	48 89 c7             	mov    %rax,%rdi
+  402158:	e8 71 02 00 00       	callq  4023ce <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::_M_handle_exception(int)>
+  40215d:	eb 0a                	jmp    402169 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >& stlp_std::priv::__put_num<char, stlp_std::char_traits<char>, long>(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >&, long)+0x1be>
+  40215f:	48 89 c3             	mov    %rax,%rbx
+/usr/include/stlport/stl/_ostream.c:206
+  402162:	e8 69 ed ff ff       	callq  400ed0 <__cxa_end_catch@plt>
+  402167:	eb 0d                	jmp    402176 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >& stlp_std::priv::__put_num<char, stlp_std::char_traits<char>, long>(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >&, long)+0x1cb>
+  402169:	e8 62 ed ff ff       	callq  400ed0 <__cxa_end_catch@plt>
+  40216e:	e9 66 ff ff ff       	jmpq   4020d9 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >& stlp_std::priv::__put_num<char, stlp_std::char_traits<char>, long>(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >&, long)+0x12e>
+  402173:	48 89 c3             	mov    %rax,%rbx
+/usr/include/stlport/stl/_ostream.c:196
+  402176:	48 8d 45 a0          	lea    -0x60(%rbp),%rax
+  40217a:	48 89 c7             	mov    %rax,%rdi
+  40217d:	e8 38 01 00 00       	callq  4022ba <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::sentry::~sentry()>
+  402182:	48 89 d8             	mov    %rbx,%rax
+  402185:	48 89 c7             	mov    %rax,%rdi
+  402188:	e8 93 ed ff ff       	callq  400f20 <_Unwind_Resume@plt>
+
+000000000040218d <void stlp_std::_Destroy<int>(int*)>:
+_ZN8stlp_std8_DestroyIiEEvPT_():
+/usr/include/stlport/stl/_construct.h:63
+  40218d:	55                   	push   %rbp
+  40218e:	48 89 e5             	mov    %rsp,%rbp
+  402191:	48 83 ec 20          	sub    $0x20,%rsp
+  402195:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+/usr/include/stlport/stl/_construct.h:65
+  402199:	48 8d 55 ff          	lea    -0x1(%rbp),%rdx
+  40219d:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  4021a1:	48 89 d6             	mov    %rdx,%rsi
+  4021a4:	48 89 c7             	mov    %rax,%rdi
+  4021a7:	e8 0b 06 00 00       	callq  4027b7 <void stlp_std::__destroy_aux<int>(int*, stlp_std::__true_type const&)>
+/usr/include/stlport/stl/_construct.h:69
+  4021ac:	c9                   	leaveq 
+  4021ad:	c3                   	retq   
+
+00000000004021ae <stlp_std::allocator<stlp_std::priv::_List_node<int> >::deallocate(stlp_std::priv::_List_node<int>*, unsigned long)>:
+_ZN8stlp_std9allocatorINS_4priv10_List_nodeIiEEE10deallocateEPS3_m():
+/usr/include/stlport/stl/_alloc.h:317
+  4021ae:	55                   	push   %rbp
+  4021af:	48 89 e5             	mov    %rsp,%rbp
+  4021b2:	48 83 ec 20          	sub    $0x20,%rsp
+  4021b6:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  4021ba:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+  4021be:	48 89 55 e8          	mov    %rdx,-0x18(%rbp)
+/usr/include/stlport/stl/_alloc.h:319
+  4021c2:	48 83 7d f0 00       	cmpq   $0x0,-0x10(%rbp)
+  4021c7:	74 23                	je     4021ec <stlp_std::allocator<stlp_std::priv::_List_node<int> >::deallocate(stlp_std::priv::_List_node<int>*, unsigned long)+0x3e>
+/usr/include/stlport/stl/_alloc.h:323
+  4021c9:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  4021cd:	48 89 d0             	mov    %rdx,%rax
+  4021d0:	48 01 c0             	add    %rax,%rax
+  4021d3:	48 01 d0             	add    %rdx,%rax
+  4021d6:	48 c1 e0 03          	shl    $0x3,%rax
+  4021da:	48 89 c2             	mov    %rax,%rdx
+  4021dd:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  4021e1:	48 89 d6             	mov    %rdx,%rsi
+  4021e4:	48 89 c7             	mov    %rax,%rdi
+  4021e7:	e8 f4 f0 ff ff       	callq  4012e0 <stlp_std::__malloc_alloc::deallocate(void*, unsigned long)>
+/usr/include/stlport/stl/_alloc.h:325
+  4021ec:	c9                   	leaveq 
+  4021ed:	c3                   	retq   
+
+00000000004021ee <stlp_std::__stlport_class<stlp_std::allocator<stlp_std::priv::_List_node<int> > >::__stlport_class()>:
+__stlport_class():
+/usr/include/stlport/stl/type_traits.h:572
+  4021ee:	55                   	push   %rbp
+  4021ef:	48 89 e5             	mov    %rsp,%rbp
+  4021f2:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  4021f6:	c9                   	leaveq 
+  4021f7:	c3                   	retq   
+
+00000000004021f8 <stlp_std::allocator<stlp_std::priv::_List_node<int> >::allocator<int>(stlp_std::allocator<int> const&)>:
+allocator<int>():
+/usr/include/stlport/stl/_alloc.h:291
+  4021f8:	55                   	push   %rbp
+  4021f9:	48 89 e5             	mov    %rsp,%rbp
+  4021fc:	48 83 ec 10          	sub    $0x10,%rsp
+  402200:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  402204:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+  402208:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  40220c:	48 89 c7             	mov    %rax,%rdi
+  40220f:	e8 da ff ff ff       	callq  4021ee <stlp_std::__stlport_class<stlp_std::allocator<stlp_std::priv::_List_node<int> > >::__stlport_class()>
+  402214:	c9                   	leaveq 
+  402215:	c3                   	retq   
+
+0000000000402216 <stlp_std::allocator<stlp_std::priv::_List_node<int> >::~allocator()>:
+~allocator():
+/usr/include/stlport/stl/_alloc.h:297
+  402216:	55                   	push   %rbp
+  402217:	48 89 e5             	mov    %rsp,%rbp
+  40221a:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  40221e:	c9                   	leaveq 
+  40221f:	c3                   	retq   
+
+0000000000402220 <stlp_std::priv::_STLP_alloc_proxy<stlp_std::priv::_List_node_base, stlp_std::priv::_List_node<int>, stlp_std::allocator<stlp_std::priv::_List_node<int> > >::_STLP_alloc_proxy(stlp_std::allocator<stlp_std::priv::_List_node<int> > const&, stlp_std::priv::_List_node_base)>:
+_STLP_alloc_proxy():
+/usr/include/stlport/stl/_alloc.h:480
+  402220:	55                   	push   %rbp
+  402221:	48 89 e5             	mov    %rsp,%rbp
+  402224:	48 83 ec 20          	sub    $0x20,%rsp
+  402228:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  40222c:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+  402230:	48 89 c8             	mov    %rcx,%rax
+  402233:	48 89 55 e0          	mov    %rdx,-0x20(%rbp)
+  402237:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+/usr/include/stlport/stl/_alloc.h:481
+  40223b:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  40223f:	48 8b 55 f0          	mov    -0x10(%rbp),%rdx
+  402243:	48 89 d6             	mov    %rdx,%rsi
+  402246:	48 89 c7             	mov    %rax,%rdi
+  402249:	e8 78 05 00 00       	callq  4027c6 <stlp_std::allocator<stlp_std::priv::_List_node<int> >::allocator(stlp_std::allocator<stlp_std::priv::_List_node<int> > const&)>
+  40224e:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  402252:	48 8b 55 e0          	mov    -0x20(%rbp),%rdx
+  402256:	48 89 10             	mov    %rdx,(%rax)
+  402259:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  40225d:	48 89 50 08          	mov    %rdx,0x8(%rax)
+  402261:	c9                   	leaveq 
+  402262:	c3                   	retq   
+_ZN8stlp_std4priv17_STLP_alloc_proxyINS0_15_List_node_baseENS0_10_List_nodeIiEENS_9allocatorIS4_EEEC1ERKS6_S2_():
+  402263:	90                   	nop
+
+0000000000402264 <stlp_std::priv::_List_base<int, stlp_std::allocator<int> >::_M_empty_initialize()>:
+_ZN8stlp_std4priv10_List_baseIiNS_9allocatorIiEEE19_M_empty_initializeEv():
+/usr/include/stlport/stl/_list.h:210
+  402264:	55                   	push   %rbp
+  402265:	48 89 e5             	mov    %rsp,%rbp
+  402268:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+/usr/include/stlport/stl/_list.h:211
+  40226c:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+  402270:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  402274:	48 89 10             	mov    %rdx,(%rax)
+/usr/include/stlport/stl/_list.h:212
+  402277:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  40227b:	48 8b 10             	mov    (%rax),%rdx
+  40227e:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  402282:	48 89 50 08          	mov    %rdx,0x8(%rax)
+/usr/include/stlport/stl/_list.h:213
+  402286:	c9                   	leaveq 
+  402287:	c3                   	retq   
+
+0000000000402288 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::sentry::sentry(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >&)>:
+sentry():
+/usr/include/stlport/stl/_ostream.h:180
+  402288:	55                   	push   %rbp
+  402289:	48 89 e5             	mov    %rsp,%rbp
+  40228c:	48 83 ec 10          	sub    $0x10,%rsp
+  402290:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  402294:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+/usr/include/stlport/stl/_ostream.h:181
+  402298:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  40229c:	48 8b 55 f0          	mov    -0x10(%rbp),%rdx
+  4022a0:	48 89 10             	mov    %rdx,(%rax)
+  4022a3:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  4022a7:	48 89 c7             	mov    %rax,%rdi
+  4022aa:	e8 35 05 00 00       	callq  4027e4 <bool stlp_std::priv::__init_bostr<char, stlp_std::char_traits<char> >(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >&)>
+  4022af:	89 c2                	mov    %eax,%edx
+  4022b1:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4022b5:	88 50 08             	mov    %dl,0x8(%rax)
+/usr/include/stlport/stl/_ostream.h:182
+  4022b8:	c9                   	leaveq 
+  4022b9:	c3                   	retq   
+
+00000000004022ba <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::sentry::~sentry()>:
+~sentry():
+/usr/include/stlport/stl/_ostream.h:184
+  4022ba:	55                   	push   %rbp
+  4022bb:	48 89 e5             	mov    %rsp,%rbp
+  4022be:	48 83 ec 10          	sub    $0x10,%rsp
+  4022c2:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+/usr/include/stlport/stl/_ostream.h:185
+  4022c6:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4022ca:	48 8b 00             	mov    (%rax),%rax
+  4022cd:	48 89 c2             	mov    %rax,%rdx
+  4022d0:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4022d4:	48 8b 00             	mov    (%rax),%rax
+  4022d7:	48 8b 00             	mov    (%rax),%rax
+  4022da:	48 83 e8 18          	sub    $0x18,%rax
+  4022de:	48 8b 00             	mov    (%rax),%rax
+  4022e1:	48 8d 04 02          	lea    (%rdx,%rax,1),%rax
+  4022e5:	48 89 c7             	mov    %rax,%rdi
+  4022e8:	e8 11 f0 ff ff       	callq  4012fe <stlp_std::ios_base::flags() const>
+  4022ed:	25 00 20 00 00       	and    $0x2000,%eax
+  4022f2:	85 c0                	test   %eax,%eax
+  4022f4:	0f 95 c0             	setne  %al
+  4022f7:	84 c0                	test   %al,%al
+  4022f9:	74 1b                	je     402316 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::sentry::~sentry()+0x5c>
+/usr/include/stlport/stl/_ostream.h:187
+  4022fb:	e8 50 eb ff ff       	callq  400e50 <std::uncaught_exception()@plt>
+  402300:	83 f0 01             	xor    $0x1,%eax
+  402303:	84 c0                	test   %al,%al
+  402305:	74 0f                	je     402316 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::sentry::~sentry()+0x5c>
+/usr/include/stlport/stl/_ostream.h:189
+  402307:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  40230b:	48 8b 00             	mov    (%rax),%rax
+  40230e:	48 89 c7             	mov    %rax,%rdi
+  402311:	e8 44 fb ff ff       	callq  401e5a <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::flush()>
+/usr/include/stlport/stl/_ostream.h:190
+  402316:	c9                   	leaveq 
+  402317:	c3                   	retq   
+
+0000000000402318 <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::sentry::operator bool() const>:
+_ZNK8stlp_std13basic_ostreamIcNS_11char_traitsIcEEE6sentrycvbEv():
+/usr/include/stlport/stl/_ostream.h:192
+  402318:	55                   	push   %rbp
+  402319:	48 89 e5             	mov    %rsp,%rbp
+  40231c:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  402320:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  402324:	0f b6 40 08          	movzbl 0x8(%rax),%eax
+  402328:	c9                   	leaveq 
+  402329:	c3                   	retq   
+
+000000000040232a <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::rdbuf() const>:
+_ZNK8stlp_std9basic_iosIcNS_11char_traitsIcEEE5rdbufEv():
+/usr/include/stlport/stl/_ios.h:72
+  40232a:	55                   	push   %rbp
+  40232b:	48 89 e5             	mov    %rsp,%rbp
+  40232e:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+/usr/include/stlport/stl/_ios.h:73
+  402332:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  402336:	48 8b 80 80 00 00 00 	mov    0x80(%rax),%rax
+  40233d:	c9                   	leaveq 
+  40233e:	c3                   	retq   
+  40233f:	90                   	nop
+
+0000000000402340 <stlp_std::basic_streambuf<char, stlp_std::char_traits<char> >::sputn(char const*, long)>:
+_ZN8stlp_std15basic_streambufIcNS_11char_traitsIcEEE5sputnEPKcl():
+/usr/include/stlport/stl/_streambuf.h:204
+  402340:	55                   	push   %rbp
+  402341:	48 89 e5             	mov    %rsp,%rbp
+  402344:	53                   	push   %rbx
+  402345:	48 83 ec 28          	sub    $0x28,%rsp
+  402349:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+  40234d:	48 89 75 e0          	mov    %rsi,-0x20(%rbp)
+  402351:	48 89 55 d8          	mov    %rdx,-0x28(%rbp)
+/usr/include/stlport/stl/_streambuf.h:205
+  402355:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  402359:	48 8b 00             	mov    (%rax),%rax
+  40235c:	48 83 c0 58          	add    $0x58,%rax
+  402360:	48 8b 18             	mov    (%rax),%rbx
+  402363:	48 8b 55 d8          	mov    -0x28(%rbp),%rdx
+  402367:	48 8b 4d e0          	mov    -0x20(%rbp),%rcx
+  40236b:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  40236f:	48 89 ce             	mov    %rcx,%rsi
+  402372:	48 89 c7             	mov    %rax,%rdi
+  402375:	ff d3                	callq  *%rbx
+  402377:	48 83 c4 28          	add    $0x28,%rsp
+  40237b:	5b                   	pop    %rbx
+  40237c:	c9                   	leaveq 
+  40237d:	c3                   	retq   
+
+000000000040237e <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::fill() const>:
+_ZNK8stlp_std9basic_iosIcNS_11char_traitsIcEEE4fillEv():
+/usr/include/stlport/stl/_ios.h:81
+  40237e:	55                   	push   %rbp
+  40237f:	48 89 e5             	mov    %rsp,%rbp
+  402382:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  402386:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  40238a:	0f b6 40 78          	movzbl 0x78(%rax),%eax
+  40238e:	c9                   	leaveq 
+  40238f:	c3                   	retq   
+
+0000000000402390 <stlp_std::basic_streambuf<char, stlp_std::char_traits<char> >::_M_sputnc(char, long)>:
+_ZN8stlp_std15basic_streambufIcNS_11char_traitsIcEEE9_M_sputncEcl():
+/usr/include/stlport/stl/_streambuf.h:208
+  402390:	55                   	push   %rbp
+  402391:	48 89 e5             	mov    %rsp,%rbp
+  402394:	53                   	push   %rbx
+  402395:	48 83 ec 28          	sub    $0x28,%rsp
+  402399:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+  40239d:	89 f0                	mov    %esi,%eax
+  40239f:	48 89 55 d8          	mov    %rdx,-0x28(%rbp)
+  4023a3:	88 45 e4             	mov    %al,-0x1c(%rbp)
+/usr/include/stlport/stl/_streambuf.h:209
+  4023a6:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  4023aa:	48 8b 00             	mov    (%rax),%rax
+  4023ad:	48 83 c0 60          	add    $0x60,%rax
+  4023b1:	48 8b 18             	mov    (%rax),%rbx
+  4023b4:	0f be 4d e4          	movsbl -0x1c(%rbp),%ecx
+  4023b8:	48 8b 55 d8          	mov    -0x28(%rbp),%rdx
+  4023bc:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  4023c0:	89 ce                	mov    %ecx,%esi
+  4023c2:	48 89 c7             	mov    %rax,%rdi
+  4023c5:	ff d3                	callq  *%rbx
+  4023c7:	48 83 c4 28          	add    $0x28,%rsp
+  4023cb:	5b                   	pop    %rbx
+  4023cc:	c9                   	leaveq 
+  4023cd:	c3                   	retq   
+
+00000000004023ce <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::_M_handle_exception(int)>:
+_ZN8stlp_std9basic_iosIcNS_11char_traitsIcEEE19_M_handle_exceptionEi():
+/usr/include/stlport/stl/_ios.h:132
+  4023ce:	55                   	push   %rbp
+  4023cf:	48 89 e5             	mov    %rsp,%rbp
+  4023d2:	48 83 ec 10          	sub    $0x10,%rsp
+  4023d6:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  4023da:	89 75 f4             	mov    %esi,-0xc(%rbp)
+/usr/include/stlport/stl/_ios.c:116
+  4023dd:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4023e1:	8b 55 f4             	mov    -0xc(%rbp),%edx
+  4023e4:	89 d6                	mov    %edx,%esi
+  4023e6:	48 89 c7             	mov    %rax,%rdi
+  4023e9:	e8 ba ef ff ff       	callq  4013a8 <stlp_std::ios_base::_M_setstate_nothrow(int)>
+/usr/include/stlport/stl/_ios.c:117
+  4023ee:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4023f2:	48 89 c7             	mov    %rax,%rdi
+  4023f5:	e8 e6 ef ff ff       	callq  4013e0 <stlp_std::ios_base::_M_get_exception_mask() const>
+  4023fa:	23 45 f4             	and    -0xc(%rbp),%eax
+  4023fd:	85 c0                	test   %eax,%eax
+  4023ff:	0f 95 c0             	setne  %al
+  402402:	84 c0                	test   %al,%al
+  402404:	74 05                	je     40240b <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::_M_handle_exception(int)+0x3d>
+/usr/include/stlport/stl/_ios.c:118
+  402406:	e8 f5 ea ff ff       	callq  400f00 <__cxa_rethrow@plt>
+/usr/include/stlport/stl/_ios.c:119
+  40240b:	c9                   	leaveq 
+  40240c:	c3                   	retq   
+  40240d:	90                   	nop
+
+000000000040240e <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::setstate(int)>:
+_ZN8stlp_std9basic_iosIcNS_11char_traitsIcEEE8setstateEi():
+/usr/include/stlport/stl/_ios.h:95
+  40240e:	55                   	push   %rbp
+  40240f:	48 89 e5             	mov    %rsp,%rbp
+  402412:	48 83 ec 10          	sub    $0x10,%rsp
+  402416:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  40241a:	89 75 f4             	mov    %esi,-0xc(%rbp)
+  40241d:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  402421:	48 89 c7             	mov    %rax,%rdi
+  402424:	e8 57 ef ff ff       	callq  401380 <stlp_std::ios_base::rdstate() const>
+  402429:	89 c2                	mov    %eax,%edx
+  40242b:	0b 55 f4             	or     -0xc(%rbp),%edx
+  40242e:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  402432:	89 d6                	mov    %edx,%esi
+  402434:	48 89 c7             	mov    %rax,%rdi
+  402437:	e8 9a 04 00 00       	callq  4028d6 <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::clear(int)>
+  40243c:	c9                   	leaveq 
+  40243d:	c3                   	retq   
+
+000000000040243e <stlp_std::priv::_List_iterator<int, stlp_std::_Const_traits<int> >::_List_iterator(stlp_std::priv::_List_node_base*)>:
+_List_iterator():
+/usr/include/stlport/stl/_list.h:113
+  40243e:	55                   	push   %rbp
+  40243f:	48 89 e5             	mov    %rsp,%rbp
+  402442:	48 83 ec 10          	sub    $0x10,%rsp
+  402446:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  40244a:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+  40244e:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  402452:	48 8b 55 f0          	mov    -0x10(%rbp),%rdx
+  402456:	48 89 d6             	mov    %rdx,%rsi
+  402459:	48 89 c7             	mov    %rax,%rdi
+  40245c:	e8 d3 ef ff ff       	callq  401434 <stlp_std::priv::_List_iterator_base::_List_iterator_base(stlp_std::priv::_List_node_base*)>
+  402461:	c9                   	leaveq 
+  402462:	c3                   	retq   
+
+0000000000402463 <stlp_std::iterator_traits<stlp_std::priv::_List_iterator<int, stlp_std::_Const_traits<int> > >::difference_type stlp_std::priv::__distance<stlp_std::priv::_List_iterator<int, stlp_std::_Const_traits<int> > >(stlp_std::priv::_List_iterator<int, stlp_std::_Const_traits<int> > const&, stlp_std::priv::_List_iterator<int, stlp_std::_Const_traits<int> > const&, stlp_std::input_iterator_tag const&)>:
+_ZN8stlp_std4priv10__distanceINS0_14_List_iteratorIiNS_13_Const_traitsIiEEEEEENS_15iterator_traitsIT_E15difference_typeERKS7_SB_RKNS_18input_iterator_tagE():
+/usr/include/stlport/stl/_iterator_base.h:315
+  402463:	55                   	push   %rbp
+  402464:	48 89 e5             	mov    %rsp,%rbp
+  402467:	48 83 ec 30          	sub    $0x30,%rsp
+  40246b:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+  40246f:	48 89 75 e0          	mov    %rsi,-0x20(%rbp)
+  402473:	48 89 55 d8          	mov    %rdx,-0x28(%rbp)
+/usr/include/stlport/stl/_iterator_base.h:317
+  402477:	48 c7 45 f8 00 00 00 	movq   $0x0,-0x8(%rbp)
+  40247e:	00 
+/usr/include/stlport/stl/_iterator_base.h:318
+  40247f:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  402483:	48 8b 00             	mov    (%rax),%rax
+  402486:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
+/usr/include/stlport/stl/_iterator_base.h:319
+  40248a:	eb 11                	jmp    40249d <stlp_std::iterator_traits<stlp_std::priv::_List_iterator<int, stlp_std::_Const_traits<int> > >::difference_type stlp_std::priv::__distance<stlp_std::priv::_List_iterator<int, stlp_std::_Const_traits<int> > >(stlp_std::priv::_List_iterator<int, stlp_std::_Const_traits<int> > const&, stlp_std::priv::_List_iterator<int, stlp_std::_Const_traits<int> > const&, stlp_std::input_iterator_tag const&)+0x3a>
+/usr/include/stlport/stl/_iterator_base.h:320
+  40248c:	48 8d 45 f0          	lea    -0x10(%rbp),%rax
+  402490:	48 89 c7             	mov    %rax,%rdi
+  402493:	e8 a6 04 00 00       	callq  40293e <stlp_std::priv::_List_iterator<int, stlp_std::_Const_traits<int> >::operator++()>
+  402498:	48 83 45 f8 01       	addq   $0x1,-0x8(%rbp)
+/usr/include/stlport/stl/_iterator_base.h:319
+  40249d:	48 8b 55 e0          	mov    -0x20(%rbp),%rdx
+  4024a1:	48 8d 45 f0          	lea    -0x10(%rbp),%rax
+  4024a5:	48 8b 32             	mov    (%rdx),%rsi
+  4024a8:	48 89 c7             	mov    %rax,%rdi
+  4024ab:	e8 6e 04 00 00       	callq  40291e <stlp_std::priv::_List_iterator<int, stlp_std::_Const_traits<int> >::operator!=(stlp_std::priv::_List_iterator<int, stlp_std::_Const_traits<int> >) const>
+  4024b0:	84 c0                	test   %al,%al
+  4024b2:	75 d8                	jne    40248c <stlp_std::iterator_traits<stlp_std::priv::_List_iterator<int, stlp_std::_Const_traits<int> > >::difference_type stlp_std::priv::__distance<stlp_std::priv::_List_iterator<int, stlp_std::_Const_traits<int> > >(stlp_std::priv::_List_iterator<int, stlp_std::_Const_traits<int> > const&, stlp_std::priv::_List_iterator<int, stlp_std::_Const_traits<int> > const&, stlp_std::input_iterator_tag const&)+0x29>
+/usr/include/stlport/stl/_iterator_base.h:322
+  4024b4:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+/usr/include/stlport/stl/_iterator_base.h:323
+  4024b8:	c9                   	leaveq 
+  4024b9:	c3                   	retq   
+
+00000000004024ba <stlp_std::num_put<char, stlp_std::ostreambuf_iterator<char, stlp_std::char_traits<char> > > const& stlp_std::use_facet<stlp_std::num_put<char, stlp_std::ostreambuf_iterator<char, stlp_std::char_traits<char> > > >(stlp_std::locale const&)>:
+_ZN8stlp_std9use_facetINS_7num_putIcNS_19ostreambuf_iteratorIcNS_11char_traitsIcEEEEEEEERKT_RKNS_6localeE():
+/usr/include/stlport/stl/_locale.h:293
+  4024ba:	55                   	push   %rbp
+  4024bb:	48 89 e5             	mov    %rsp,%rbp
+  4024be:	48 83 ec 20          	sub    $0x20,%rsp
+  4024c2:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+/usr/include/stlport/stl/_locale.h:296
+  4024c6:	48 c7 45 f8 00 00 00 	movq   $0x0,-0x8(%rbp)
+  4024cd:	00 
+/usr/include/stlport/stl/_locale.h:297
+  4024ce:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+  4024d2:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  4024d6:	48 89 d6             	mov    %rdx,%rsi
+  4024d9:	48 89 c7             	mov    %rax,%rdi
+  4024dc:	e8 7b 04 00 00       	callq  40295c <stlp_std::num_put<char, stlp_std::ostreambuf_iterator<char, stlp_std::char_traits<char> > >* stlp_std::priv::_UseFacet<stlp_std::num_put<char, stlp_std::ostreambuf_iterator<char, stlp_std::char_traits<char> > > >(stlp_std::locale const&, stlp_std::num_put<char, stlp_std::ostreambuf_iterator<char, stlp_std::char_traits<char> > > const*)>
+/usr/include/stlport/stl/_locale.h:298
+  4024e1:	c9                   	leaveq 
+  4024e2:	c3                   	retq   
+  4024e3:	90                   	nop
+
+00000000004024e4 <stlp_std::iterator<stlp_std::output_iterator_tag, void, void, void, void>::iterator()>:
+iterator():
+/usr/include/stlport/stl/_iterator_base.h:67
+  4024e4:	55                   	push   %rbp
+  4024e5:	48 89 e5             	mov    %rsp,%rbp
+  4024e8:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  4024ec:	c9                   	leaveq 
+  4024ed:	c3                   	retq   
+
+00000000004024ee <stlp_std::ostreambuf_iterator<char, stlp_std::char_traits<char> >::ostreambuf_iterator(stlp_std::basic_streambuf<char, stlp_std::char_traits<char> >*)>:
+ostreambuf_iterator():
+/usr/include/stlport/stl/_ostreambuf_iterator.h:57
+  4024ee:	55                   	push   %rbp
+  4024ef:	48 89 e5             	mov    %rsp,%rbp
+  4024f2:	48 83 ec 10          	sub    $0x10,%rsp
+  4024f6:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  4024fa:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+  4024fe:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  402502:	48 89 c7             	mov    %rax,%rdi
+  402505:	e8 da ff ff ff       	callq  4024e4 <stlp_std::iterator<stlp_std::output_iterator_tag, void, void, void, void>::iterator()>
+  40250a:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  40250e:	48 8b 55 f0          	mov    -0x10(%rbp),%rdx
+  402512:	48 89 10             	mov    %rdx,(%rax)
+  402515:	48 83 7d f0 00       	cmpq   $0x0,-0x10(%rbp)
+  40251a:	0f 95 c2             	setne  %dl
+  40251d:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  402521:	88 50 08             	mov    %dl,0x8(%rax)
+  402524:	c9                   	leaveq 
+  402525:	c3                   	retq   
+
+0000000000402526 <stlp_std::num_put<char, stlp_std::ostreambuf_iterator<char, stlp_std::char_traits<char> > >::put(stlp_std::ostreambuf_iterator<char, stlp_std::char_traits<char> >, stlp_std::ios_base&, char, unsigned long) const>:
+_ZNK8stlp_std7num_putIcNS_19ostreambuf_iteratorIcNS_11char_traitsIcEEEEE3putES4_RNS_8ios_baseEcm():
+/usr/include/stlport/stl/_num_put.h:70
+  402526:	55                   	push   %rbp
+  402527:	48 89 e5             	mov    %rsp,%rbp
+  40252a:	53                   	push   %rbx
+  40252b:	48 83 ec 58          	sub    $0x58,%rsp
+  40252f:	48 89 7d d8          	mov    %rdi,-0x28(%rbp)
+  402533:	48 89 f3             	mov    %rsi,%rbx
+  402536:	89 d0                	mov    %edx,%eax
+  402538:	48 89 4d c0          	mov    %rcx,-0x40(%rbp)
+  40253c:	44 89 c2             	mov    %r8d,%edx
+  40253f:	4c 89 4d b0          	mov    %r9,-0x50(%rbp)
+  402543:	48 89 5d c8          	mov    %rbx,-0x38(%rbp)
+  402547:	89 45 d0             	mov    %eax,-0x30(%rbp)
+  40254a:	88 55 bc             	mov    %dl,-0x44(%rbp)
+/usr/include/stlport/stl/_num_put.h:72
+  40254d:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  402551:	48 8b 00             	mov    (%rax),%rax
+  402554:	48 83 c0 20          	add    $0x20,%rax
+  402558:	4c 8b 10             	mov    (%rax),%r10
+  40255b:	0f be 75 bc          	movsbl -0x44(%rbp),%esi
+  40255f:	48 8b 7d b0          	mov    -0x50(%rbp),%rdi
+  402563:	48 8b 4d c0          	mov    -0x40(%rbp),%rcx
+  402567:	48 8b 5d c8          	mov    -0x38(%rbp),%rbx
+  40256b:	8b 55 d0             	mov    -0x30(%rbp),%edx
+  40256e:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  402572:	49 89 f9             	mov    %rdi,%r9
+  402575:	41 89 f0             	mov    %esi,%r8d
+  402578:	48 89 de             	mov    %rbx,%rsi
+  40257b:	48 89 c7             	mov    %rax,%rdi
+  40257e:	41 ff d2             	callq  *%r10
+  402581:	48 89 c1             	mov    %rax,%rcx
+  402584:	89 d0                	mov    %edx,%eax
+  402586:	48 89 4d a0          	mov    %rcx,-0x60(%rbp)
+  40258a:	89 45 a8             	mov    %eax,-0x58(%rbp)
+  40258d:	48 8b 45 a0          	mov    -0x60(%rbp),%rax
+  402591:	48 89 45 e0          	mov    %rax,-0x20(%rbp)
+  402595:	48 8b 45 a8          	mov    -0x58(%rbp),%rax
+  402599:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+  40259d:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  4025a1:	8b 55 e8             	mov    -0x18(%rbp),%edx
+/usr/include/stlport/stl/_num_put.h:73
+  4025a4:	48 83 c4 58          	add    $0x58,%rsp
+  4025a8:	5b                   	pop    %rbx
+  4025a9:	c9                   	leaveq 
+  4025aa:	c3                   	retq   
+  4025ab:	90                   	nop
+
+00000000004025ac <stlp_std::ostreambuf_iterator<char, stlp_std::char_traits<char> >::failed() const>:
+_ZNK8stlp_std19ostreambuf_iteratorIcNS_11char_traitsIcEEE6failedEv():
+/usr/include/stlport/stl/_ostreambuf_iterator.h:71
+  4025ac:	55                   	push   %rbp
+  4025ad:	48 89 e5             	mov    %rsp,%rbp
+  4025b0:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  4025b4:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4025b8:	0f b6 40 08          	movzbl 0x8(%rax),%eax
+  4025bc:	83 f0 01             	xor    $0x1,%eax
+  4025bf:	c9                   	leaveq 
+  4025c0:	c3                   	retq   
+  4025c1:	90                   	nop
+
+00000000004025c2 <stlp_std::basic_streambuf<char, stlp_std::char_traits<char> >::sputc(char)>:
+_ZN8stlp_std15basic_streambufIcNS_11char_traitsIcEEE5sputcEc():
+/usr/include/stlport/stl/_streambuf.h:198
+  4025c2:	55                   	push   %rbp
+  4025c3:	48 89 e5             	mov    %rsp,%rbp
+  4025c6:	53                   	push   %rbx
+  4025c7:	48 83 ec 18          	sub    $0x18,%rsp
+  4025cb:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+  4025cf:	89 f0                	mov    %esi,%eax
+  4025d1:	88 45 e4             	mov    %al,-0x1c(%rbp)
+/usr/include/stlport/stl/_streambuf.h:200
+  4025d4:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  4025d8:	48 8b 50 28          	mov    0x28(%rax),%rdx
+  4025dc:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  4025e0:	48 8b 40 30          	mov    0x30(%rax),%rax
+  4025e4:	48 39 c2             	cmp    %rax,%rdx
+  4025e7:	73 27                	jae    402610 <stlp_std::basic_streambuf<char, stlp_std::char_traits<char> >::sputc(char)+0x4e>
+  4025e9:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  4025ed:	48 8b 50 28          	mov    0x28(%rax),%rdx
+  4025f1:	48 89 d0             	mov    %rdx,%rax
+  4025f4:	0f b6 4d e4          	movzbl -0x1c(%rbp),%ecx
+  4025f8:	88 08                	mov    %cl,(%rax)
+  4025fa:	48 8d 4a 01          	lea    0x1(%rdx),%rcx
+  4025fe:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  402602:	48 89 4a 28          	mov    %rcx,0x28(%rdx)
+  402606:	48 89 c7             	mov    %rax,%rdi
+  402609:	e8 1f ec ff ff       	callq  40122d <stlp_std::char_traits<char>::to_int_type(char const&)>
+  40260e:	eb 27                	jmp    402637 <stlp_std::basic_streambuf<char, stlp_std::char_traits<char> >::sputc(char)+0x75>
+  402610:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  402614:	48 8b 00             	mov    (%rax),%rax
+  402617:	48 83 c0 68          	add    $0x68,%rax
+  40261b:	48 8b 18             	mov    (%rax),%rbx
+  40261e:	48 8d 45 e4          	lea    -0x1c(%rbp),%rax
+  402622:	48 89 c7             	mov    %rax,%rdi
+  402625:	e8 03 ec ff ff       	callq  40122d <stlp_std::char_traits<char>::to_int_type(char const&)>
+  40262a:	89 c2                	mov    %eax,%edx
+  40262c:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  402630:	89 d6                	mov    %edx,%esi
+  402632:	48 89 c7             	mov    %rax,%rdi
+  402635:	ff d3                	callq  *%rbx
+/usr/include/stlport/stl/_streambuf.h:201
+  402637:	48 83 c4 18          	add    $0x18,%rsp
+  40263b:	5b                   	pop    %rbx
+  40263c:	c9                   	leaveq 
+  40263d:	c3                   	retq   
+
+000000000040263e <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::_S_eof(int)>:
+_ZN8stlp_std9basic_iosIcNS_11char_traitsIcEEE6_S_eofEi():
+/usr/include/stlport/stl/_ios.h:110
+  40263e:	55                   	push   %rbp
+  40263f:	48 89 e5             	mov    %rsp,%rbp
+  402642:	48 83 ec 20          	sub    $0x20,%rsp
+  402646:	89 7d ec             	mov    %edi,-0x14(%rbp)
+/usr/include/stlport/stl/_ios.h:111
+  402649:	e8 3e 03 00 00       	callq  40298c <stlp_std::__char_traits_base<char, int>::eof()>
+  40264e:	89 45 fc             	mov    %eax,-0x4(%rbp)
+/usr/include/stlport/stl/_ios.h:112
+  402651:	48 8d 55 fc          	lea    -0x4(%rbp),%rdx
+  402655:	48 8d 45 ec          	lea    -0x14(%rbp),%rax
+  402659:	48 89 d6             	mov    %rdx,%rsi
+  40265c:	48 89 c7             	mov    %rax,%rdi
+  40265f:	e8 33 03 00 00       	callq  402997 <stlp_std::__char_traits_base<char, int>::eq_int_type(int const&, int const&)>
+/usr/include/stlport/stl/_ios.h:113
+  402664:	c9                   	leaveq 
+  402665:	c3                   	retq   
+
+0000000000402666 <stlp_std::basic_streambuf<char, stlp_std::char_traits<char> >::pubsync()>:
+_ZN8stlp_std15basic_streambufIcNS_11char_traitsIcEEE7pubsyncEv():
+/usr/include/stlport/stl/_streambuf.h:153
+  402666:	55                   	push   %rbp
+  402667:	48 89 e5             	mov    %rsp,%rbp
+  40266a:	48 83 ec 10          	sub    $0x10,%rsp
+  40266e:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  402672:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  402676:	48 8b 00             	mov    (%rax),%rax
+  402679:	48 83 c0 28          	add    $0x28,%rax
+  40267d:	48 8b 10             	mov    (%rax),%rdx
+  402680:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  402684:	48 89 c7             	mov    %rax,%rdi
+  402687:	ff d2                	callq  *%rdx
+  402689:	c9                   	leaveq 
+  40268a:	c3                   	retq   
+  40268b:	90                   	nop
+
+000000000040268c <stlp_std::priv::_List_iterator<int, stlp_std::_Nonconst_traits<int> >::_List_iterator(stlp_std::priv::_List_node_base*)>:
+_List_iterator():
+/usr/include/stlport/stl/_list.h:113
+  40268c:	55                   	push   %rbp
+  40268d:	48 89 e5             	mov    %rsp,%rbp
+  402690:	48 83 ec 10          	sub    $0x10,%rsp
+  402694:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  402698:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+  40269c:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4026a0:	48 8b 55 f0          	mov    -0x10(%rbp),%rdx
+  4026a4:	48 89 d6             	mov    %rdx,%rsi
+  4026a7:	48 89 c7             	mov    %rax,%rdi
+  4026aa:	e8 85 ed ff ff       	callq  401434 <stlp_std::priv::_List_iterator_base::_List_iterator_base(stlp_std::priv::_List_node_base*)>
+  4026af:	c9                   	leaveq 
+  4026b0:	c3                   	retq   
+_ZN8stlp_std4priv14_List_iteratorIiNS_16_Nonconst_traitsIiEEEC2EPNS0_15_List_node_baseE():
+  4026b1:	90                   	nop
+
+00000000004026b2 <stlp_std::list<int, stlp_std::allocator<int> >::_M_create_node(int const&)>:
+_ZN8stlp_std4listIiNS_9allocatorIiEEE14_M_create_nodeERKi():
+/usr/include/stlport/stl/_list.h:281
+  4026b2:	55                   	push   %rbp
+  4026b3:	48 89 e5             	mov    %rsp,%rbp
+  4026b6:	53                   	push   %rbx
+  4026b7:	48 83 ec 28          	sub    $0x28,%rsp
+  4026bb:	48 89 7d d8          	mov    %rdi,-0x28(%rbp)
+  4026bf:	48 89 75 d0          	mov    %rsi,-0x30(%rbp)
+/usr/include/stlport/stl/_list.h:285
+  4026c3:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  4026c7:	be 01 00 00 00       	mov    $0x1,%esi
+  4026cc:	48 89 c7             	mov    %rax,%rdi
+  4026cf:	e8 e2 02 00 00       	callq  4029b6 <stlp_std::priv::_STLP_alloc_proxy<stlp_std::priv::_List_node_base, stlp_std::priv::_List_node<int>, stlp_std::allocator<stlp_std::priv::_List_node<int> > >::allocate(unsigned long)>
+  4026d4:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+/usr/include/stlport/stl/_list.h:287
+  4026d8:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  4026dc:	48 8d 50 10          	lea    0x10(%rax),%rdx
+  4026e0:	48 8b 45 d0          	mov    -0x30(%rbp),%rax
+  4026e4:	48 89 c6             	mov    %rax,%rsi
+  4026e7:	48 89 d7             	mov    %rdx,%rdi
+  4026ea:	e8 f1 02 00 00       	callq  4029e0 <void stlp_std::_Copy_Construct<int>(int*, int const&)>
+/usr/include/stlport/stl/_list.h:290
+  4026ef:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+/usr/include/stlport/stl/_list.h:291
+  4026f3:	48 83 c4 28          	add    $0x28,%rsp
+  4026f7:	5b                   	pop    %rbx
+  4026f8:	c9                   	leaveq 
+  4026f9:	c3                   	retq   
+  4026fa:	48 89 c3             	mov    %rax,%rbx
+/usr/include/stlport/stl/_list.h:289
+  4026fd:	e8 ce e7 ff ff       	callq  400ed0 <__cxa_end_catch@plt>
+  402702:	48 89 d8             	mov    %rbx,%rax
+  402705:	48 89 c7             	mov    %rax,%rdi
+  402708:	e8 13 e8 ff ff       	callq  400f20 <_Unwind_Resume@plt>
+  40270d:	48 89 c7             	mov    %rax,%rdi
+  402710:	e8 eb e6 ff ff       	callq  400e00 <__cxa_begin_catch@plt>
+  402715:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  402719:	48 8b 4d e8          	mov    -0x18(%rbp),%rcx
+  40271d:	ba 01 00 00 00       	mov    $0x1,%edx
+  402722:	48 89 ce             	mov    %rcx,%rsi
+  402725:	48 89 c7             	mov    %rax,%rdi
+  402728:	e8 81 fa ff ff       	callq  4021ae <stlp_std::allocator<stlp_std::priv::_List_node<int> >::deallocate(stlp_std::priv::_List_node<int>*, unsigned long)>
+  40272d:	e8 ce e7 ff ff       	callq  400f00 <__cxa_rethrow@plt>
+
+0000000000402732 <stlp_std::num_put<char, stlp_std::ostreambuf_iterator<char, stlp_std::char_traits<char> > >::put(stlp_std::ostreambuf_iterator<char, stlp_std::char_traits<char> >, stlp_std::ios_base&, char, long) const>:
+_ZNK8stlp_std7num_putIcNS_19ostreambuf_iteratorIcNS_11char_traitsIcEEEEE3putES4_RNS_8ios_baseEcl():
+/usr/include/stlport/stl/_num_put.h:65
+  402732:	55                   	push   %rbp
+  402733:	48 89 e5             	mov    %rsp,%rbp
+  402736:	53                   	push   %rbx
+  402737:	48 83 ec 58          	sub    $0x58,%rsp
+  40273b:	48 89 7d d8          	mov    %rdi,-0x28(%rbp)
+  40273f:	48 89 f3             	mov    %rsi,%rbx
+  402742:	89 d0                	mov    %edx,%eax
+  402744:	48 89 4d c0          	mov    %rcx,-0x40(%rbp)
+  402748:	44 89 c2             	mov    %r8d,%edx
+  40274b:	4c 89 4d b0          	mov    %r9,-0x50(%rbp)
+  40274f:	48 89 5d c8          	mov    %rbx,-0x38(%rbp)
+  402753:	89 45 d0             	mov    %eax,-0x30(%rbp)
+  402756:	88 55 bc             	mov    %dl,-0x44(%rbp)
+/usr/include/stlport/stl/_num_put.h:67
+  402759:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  40275d:	48 8b 00             	mov    (%rax),%rax
+  402760:	48 83 c0 18          	add    $0x18,%rax
+  402764:	4c 8b 10             	mov    (%rax),%r10
+  402767:	0f be 75 bc          	movsbl -0x44(%rbp),%esi
+  40276b:	48 8b 7d b0          	mov    -0x50(%rbp),%rdi
+  40276f:	48 8b 4d c0          	mov    -0x40(%rbp),%rcx
+  402773:	48 8b 5d c8          	mov    -0x38(%rbp),%rbx
+  402777:	8b 55 d0             	mov    -0x30(%rbp),%edx
+  40277a:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  40277e:	49 89 f9             	mov    %rdi,%r9
+  402781:	41 89 f0             	mov    %esi,%r8d
+  402784:	48 89 de             	mov    %rbx,%rsi
+  402787:	48 89 c7             	mov    %rax,%rdi
+  40278a:	41 ff d2             	callq  *%r10
+  40278d:	48 89 c1             	mov    %rax,%rcx
+  402790:	89 d0                	mov    %edx,%eax
+  402792:	48 89 4d a0          	mov    %rcx,-0x60(%rbp)
+  402796:	89 45 a8             	mov    %eax,-0x58(%rbp)
+  402799:	48 8b 45 a0          	mov    -0x60(%rbp),%rax
+  40279d:	48 89 45 e0          	mov    %rax,-0x20(%rbp)
+  4027a1:	48 8b 45 a8          	mov    -0x58(%rbp),%rax
+  4027a5:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+  4027a9:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  4027ad:	8b 55 e8             	mov    -0x18(%rbp),%edx
+/usr/include/stlport/stl/_num_put.h:68
+  4027b0:	48 83 c4 58          	add    $0x58,%rsp
+  4027b4:	5b                   	pop    %rbx
+  4027b5:	c9                   	leaveq 
+  4027b6:	c3                   	retq   
+
+00000000004027b7 <void stlp_std::__destroy_aux<int>(int*, stlp_std::__true_type const&)>:
+_ZN8stlp_std13__destroy_auxIiEEvPT_RKNS_11__true_typeE():
+/usr/include/stlport/stl/_construct.h:60
+  4027b7:	55                   	push   %rbp
+  4027b8:	48 89 e5             	mov    %rsp,%rbp
+  4027bb:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  4027bf:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+  4027c3:	c9                   	leaveq 
+  4027c4:	c3                   	retq   
+  4027c5:	90                   	nop
+
+00000000004027c6 <stlp_std::allocator<stlp_std::priv::_List_node<int> >::allocator(stlp_std::allocator<stlp_std::priv::_List_node<int> > const&)>:
+allocator():
+/usr/include/stlport/stl/_alloc.h:293
+  4027c6:	55                   	push   %rbp
+  4027c7:	48 89 e5             	mov    %rsp,%rbp
+  4027ca:	48 83 ec 10          	sub    $0x10,%rsp
+  4027ce:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  4027d2:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+  4027d6:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4027da:	48 89 c7             	mov    %rax,%rdi
+  4027dd:	e8 0c fa ff ff       	callq  4021ee <stlp_std::__stlport_class<stlp_std::allocator<stlp_std::priv::_List_node<int> > >::__stlport_class()>
+  4027e2:	c9                   	leaveq 
+  4027e3:	c3                   	retq   
+
+00000000004027e4 <bool stlp_std::priv::__init_bostr<char, stlp_std::char_traits<char> >(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >&)>:
+_ZN8stlp_std4priv12__init_bostrIcNS_11char_traitsIcEEEEbRNS_13basic_ostreamIT_T0_EE():
+/usr/include/stlport/stl/_ostream.h:218
+  4027e4:	55                   	push   %rbp
+  4027e5:	48 89 e5             	mov    %rsp,%rbp
+  4027e8:	48 83 ec 10          	sub    $0x10,%rsp
+  4027ec:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+/usr/include/stlport/stl/_ostream.h:219
+  4027f0:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+  4027f4:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4027f8:	48 8b 00             	mov    (%rax),%rax
+  4027fb:	48 83 e8 18          	sub    $0x18,%rax
+  4027ff:	48 8b 00             	mov    (%rax),%rax
+  402802:	48 8d 04 02          	lea    (%rdx,%rax,1),%rax
+  402806:	48 89 c7             	mov    %rax,%rdi
+  402809:	e8 84 eb ff ff       	callq  401392 <stlp_std::ios_base::good() const>
+  40280e:	84 c0                	test   %al,%al
+  402810:	0f 84 b9 00 00 00    	je     4028cf <bool stlp_std::priv::__init_bostr<char, stlp_std::char_traits<char> >(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >&)+0xeb>
+/usr/include/stlport/stl/_ostream.h:221
+  402816:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+  40281a:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  40281e:	48 8b 00             	mov    (%rax),%rax
+  402821:	48 83 e8 18          	sub    $0x18,%rax
+  402825:	48 8b 00             	mov    (%rax),%rax
+  402828:	48 8d 04 02          	lea    (%rdx,%rax,1),%rax
+  40282c:	48 89 c7             	mov    %rax,%rdi
+  40282f:	e8 f6 fa ff ff       	callq  40232a <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::rdbuf() const>
+  402834:	48 85 c0             	test   %rax,%rax
+  402837:	0f 94 c0             	sete   %al
+  40283a:	84 c0                	test   %al,%al
+  40283c:	74 23                	je     402861 <bool stlp_std::priv::__init_bostr<char, stlp_std::char_traits<char> >(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >&)+0x7d>
+/usr/include/stlport/stl/_ostream.h:222
+  40283e:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+  402842:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  402846:	48 8b 00             	mov    (%rax),%rax
+  402849:	48 83 e8 18          	sub    $0x18,%rax
+  40284d:	48 8b 00             	mov    (%rax),%rax
+  402850:	48 8d 04 02          	lea    (%rdx,%rax,1),%rax
+  402854:	be 01 00 00 00       	mov    $0x1,%esi
+  402859:	48 89 c7             	mov    %rax,%rdi
+  40285c:	e8 ad fb ff ff       	callq  40240e <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::setstate(int)>
+/usr/include/stlport/stl/_ostream.h:223
+  402861:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+  402865:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  402869:	48 8b 00             	mov    (%rax),%rax
+  40286c:	48 83 e8 18          	sub    $0x18,%rax
+  402870:	48 8b 00             	mov    (%rax),%rax
+  402873:	48 8d 04 02          	lea    (%rdx,%rax,1),%rax
+  402877:	48 89 c7             	mov    %rax,%rdi
+  40287a:	e8 9b 01 00 00       	callq  402a1a <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::tie() const>
+  40287f:	48 85 c0             	test   %rax,%rax
+  402882:	0f 95 c0             	setne  %al
+  402885:	84 c0                	test   %al,%al
+  402887:	74 26                	je     4028af <bool stlp_std::priv::__init_bostr<char, stlp_std::char_traits<char> >(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >&)+0xcb>
+/usr/include/stlport/stl/_ostream.h:224
+  402889:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+  40288d:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  402891:	48 8b 00             	mov    (%rax),%rax
+  402894:	48 83 e8 18          	sub    $0x18,%rax
+  402898:	48 8b 00             	mov    (%rax),%rax
+  40289b:	48 8d 04 02          	lea    (%rdx,%rax,1),%rax
+  40289f:	48 89 c7             	mov    %rax,%rdi
+  4028a2:	e8 73 01 00 00       	callq  402a1a <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::tie() const>
+  4028a7:	48 89 c7             	mov    %rax,%rdi
+  4028aa:	e8 ab f5 ff ff       	callq  401e5a <stlp_std::basic_ostream<char, stlp_std::char_traits<char> >::flush()>
+/usr/include/stlport/stl/_ostream.h:225
+  4028af:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+  4028b3:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4028b7:	48 8b 00             	mov    (%rax),%rax
+  4028ba:	48 83 e8 18          	sub    $0x18,%rax
+  4028be:	48 8b 00             	mov    (%rax),%rax
+  4028c1:	48 8d 04 02          	lea    (%rdx,%rax,1),%rax
+  4028c5:	48 89 c7             	mov    %rax,%rdi
+  4028c8:	e8 c5 ea ff ff       	callq  401392 <stlp_std::ios_base::good() const>
+  4028cd:	eb 05                	jmp    4028d4 <bool stlp_std::priv::__init_bostr<char, stlp_std::char_traits<char> >(stlp_std::basic_ostream<char, stlp_std::char_traits<char> >&)+0xf0>
+/usr/include/stlport/stl/_ostream.h:228
+  4028cf:	b8 00 00 00 00       	mov    $0x0,%eax
+/usr/include/stlport/stl/_ostream.h:229
+  4028d4:	c9                   	leaveq 
+  4028d5:	c3                   	retq   
+
+00000000004028d6 <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::clear(int)>:
+_ZN8stlp_std9basic_iosIcNS_11char_traitsIcEEE5clearEi():
+/usr/include/stlport/stl/_ios.h:91
+  4028d6:	55                   	push   %rbp
+  4028d7:	48 89 e5             	mov    %rsp,%rbp
+  4028da:	48 83 ec 10          	sub    $0x10,%rsp
+  4028de:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  4028e2:	89 75 f4             	mov    %esi,-0xc(%rbp)
+/usr/include/stlport/stl/_ios.h:92
+  4028e5:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4028e9:	48 89 c7             	mov    %rax,%rdi
+  4028ec:	e8 39 fa ff ff       	callq  40232a <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::rdbuf() const>
+  4028f1:	48 85 c0             	test   %rax,%rax
+  4028f4:	75 08                	jne    4028fe <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::clear(int)+0x28>
+  4028f6:	8b 45 f4             	mov    -0xc(%rbp),%eax
+  4028f9:	83 c8 01             	or     $0x1,%eax
+  4028fc:	eb 03                	jmp    402901 <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::clear(int)+0x2b>
+  4028fe:	8b 45 f4             	mov    -0xc(%rbp),%eax
+  402901:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+  402905:	89 c6                	mov    %eax,%esi
+  402907:	48 89 d7             	mov    %rdx,%rdi
+  40290a:	e8 b9 ea ff ff       	callq  4013c8 <stlp_std::ios_base::_M_clear_nothrow(int)>
+/usr/include/stlport/stl/_ios.h:93
+  40290f:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  402913:	48 89 c7             	mov    %rax,%rdi
+  402916:	e8 d7 ea ff ff       	callq  4013f2 <stlp_std::ios_base::_M_check_exception_mask()>
+/usr/include/stlport/stl/_ios.h:94
+  40291b:	c9                   	leaveq 
+  40291c:	c3                   	retq   
+  40291d:	90                   	nop
+
+000000000040291e <stlp_std::priv::_List_iterator<int, stlp_std::_Const_traits<int> >::operator!=(stlp_std::priv::_List_iterator<int, stlp_std::_Const_traits<int> >) const>:
+_ZNK8stlp_std4priv14_List_iteratorIiNS_13_Const_traitsIiEEEneES4_():
+/usr/include/stlport/stl/_list.h:143
+  40291e:	55                   	push   %rbp
+  40291f:	48 89 e5             	mov    %rsp,%rbp
+  402922:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  402926:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+/usr/include/stlport/stl/_list.h:144
+  40292a:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  40292e:	48 8b 10             	mov    (%rax),%rdx
+  402931:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  402935:	48 39 c2             	cmp    %rax,%rdx
+  402938:	0f 95 c0             	setne  %al
+/usr/include/stlport/stl/_list.h:145
+  40293b:	c9                   	leaveq 
+  40293c:	c3                   	retq   
+  40293d:	90                   	nop
+
+000000000040293e <stlp_std::priv::_List_iterator<int, stlp_std::_Const_traits<int> >::operator++()>:
+_ZN8stlp_std4priv14_List_iteratorIiNS_13_Const_traitsIiEEEppEv():
+/usr/include/stlport/stl/_list.h:122
+  40293e:	55                   	push   %rbp
+  40293f:	48 89 e5             	mov    %rsp,%rbp
+  402942:	48 83 ec 10          	sub    $0x10,%rsp
+  402946:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+/usr/include/stlport/stl/_list.h:123
+  40294a:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  40294e:	48 89 c7             	mov    %rax,%rdi
+  402951:	e8 f8 ea ff ff       	callq  40144e <stlp_std::priv::_List_iterator_base::_M_incr()>
+/usr/include/stlport/stl/_list.h:124
+  402956:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+/usr/include/stlport/stl/_list.h:125
+  40295a:	c9                   	leaveq 
+  40295b:	c3                   	retq   
+
+000000000040295c <stlp_std::num_put<char, stlp_std::ostreambuf_iterator<char, stlp_std::char_traits<char> > >* stlp_std::priv::_UseFacet<stlp_std::num_put<char, stlp_std::ostreambuf_iterator<char, stlp_std::char_traits<char> > > >(stlp_std::locale const&, stlp_std::num_put<char, stlp_std::ostreambuf_iterator<char, stlp_std::char_traits<char> > > const*)>:
+_ZN8stlp_std4priv9_UseFacetINS_7num_putIcNS_19ostreambuf_iteratorIcNS_11char_traitsIcEEEEEEEEPT_RKNS_6localeEPKS8_():
+/usr/include/stlport/stl/_locale.h:351
+  40295c:	55                   	push   %rbp
+  40295d:	48 89 e5             	mov    %rsp,%rbp
+  402960:	48 83 ec 10          	sub    $0x10,%rsp
+  402964:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  402968:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+/usr/include/stlport/stl/_locale.h:352
+  40296c:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  402970:	48 89 c7             	mov    %rax,%rdi
+  402973:	e8 38 e5 ff ff       	callq  400eb0 <stlp_std::priv::_GetFacetId(stlp_std::num_put<char, stlp_std::ostreambuf_iterator<char, stlp_std::char_traits<char> > > const*)@plt>
+  402978:	48 89 c2             	mov    %rax,%rdx
+  40297b:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  40297f:	48 89 d6             	mov    %rdx,%rsi
+  402982:	48 89 c7             	mov    %rax,%rdi
+  402985:	e8 96 e4 ff ff       	callq  400e20 <stlp_std::locale::_M_use_facet(stlp_std::locale::id const&) const@plt>
+  40298a:	c9                   	leaveq 
+  40298b:	c3                   	retq   
+
+000000000040298c <stlp_std::__char_traits_base<char, int>::eof()>:
+_ZN8stlp_std18__char_traits_baseIciE3eofEv():
+/usr/include/stlport/stl/char_traits.h:193
+  40298c:	55                   	push   %rbp
+  40298d:	48 89 e5             	mov    %rsp,%rbp
+/usr/include/stlport/stl/char_traits.h:194
+  402990:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+  402995:	c9                   	leaveq 
+  402996:	c3                   	retq   
+
+0000000000402997 <stlp_std::__char_traits_base<char, int>::eq_int_type(int const&, int const&)>:
+_ZN8stlp_std18__char_traits_baseIciE11eq_int_typeERKiS3_():
+/usr/include/stlport/stl/char_traits.h:190
+  402997:	55                   	push   %rbp
+  402998:	48 89 e5             	mov    %rsp,%rbp
+  40299b:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  40299f:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+/usr/include/stlport/stl/char_traits.h:191
+  4029a3:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4029a7:	8b 10                	mov    (%rax),%edx
+  4029a9:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  4029ad:	8b 00                	mov    (%rax),%eax
+  4029af:	39 c2                	cmp    %eax,%edx
+  4029b1:	0f 94 c0             	sete   %al
+  4029b4:	c9                   	leaveq 
+  4029b5:	c3                   	retq   
+
+00000000004029b6 <stlp_std::priv::_STLP_alloc_proxy<stlp_std::priv::_List_node_base, stlp_std::priv::_List_node<int>, stlp_std::allocator<stlp_std::priv::_List_node<int> > >::allocate(unsigned long)>:
+_ZN8stlp_std4priv17_STLP_alloc_proxyINS0_15_List_node_baseENS0_10_List_nodeIiEENS_9allocatorIS4_EEE8allocateEm():
+/usr/include/stlport/stl/_alloc.h:547
+  4029b6:	55                   	push   %rbp
+  4029b7:	48 89 e5             	mov    %rsp,%rbp
+  4029ba:	48 83 ec 10          	sub    $0x10,%rsp
+  4029be:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  4029c2:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+/usr/include/stlport/stl/_alloc.h:548
+  4029c6:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4029ca:	48 8b 4d f0          	mov    -0x10(%rbp),%rcx
+  4029ce:	ba 00 00 00 00       	mov    $0x0,%edx
+  4029d3:	48 89 ce             	mov    %rcx,%rsi
+  4029d6:	48 89 c7             	mov    %rax,%rdi
+  4029d9:	e8 52 00 00 00       	callq  402a30 <stlp_std::allocator<stlp_std::priv::_List_node<int> >::allocate(unsigned long, void const*)>
+  4029de:	c9                   	leaveq 
+  4029df:	c3                   	retq   
+
+00000000004029e0 <void stlp_std::_Copy_Construct<int>(int*, int const&)>:
+_ZN8stlp_std15_Copy_ConstructIiEEvPT_RKS1_():
+/usr/include/stlport/stl/_construct.h:130
+  4029e0:	55                   	push   %rbp
+  4029e1:	48 89 e5             	mov    %rsp,%rbp
+  4029e4:	48 83 ec 20          	sub    $0x20,%rsp
+  4029e8:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+  4029ec:	48 89 75 e0          	mov    %rsi,-0x20(%rbp)
+/usr/include/stlport/stl/_construct.h:134
+  4029f0:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  4029f4:	48 89 c7             	mov    %rax,%rdi
+  4029f7:	e8 cb 00 00 00       	callq  402ac7 <stlp_std::_IsPOD<int> stlp_std::_Is_POD<int>(int*)>
+  4029fc:	e8 d0 00 00 00       	callq  402ad1 <stlp_std::_IsPOD<int>::_Answer()>
+  402a01:	48 8d 55 ff          	lea    -0x1(%rbp),%rdx
+  402a05:	48 8b 4d e0          	mov    -0x20(%rbp),%rcx
+  402a09:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  402a0d:	48 89 ce             	mov    %rcx,%rsi
+  402a10:	48 89 c7             	mov    %rax,%rdi
+  402a13:	e8 bf 00 00 00       	callq  402ad7 <void stlp_std::_Copy_Construct_aux<int>(int*, int const&, stlp_std::__true_type const&)>
+/usr/include/stlport/stl/_construct.h:135
+  402a18:	c9                   	leaveq 
+  402a19:	c3                   	retq   
+
+0000000000402a1a <stlp_std::basic_ios<char, stlp_std::char_traits<char> >::tie() const>:
+_ZNK8stlp_std9basic_iosIcNS_11char_traitsIcEEE3tieEv():
+/usr/include/stlport/stl/_ios.h:62
+  402a1a:	55                   	push   %rbp
+  402a1b:	48 89 e5             	mov    %rsp,%rbp
+  402a1e:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+/usr/include/stlport/stl/_ios.h:63
+  402a22:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  402a26:	48 8b 80 88 00 00 00 	mov    0x88(%rax),%rax
+/usr/include/stlport/stl/_ios.h:64
+  402a2d:	c9                   	leaveq 
+  402a2e:	c3                   	retq   
+  402a2f:	90                   	nop
+
+0000000000402a30 <stlp_std::allocator<stlp_std::priv::_List_node<int> >::allocate(unsigned long, void const*)>:
+_ZN8stlp_std9allocatorINS_4priv10_List_nodeIiEEE8allocateEmPKv():
+/usr/include/stlport/stl/_alloc.h:301
+  402a30:	55                   	push   %rbp
+  402a31:	48 89 e5             	mov    %rsp,%rbp
+  402a34:	53                   	push   %rbx
+  402a35:	48 83 ec 38          	sub    $0x38,%rsp
+  402a39:	48 89 7d d8          	mov    %rdi,-0x28(%rbp)
+  402a3d:	48 89 75 d0          	mov    %rsi,-0x30(%rbp)
+  402a41:	48 89 55 c8          	mov    %rdx,-0x38(%rbp)
+/usr/include/stlport/stl/_alloc.h:302
+  402a45:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  402a49:	48 89 c7             	mov    %rax,%rdi
+  402a4c:	e8 a5 00 00 00       	callq  402af6 <stlp_std::allocator<stlp_std::priv::_List_node<int> >::max_size() const>
+  402a51:	48 3b 45 d0          	cmp    -0x30(%rbp),%rax
+  402a55:	0f 92 c0             	setb   %al
+  402a58:	84 c0                	test   %al,%al
+  402a5a:	74 2d                	je     402a89 <stlp_std::allocator<stlp_std::priv::_List_node<int> >::allocate(unsigned long, void const*)+0x59>
+/usr/include/stlport/stl/_alloc.h:303
+  402a5c:	bf 08 00 00 00       	mov    $0x8,%edi
+  402a61:	e8 1a e4 ff ff       	callq  400e80 <__cxa_allocate_exception@plt>
+  402a66:	48 89 c3             	mov    %rax,%rbx
+  402a69:	48 89 d8             	mov    %rbx,%rax
+  402a6c:	48 89 c7             	mov    %rax,%rdi
+  402a6f:	e8 94 e7 ff ff       	callq  401208 <std::bad_alloc::bad_alloc()>
+  402a74:	b8 10 0f 40 00       	mov    $0x400f10,%eax
+  402a79:	48 89 c2             	mov    %rax,%rdx
+  402a7c:	be c0 40 60 00       	mov    $0x6040c0,%esi
+  402a81:	48 89 df             	mov    %rbx,%rdi
+  402a84:	e8 37 e4 ff ff       	callq  400ec0 <__cxa_throw@plt>
+/usr/include/stlport/stl/_alloc.h:305
+  402a89:	48 83 7d d0 00       	cmpq   $0x0,-0x30(%rbp)
+  402a8e:	74 2b                	je     402abb <stlp_std::allocator<stlp_std::priv::_List_node<int> >::allocate(unsigned long, void const*)+0x8b>
+/usr/include/stlport/stl/_alloc.h:306
+  402a90:	48 8b 55 d0          	mov    -0x30(%rbp),%rdx
+  402a94:	48 89 d0             	mov    %rdx,%rax
+  402a97:	48 01 c0             	add    %rax,%rax
+  402a9a:	48 01 d0             	add    %rdx,%rax
+  402a9d:	48 c1 e0 03          	shl    $0x3,%rax
+  402aa1:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+/usr/include/stlport/stl/_alloc.h:307
+  402aa5:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  402aa9:	48 89 c7             	mov    %rax,%rdi
+  402aac:	e8 7f e4 ff ff       	callq  400f30 <stlp_std::__malloc_alloc::allocate(unsigned long)@plt>
+  402ab1:	48 89 45 e0          	mov    %rax,-0x20(%rbp)
+/usr/include/stlport/stl/_alloc.h:311
+  402ab5:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  402ab9:	eb 05                	jmp    402ac0 <stlp_std::allocator<stlp_std::priv::_List_node<int> >::allocate(unsigned long, void const*)+0x90>
+/usr/include/stlport/stl/_alloc.h:314
+  402abb:	b8 00 00 00 00       	mov    $0x0,%eax
+/usr/include/stlport/stl/_alloc.h:315
+  402ac0:	48 83 c4 38          	add    $0x38,%rsp
+  402ac4:	5b                   	pop    %rbx
+  402ac5:	c9                   	leaveq 
+  402ac6:	c3                   	retq   
+
+0000000000402ac7 <stlp_std::_IsPOD<int> stlp_std::_Is_POD<int>(int*)>:
+_ZN8stlp_std7_Is_PODIiEENS_6_IsPODIT_EEPS2_():
+/usr/include/stlport/stl/type_traits.h:551
+  402ac7:	55                   	push   %rbp
+  402ac8:	48 89 e5             	mov    %rsp,%rbp
+  402acb:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+/usr/include/stlport/stl/type_traits.h:552
+  402acf:	c9                   	leaveq 
+  402ad0:	c3                   	retq   
+
+0000000000402ad1 <stlp_std::_IsPOD<int>::_Answer()>:
+_ZN8stlp_std6_IsPODIiE7_AnswerEv():
+/usr/include/stlport/stl/type_traits.h:547
+  402ad1:	55                   	push   %rbp
+  402ad2:	48 89 e5             	mov    %rsp,%rbp
+  402ad5:	c9                   	leaveq 
+  402ad6:	c3                   	retq   
+
+0000000000402ad7 <void stlp_std::_Copy_Construct_aux<int>(int*, int const&, stlp_std::__true_type const&)>:
+_ZN8stlp_std19_Copy_Construct_auxIiEEvPT_RKS1_RKNS_11__true_typeE():
+/usr/include/stlport/stl/_construct.h:123
+  402ad7:	55                   	push   %rbp
+  402ad8:	48 89 e5             	mov    %rsp,%rbp
+  402adb:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  402adf:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+  402ae3:	48 89 55 e8          	mov    %rdx,-0x18(%rbp)
+/usr/include/stlport/stl/_construct.h:126
+  402ae7:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  402aeb:	8b 10                	mov    (%rax),%edx
+  402aed:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  402af1:	89 10                	mov    %edx,(%rax)
+/usr/include/stlport/stl/_construct.h:127
+  402af3:	c9                   	leaveq 
+  402af4:	c3                   	retq   
+  402af5:	90                   	nop
+
+0000000000402af6 <stlp_std::allocator<stlp_std::priv::_List_node<int> >::max_size() const>:
+_ZNK8stlp_std9allocatorINS_4priv10_List_nodeIiEEE8max_sizeEv():
+/usr/include/stlport/stl/_alloc.h:330
+  402af6:	55                   	push   %rbp
+  402af7:	48 89 e5             	mov    %rsp,%rbp
+  402afa:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  402afe:	48 b8 aa aa aa aa aa 	movabs $0xaaaaaaaaaaaaaaa,%rax
+  402b05:	aa aa 0a 
+  402b08:	c9                   	leaveq 
+  402b09:	c3                   	retq   
+  402b0a:	90                   	nop
+  402b0b:	90                   	nop
+
+0000000000402b0c <__libc_csu_init>:
+__libc_csu_init():
+  402b0c:	41 57                	push   %r15
+  402b0e:	41 56                	push   %r14
+  402b10:	41 55                	push   %r13
+  402b12:	41 54                	push   %r12
+  402b14:	55                   	push   %rbp
+  402b15:	53                   	push   %rbx
+  402b16:	48 83 ec 08          	sub    $0x8,%rsp
+  402b1a:	41 89 fc             	mov    %edi,%r12d
+  402b1d:	49 89 f5             	mov    %rsi,%r13
+  402b20:	49 89 d6             	mov    %rdx,%r14
+  402b23:	e8 b0 e2 ff ff       	callq  400dd8 <_init>
+  402b28:	4c 8d 3d 8d 12 20 00 	lea    0x20128d(%rip),%r15        # 603dbc <__init_array_end>
+  402b2f:	48 8d 2d 86 12 20 00 	lea    0x201286(%rip),%rbp        # 603dbc <__init_array_end>
+  402b36:	49 29 ef             	sub    %rbp,%r15
+  402b39:	49 c1 ff 03          	sar    $0x3,%r15
+  402b3d:	74 18                	je     402b57 <__libc_csu_init+0x4b>
+  402b3f:	31 db                	xor    %ebx,%ebx
+  402b41:	4c 89 f2             	mov    %r14,%rdx
+  402b44:	4c 89 ee             	mov    %r13,%rsi
+  402b47:	44 89 e7             	mov    %r12d,%edi
+  402b4a:	ff 54 dd 00          	callq  *0x0(%rbp,%rbx,8)
+  402b4e:	48 83 c3 01          	add    $0x1,%rbx
+  402b52:	4c 39 fb             	cmp    %r15,%rbx
+  402b55:	72 ea                	jb     402b41 <__libc_csu_init+0x35>
+  402b57:	48 83 c4 08          	add    $0x8,%rsp
+  402b5b:	5b                   	pop    %rbx
+  402b5c:	5d                   	pop    %rbp
+  402b5d:	41 5c                	pop    %r12
+  402b5f:	41 5d                	pop    %r13
+  402b61:	41 5e                	pop    %r14
+  402b63:	41 5f                	pop    %r15
+  402b65:	c3                   	retq   
+
+0000000000402b66 <__libc_csu_fini>:
+__libc_csu_fini():
+  402b66:	c3                   	retq   
+  402b67:	90                   	nop
+  402b68:	55                   	push   %rbp
+  402b69:	48 89 e5             	mov    %rsp,%rbp
+  402b6c:	53                   	push   %rbx
+  402b6d:	48 83 ec 08          	sub    $0x8,%rsp
+  402b71:	48 8b 05 50 12 20 00 	mov    0x201250(%rip),%rax        # 603dc8 <__init_array_end+0xc>
+  402b78:	48 83 f8 ff          	cmp    $0xffffffffffffffff,%rax
+  402b7c:	74 14                	je     402b92 <__libc_csu_fini+0x2c>
+  402b7e:	bb c8 3d 60 00       	mov    $0x603dc8,%ebx
+  402b83:	ff d0                	callq  *%rax
+  402b85:	48 83 eb 08          	sub    $0x8,%rbx
+  402b89:	48 8b 03             	mov    (%rbx),%rax
+  402b8c:	48 83 f8 ff          	cmp    $0xffffffffffffffff,%rax
+  402b90:	75 f1                	jne    402b83 <__libc_csu_fini+0x1d>
+  402b92:	48 83 c4 08          	add    $0x8,%rsp
+  402b96:	5b                   	pop    %rbx
+  402b97:	5d                   	pop    %rbp
+  402b98:	c3                   	retq   
+  402b99:	90                   	nop
+  402b9a:	90                   	nop
+  402b9b:	90                   	nop
+
+Disassembly of section .fini:
+
+0000000000402b9c <_fini>:
+_fini():
+  402b9c:	48 83 ec 08          	sub    $0x8,%rsp
+  402ba0:	e8 ef e3 ff ff       	callq  400f94 <_start+0x44>
+  402ba5:	48 83 c4 08          	add    $0x8,%rsp
+  402ba9:	c3                   	retq   
