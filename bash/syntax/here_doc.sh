@@ -12,3 +12,22 @@ EXAMPLE: rename all *.HTM files in *.html:
 HELP
     exit 0
 fi
+
+OLD="$1"
+NEW="$2"
+# The shift command remove one argument from the list of command line arguments.
+shift
+shift
+# $@ contains now all the files:
+for file in "$@"; do
+    if [ -f "$file" ]; then
+        newfile=`echo "$file" | sed "s/${OLD}/${NEW}/g"`
+        if [ -f "newfile" ]; then
+            echo "ERROR: $new file exists already"
+        else
+            echo "renaming $file to $newfile ..."
+            mv "$file" "$newfile"
+        fi
+    fi
+done
+
