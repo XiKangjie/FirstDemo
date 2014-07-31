@@ -15,8 +15,14 @@ int main()
     stream << "world;";             // hello;world;
     cout << stream.str() << endl;
 
+    string str;
+    stream >> str;                  // >> reaches the end of the string and sets the eof bit.
     stream.str("");                 // clear content.
+    stream.clear();                 // must reset stream state, otherwise can't <<.
     cout << stream.str() << endl;   // output empty.
+
+    stream << "hello ?";            // hello ?
+    cout << stream.str() << endl;
 
     return 0;
 }
