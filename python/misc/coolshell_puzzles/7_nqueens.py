@@ -32,12 +32,11 @@ anss_str = [''.join(i) for i in anss]
 print(len(anss_str), anss_str)
 
 import hashlib
-
 #s = hashlib.sha1()
 for code in anss_str:
     s = hashlib.sha1()
     # Repeated update() calls are equivalent to a single call with the concatenation of all the arguments
-    s.update(('zWp8LGn01wxJ7' + code + "\n").encode('utf-8'))
+    s.update(('zWp8LGn01wxJ7' + code + '\n').encode('utf-8'))
     if s.hexdigest() == 'e48d316ed573d3273931e19f9ac9f9e6039a4242':
         print('answer is ', code)
 # 953172864
