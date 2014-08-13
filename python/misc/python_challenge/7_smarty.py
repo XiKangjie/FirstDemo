@@ -1,3 +1,4 @@
+# pip install Pillow
 from PIL import Image
 
 img = Image.open('oxygen.png')
