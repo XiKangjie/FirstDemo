@@ -13,8 +13,9 @@ int main()
     }
     printf("sleep 5s\n");
     sleep(5);
-    int n = write(fd, "test\n", 5);
+    int n = write(fd, "test\n", 4);
     printf("n: %d\n", n);
+    sleep(10);
     close(fd);
 
     return 0;
