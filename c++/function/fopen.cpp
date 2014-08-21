@@ -6,9 +6,9 @@ int main()
     printf("BUFSIZ: %d\n", BUFSIZ);
 
     FILE* f;
-    f = fopen("fopen.txt", "w");
-    char buf[120];
-    setvbuf(f, buf, _IOFBF, 100);
+    f = fopen("fopen.txt", "wa");
+    //char buf[120];
+    //setvbuf(f, buf, _IOFBF, 100);
     printf("BUFSIZ: %d\n", BUFSIZ);
     if (f) {
         char buffer[] = "0123456789";
