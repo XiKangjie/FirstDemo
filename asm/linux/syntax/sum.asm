@@ -7,7 +7,7 @@ section .data
     num1:   equ 100
     num2:   equ 50
     ; initialize message
-    msg:    db  "Sum is correct.\n"
+    msg:    db  "Sum is correct.", 0xa
 
 section .text
     global _start

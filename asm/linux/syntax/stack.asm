@@ -62,6 +62,8 @@ argcError:
     jmp exit
 
 ; convert string to int
+; arg: rsi
+; ret: rax
 str_to_int:
     ; accumulator
     xor rax, rax
@@ -87,7 +89,9 @@ next:
 return_str:
     ret
 
-; convert int to string
+; convert int to string and print it
+; arg: rax
+; ret: str is in stack, length is r12
 int_to_str:
     ; reminder from division
     mov rdx, 0
