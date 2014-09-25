@@ -1,8 +1,8 @@
 CFLAGS=-Wall -g
 
-all: object.exe
+all: game
 
-object.exe: object.o
+game: object.o
 
 clean:
-	rm -f object.exe
+	rm -f object.o game.o object.exe

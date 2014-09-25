@@ -5,6 +5,11 @@ typedef enum {
     NORTH, SOUTH, EAST, WEST
 } Direction;
 
+//*****
+// through *self associate object's method and data
+//*****
+// to create Monster, Room and Map objects,
+// we abstract the common part, which is Object. 
 typedef struct {
     char* description;
     int (*init)(void* self);

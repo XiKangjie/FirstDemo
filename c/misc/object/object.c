@@ -19,7 +19,7 @@ void Object_describe(void* self)
     printf("%s.\n", obj->description);
 }
 
-int Object_int(void* self)
+int Object_init(void* self)
 {
     // do nothing really
     return 1;
