@@ -9,7 +9,8 @@ parser.add_argument('-g', '--gender', choices = ['male', 'female'], help = 'your
 parser.add_argument('-o', '--ok', action = 'store_true', default = False, help = 'are you ok?')
 
 #print(parser.parse_args(['-nconsen', '--age', '18', '-o']))
-#mespace(age=18, gender=None, name='consen', ok=True)
+#print(parser.parse_args('-nconsen --age 18 -o'.split())) 
+#Namespace(age=18, gender=None, name='consen', ok=True)
 
 #print(parser.parse_args())
 #Namespace(age=12, gender=None, name='none', ok=False)
