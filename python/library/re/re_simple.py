@@ -48,3 +48,16 @@ for match in re.finditer(pattern, text):
 Found "ab" at 0:2
 Found "ab" at 5:7
 '''
+
+# Compiling Expressions
+# return a RegexObject
+regex = re.compile('this')
+text = 'Does this text match the pattern?'
+print 'Looking for "%s" in "%s" ->' % (regex.pattern, text)
+if regex.search(text):
+    print 'found a match!'
+else:
+    print 'no match'
+
+# Repetition
+
