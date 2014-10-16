@@ -60,4 +60,42 @@ else:
     print 'no match'
 
 # Repetition
+text = 'abbaaabbbbaaaaa'
+# greedy
+match = re.search('ab*', text)
+print text[match.start() : match.end()]
+# abb
 
+# greedines can be turned off by following the repetition instruction with ?
+match = re.search('ab*?', text)
+print text[match.start() : match.end()]
+# a
+
+def test_patterns(text, patterns = []):
+    print text
+    for pattern in patterns:
+        print 'Matching "%s"' % pattern
+        for match in re.finditer(pattern, text):
+            s = match.start()
+            e = match.end()
+            print ' %2d : %2d = %s' % (s, e - 1, text[s:e])
+
+# Anchoring
+test_patterns('This is some text -- with punctuation.',
+                [r'^\w+',    # word at start of string
+                 r'\w+\S*$', # word at end of string, with optional punctuation
+                 r'\bt\w+',  # 't' at start of word
+                 r'\w+t\b'   # 't' at end of word
+                 ])
+
+'''
+This is some text -- with punctuation.
+Matching "^\w+"
+  0 :  3 = This
+Matching "\w+\S*$"
+ 26 : 37 = punctuation.
+Matching "\bt\w+"
+ 13 : 16 = text
+Matching "\w+t\b"
+ 13 : 16 = text
+'''
