@@ -22,6 +22,16 @@ typedef union
     } v6;
 } __attribute__((packed)) Ip;
 
+
+typedef struct {
+    uint32_t ipv6;
+    // anonymous union
+    union {
+        uint32_t v4addr;
+        struct { uint64_t v6addr1, v6addr2; };
+    };
+} __attribute__((packed)) ipaddr;
+
 int main()
 {
     Ip ip = { .v4.dw.s = 0x12345678 };
@@ -31,6 +41,13 @@ int main()
 
     printf("%x\n", ip.v6.s.dw.s1);
     printf("%x\n", ip.v6.to_v4_s);
+
+
+    ipaddr addr;
+    addr.ipv6 = 1;
+    addr.v6addr1 = 0x1234567812345678;
+    addr.v6addr2 = 0x8765432187654321;
+    printf("%lx\n", addr.v6addr1);
 
     return 0;
 }
@@ -42,5 +59,6 @@ int main()
 78, 56, 34, 12
 0
 12345678
+1234567812345678
 
 */
