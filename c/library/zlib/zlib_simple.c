@@ -4,13 +4,13 @@
 #include <zlib.h>
 
 struct _Data{
-    int size;
-    char* str;
     struct _Data* next;
-};
+    char* str;
+    int size;
+} __attribute__((packed));
 typedef struct _Data Data;
 
-#define BUFFER_LEN 10000
+#define BUFFER_LEN 100
 
 int def(Data* data, FILE* dest)
 {
@@ -27,56 +27,69 @@ int def(Data* data, FILE* dest)
         return ret;
     }
 
+    strm.avail_out = BUFFER_LEN;
+    strm.next_out = out;
+
     do {
-        strm.avail_in = data->size;
-        strm.next_in = data->str;
+        strm.avail_in = data->size + sizeof(int);
+        strm.next_in = (char*)data + sizeof(Data*) + sizeof(char*);
+        printf("next_in: %p\n", strm.next_in);
         flush = data->next ? Z_NO_FLUSH: Z_FINISH;
         data = data->next;
 
         do {
-            strm.avail_out = BUFFER_LEN;
-            strm.next_out = out;
+            if (strm.avail_out == 0) {
+                have = BUFFER_LEN - strm.avail_out;
+                printf("have: %d\n", have);
+                fwrite(out, 1, have, dest);
+                strm.avail_out = BUFFER_LEN;
+                strm.next_out = out;
+            }
             ret = deflate(&strm, flush);
             
-            have = BUFFER_LEN - strm.avail_out;
-            printf("have: %d\n", have);
-            if (have > 0) {
-                fwrite(out, 1, have, dest);
-            }
         } while (strm.avail_out == 0);
     } while (flush != Z_FINISH);
 
-/*
- *    while (data) {
- *        strm.avail_in = data->size;
- *        strm.next_in = data->str;
- *
- *
- *
- *        data = data->next;
- *    }
- */
+    have = BUFFER_LEN - strm.avail_out;
+    fwrite(out, 1, have, dest);
+
     deflateEnd(&strm);
     return Z_OK;    
 }
 
+void free_data(Data* d)
+{
+    while (d) {
+        Data* next = d->next;
+        free(d);
+        d = next;
+    }
+}
+
 int main()
 {
-    Data d, d2;
-    d.size = 64;
-    d.str = (char*)malloc(64);
-    memset(d.str, 'A', sizeof(char) * 64);
-    d.next = NULL;
+    void* buffer = malloc(sizeof(Data) + 4);
+    Data* d = (Data*)buffer;
+    d->next = NULL;
+    d->str = (char*)d + sizeof(Data);
+    printf("d->str: %p\n", d->str);
+    d->size = 4;
+    memset(d->str, 'A', sizeof(char) * 4);
 
-    d2.size = 128;
-    d2.str = (char*)malloc(128);
-    memset(d2.str, 'B', sizeof(char) * 128);
-    d2.next = NULL;
+    buffer = malloc(sizeof(Data) + 8);
+    Data* d2 = (Data*)buffer;
+    d2->next = NULL;
+    d2->str = (char*)d2 + sizeof(Data);
+    printf("d2->str: %p\n", d2->str);
+    d2->size = 8;
+    memset(d2->str, 'B', sizeof(char) * 8);
 
-    d.next = &d2;
+    d->next = d2;
     
     FILE* output = fopen("zlib_simple.z", "w");
-    def(&d, output);
+    def(d, output);
+
+    free_data(d);
 
     return 0;
 }
