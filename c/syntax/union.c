@@ -48,6 +48,12 @@ int main()
     addr.v6addr1 = 0x1234567812345678;
     addr.v6addr2 = 0x8765432187654321;
     printf("%lx\n", addr.v6addr1);
+    printf("%lu\n", sizeof(addr));      // 20
+
+    ipaddr addr2;
+    addr2.ipv6 = 0;
+    addr2.v4addr = 0x12345678;
+    printf("%lu\n", sizeof(addr2));     // 20
 
     return 0;
 }
@@ -60,5 +66,7 @@ int main()
 0
 12345678
 1234567812345678
+20
+20
 
 */
