@@ -12,7 +12,7 @@ typedef struct _Data Data;
 
 #define BUFFER_LEN 100
 
-int def(Data* data, FILE* dest)
+int def(Data* data, FILE* dest, int* total_out)
 {
     int ret, flush;
     unsigned have;
@@ -52,6 +52,8 @@ int def(Data* data, FILE* dest)
 
     have = BUFFER_LEN - strm.avail_out;
     fwrite(out, 1, have, dest);
+    printf("total_out: %lu\n", strm.total_out);
+    *total_out = strm.total_out;
 
     deflateEnd(&strm);
     return Z_OK;    
@@ -85,9 +87,18 @@ int main()
     memset(d2->str, 'B', sizeof(char) * 8);
 
     d->next = d2;
-    
-    FILE* output = fopen("zlib_simple.z", "w");
-    def(d, output);
+
+    printf("compressBound: %lu\n", compressBound(4 + 8));    
+    FILE* output = fopen("zlib_simple.z", "r+b");   // file must exist
+    fseek(output, 0, SEEK_END);
+    int total_out = 0;
+    // reserved for total_out
+    fseek(output, sizeof(int), SEEK_END);
+    def(d, output, &total_out);
+    fseek(output, -(total_out + sizeof(int)), SEEK_END);
+    fwrite(&total_out, sizeof(int), 1, output);
+
+    fclose(output);
 
     free_data(d);
 
