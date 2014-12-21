@@ -122,3 +122,61 @@ icmp 1
 tcp 6
 udp 17
 """
+
+
+# Looking Up Server Addresses
+def get_constants(prefix):
+    """ Create a dictionary mapping socket module constants to their names."""
+    return dict((getattr(socket, n), n)
+                for n in dir(socket) if n.startswith(prefix))
+
+families = get_constants('AF_')
+types = get_constants('SOCK_')
+protocols = get_constants('IPPROTO_')
+
+for response in socket.getaddrinfo('www.baidu.com', 'http'):
+    family, socktype, proto, canonname, sockaddr = response
+    print 'Family :', families[family]
+    print 'Type: ', types[socktype]
+    print 'Protocol:', protocols[proto]
+    print 'Canonical name:', canonname
+    print 'Socket address:', sockaddr
+print
+
+"""
+Family : AF_INET
+Type:  SOCK_STREAM
+Protocol: IPPROTO_TCP
+Canonical name: 
+Socket address: ('220.181.112.244', 80)
+Family : AF_INET
+Type:  SOCK_DGRAM
+Protocol: IPPROTO_UDP
+Canonical name: 
+Socket address: ('220.181.112.244', 80)
+Family : AF_INET
+Type:  SOCK_STREAM
+Protocol: IPPROTO_TCP
+Canonical name: 
+Socket address: ('220.181.111.188', 80)
+Family : AF_INET
+Type:  SOCK_DGRAM
+Protocol: IPPROTO_UDP
+Canonical name: 
+Socket address: ('220.181.111.188', 80)
+"""
+
+
+# IP Address Representations
+import binascii
+string_address = '220.181.112.244'
+packed = socket.inet_aton(string_address)
+print 'Origianl:', string_address
+print 'Packed:', binascii.hexlify(packed)
+print 'Unpacked:', socket.inet_ntoa(packed)
+
+"""
+Origianl: 220.181.112.244
+Packed: dcb570f4
+Unpacked: 220.181.112.244
+"""
