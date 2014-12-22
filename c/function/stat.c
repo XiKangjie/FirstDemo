@@ -9,6 +9,7 @@ static char* GetFileName()
     static char fname[FILENAME_LEN] = {0};
     static char fname_old[FILENAME_LEN] = {0};
     if (fname[0] == 0) {
+        //snprintf(fname, FILENAME_LEN, "test%d.txt", getpid());
         snprintf(fname, FILENAME_LEN, "test.txt", getpid());
         snprintf(fname_old, FILENAME_LEN, "%s.old", fname);
         printf("init file name '%s' and '%s'\n", fname, fname_old);
