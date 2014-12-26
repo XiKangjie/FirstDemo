@@ -10,7 +10,7 @@ static char* GetFileName()
     static char fname_old[FILENAME_LEN] = {0};
     if (fname[0] == 0) {
         //snprintf(fname, FILENAME_LEN, "test%d.txt", getpid());
-        snprintf(fname, FILENAME_LEN, "test.txt", getpid());
+        snprintf(fname, FILENAME_LEN, "test/test.txt", getpid());
         snprintf(fname_old, FILENAME_LEN, "%s.old", fname);
         printf("init file name '%s' and '%s'\n", fname, fname_old);
     }
@@ -24,6 +24,7 @@ static char* GetFileName()
     }
     if (access(fname, F_OK) == -1) {
         printf("create %s\n", fname);
+        mkdir("test", 0755);
         int fd = creat(fname, 0644);
         close(fd);
     }
