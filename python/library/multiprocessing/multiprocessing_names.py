@@ -1,3 +1,5 @@
+# multiprocessing - Manage processes like threads
+
 import multiprocessing
 import time
 
