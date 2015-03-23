@@ -9,7 +9,7 @@ Reference: http://en.wikipedia.org/wiki/Aho%E2%80%93Corasick_string_matching_alg
 from collections import defaultdict
 
 class ACState():
-    def __init__(self, char=None):
+    def __init__(self):
         self.goto          = {}            # {char: ACState, ...}
         self.failure       = None
         self.output        = None
@@ -29,7 +29,7 @@ class ACAutomaton():
             state = self.root
             for c in keyword:
                 if c not in state.goto:
-                    state.goto[c] = ACState(c)
+                    state.goto[c] = ACState()
                 state = state.goto[c]
             state.keyword_index = index
 
