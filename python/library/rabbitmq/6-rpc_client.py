@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import pika
 import uuid
+import sys
 
 class FibonacciRpcClient(object):
     def __init__(self):
@@ -22,6 +23,8 @@ class FibonacciRpcClient(object):
     def call(self, n):
         self.response = None
         self.corr_id = str(uuid.uuid4())
+        # A client sends a request message and a server replies with a response message. 
+        # In order to receive a response the client needs to send a 'callback' queue address with the request. 
         self.channel.basic_publish(exchange='',
                                    routing_key='rpc_queue',
                                    properties=pika.BasicProperties(
@@ -35,6 +38,10 @@ class FibonacciRpcClient(object):
 
 fibonacci_rpc = FibonacciRpcClient()
 
-print(" [x] Requesting fib(30)")
-response = fibonacci_rpc.call(30)
+n = sys.argv[1]
+if not n:
+    print >> sys.stderr, 'Usage: %s [number]...' % sys.argv[0]
+    sys.exit(1)
+print(" [x] Requesting fib(n)")
+response = fibonacci_rpc.call(n)
 print(" [.] Got %r" % response)

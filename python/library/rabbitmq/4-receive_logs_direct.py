@@ -15,6 +15,11 @@ if not severities:
     print >> sys.stderr, 'Usage: %s [info] [warn] [error]' % sys.argv[0]
     sys.exit(1)
 
+# The meaning of a binding key depends on the exchange type. 
+# The fanout exchanges, which we used previously, simply ignored its value.
+
+# The routing algorithm behind a direct exchange is simple - 
+# a message goes to the queues whose binding key exactly matches the routing key of the message.
 for severity in severities:
     channel.queue_bind(exchange='direct_logs',
                        queue=queue_name,

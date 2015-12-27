@@ -15,6 +15,9 @@ if not binding_keys:
     print >> sys.stderr, 'Usage: %s [binding_key]...' % sys.argv[0]
     sys.exit(1)
 
+# there are two important special cases for binding keys:
+# * (star) can substitute for exactly one word.
+# # (hash) can substitute for zero or more words.
 for binding_key in binding_keys:
     channel.queue_bind(exchange='topic_logs',
                        queue=queue_name,

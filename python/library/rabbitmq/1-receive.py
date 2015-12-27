@@ -7,6 +7,8 @@ channel = connection.channel()
 
 # we can run the queue_declare as many time as we like, and only one will be created
 # we need not declare the queue again if we were sure that the queue already exists.
+# we are not yet sure which program to run first, it's a goog practice to repeat declaring
+# the queue in both programs.
 channel.queue_declare(queue='hello')
 
 # Whenever we receive a message, this callback function is called
