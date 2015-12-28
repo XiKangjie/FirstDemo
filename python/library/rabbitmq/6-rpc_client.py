@@ -42,6 +42,6 @@ n = sys.argv[1]
 if not n:
     print >> sys.stderr, 'Usage: %s [number]...' % sys.argv[0]
     sys.exit(1)
-print(" [x] Requesting fib(n)")
+print(" [x] Requesting fib(%s)" % n)
 response = fibonacci_rpc.call(n)
 print(" [.] Got %r" % response)
