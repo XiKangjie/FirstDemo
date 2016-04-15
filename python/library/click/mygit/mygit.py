@@ -10,13 +10,19 @@ def mygit(debug):
 @mygit.command()
 @click.option('-f', '--force', is_flag=True, default=False, help='Force pull.')
 @click.argument('repo')
-def pull():
+def pull(force, repo):
     ''' Pull repo. '''
-    click.echo('Pulling')
+    if force:
+        click.echo('Force pull {0}'.format(repo))
+    else:
+        click.echo('Pull {0}'.format(repo))
 
 @mygit.command()
 @click.option('-f', '--force', is_flag=True, default=False, help='Force push.')
 @click.argument('repo')
-def push():
+def push(force, repo):
     ''' Push repo. '''
-    click.echo('Pushing')
+    if force:
+        click.echo('Force push {0}'.format(repo))
+    else:
+        click.echo('Push {0}'.format(repo))

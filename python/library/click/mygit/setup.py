@@ -7,8 +7,9 @@ setup(
     install_requires = [
         'click', 
     ],
-    entry_points = '''
-        [console_scripts]
-        mygit=mygit:mygit
-    ''',
+    entry_points = {
+        'console_scripts': [
+            'mygit=mygit:mygit',
+        ],
+    },
 )
