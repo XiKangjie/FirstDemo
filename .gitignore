@@ -1,20 +1,31 @@
 #-----------------------
-# ASM, C/C++
-#-----------------------
-*.o
-*.obj
-*.exe
-
-#-----------------------
-# Python
-#-----------------------
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-.ropeproject/
-
-#-----------------------
 # Sublime Text
 #-----------------------
+# cache files for sublime text
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+
 # workspace files are user-specific
 *.sublime-workspace
+
+# project files should be checked into the repository, unless a significant
+# proportion of contributors will probably not be using SublimeText
+*.sublime-project
+
+# sftp configuration file
+sftp-config.json
+
+#-----------------------
+# Vim
+#-----------------------
+# swap
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+# session
+Session.vim
+# temporary
+.netrwhist
+*~
+# auto-generated tag files
+tags
