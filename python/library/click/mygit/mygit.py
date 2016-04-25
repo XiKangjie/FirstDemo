@@ -8,6 +8,15 @@ def mygit(debug):
     click.echo('Debug mode is %s' % ('on' if debug else 'off'))
 
 @mygit.command()
+@click.argument('subcommand', nargs=-1, required=False)
+def help(subcommand):
+    """ Show help for specific subcommand. """
+    if subcommand:
+        mygit(list(subcommand) + ['--help'])
+    else:
+        mygit(['--help'])
+
+@mygit.command()
 @click.option('-f', '--force', is_flag=True, default=False, help='Force pull.')
 @click.argument('repo')
 def pull(force, repo):
