@@ -5,6 +5,8 @@
 FILE_NAME=$1
 while read line
 do
-    echo "$line"
+    if [[ -n $line && $line != "#"* ]]; then
+        echo "$line"
+    fi
 done < "$FILE_NAME"
 
