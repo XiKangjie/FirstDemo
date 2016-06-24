@@ -160,17 +160,17 @@ image_rhino = Image(uuid='uuid_rhino', \
     comments=[comment_rhino])
 
 # run once because of unique
-# session.add(tag_cool)
-# session.add(tag_car)
-# session.add(tag_animal)
+session.add(tag_cool)
+session.add(tag_car)
+session.add(tag_animal)
 
-# session.add(comment_rhino)
+session.add(comment_rhino)
 
-# session.add(image_car)
-# session.add(image_another_car)
-# session.add(image_rhino)
+session.add(image_car)
+session.add(image_another_car)
+session.add(image_rhino)
 
-# session.commit()
+session.commit()
 
 """
 $ python images.py
@@ -401,5 +401,18 @@ WHERE ? = images_tags.image_id AND tags.id = images_tags.tag_id
 2016-04-18 16:36:55,023 INFO sqlalchemy.engine.base.Engine DELETE FROM images WHERE images.id = ?
 2016-04-18 16:36:55,023 INFO sqlalchemy.engine.base.Engine (3,)
 2016-04-18 16:36:55,024 INFO sqlalchemy.engine.base.Engine COMMIT
+"""
+
+
+"""
+print '@@@ Delete'
+session.query(Image).filter(Image.uuid == 'uuid_rhino').delete()
+session.commit()
+
+@@@ Delete
+2016-06-24 20:26:38,402 INFO sqlalchemy.engine.base.Engine DELETE FROM images WHERE images.uuid = ?
+2016-06-24 20:26:38,402 INFO sqlalchemy.engine.base.Engine ('uuid_rhino',)
+<Image (uuid='uuid_rhino', likes='1', created_at=2016-06-24 12:26:38)>
+2016-06-24 20:26:38,402 INFO sqlalchemy.engine.base.Engine COMMIT
 """
 
