@@ -11,6 +11,7 @@ static inline unsigned long long rdtsc_diff() {
     ret  = ((unsigned long long)eax) | (((unsigned long long)edx) << 32);
     __asm__ volatile("rdtsc" : "=a" (eax), "=d" (edx));
     ret2  = ((unsigned long long)eax) | (((unsigned long long)edx) << 32);
+    printf("(%llu - %llu) ", ret, ret2);
     return ret2 - ret;
 }
 
@@ -24,30 +25,35 @@ static inline unsigned long long rdtsc_diff_vmexit() {
     /**/
     __asm__ volatile("rdtsc" : "=a" (eax), "=d" (edx));
     ret2  = ((unsigned long long)eax) | (((unsigned long long)edx) << 32);
+    printf("(%llu - %llu) ", ret, ret2);
     return ret2 - ret;
 }
 
 int cpu_rdtsc() {
     int i;
-    unsigned long long avg = 0;
+    unsigned long long avg = 0, sub;
     for (i = 0; i < 10; i++) {
-        avg = avg + rdtsc_diff();
+        sub = rdtsc_diff();
+        avg = avg + sub;
+        printf("rdtsc difference: %d\n", sub);
         usleep(500);
     }
     avg = avg / 10;
-    printf("cpu_rdtsc avg: %d\n", avg);
+    printf("difference average is: %d\n", avg);
     return (avg < 750 && avg > 0) ? FALSE : TRUE;
 }
 
 int cpu_rdtsc_force_vmexit() {
     int i;
-    unsigned long long avg = 0;
+    unsigned long long avg = 0, sub;
     for (i = 0; i < 10; i++) {
-        avg = avg + rdtsc_diff_vmexit();
+        sub = rdtsc_diff_vmexit();
+        avg = avg + sub;
+        printf("rdtsc_force_vmexit difference: %d\n", sub);
         usleep(500);
     }
     avg = avg / 10;
-    printf("cpu_rdtsc_force_vmexit avg: %d\n", avg);
+    printf("difference average is: %d\n", avg);
     return (avg < 1000 && avg > 0) ? FALSE : TRUE;
 }
 
