@@ -15,7 +15,7 @@ cmd = ["cat"]
 proc = subprocess.Popen(cmd)
 print proc.pid
 
-# Make sure child process 'cat' inherit the sock.
+# For netstat and lsof
 time.sleep(20)
 
 # Connect the socket to the port where the server is listening
@@ -39,4 +39,5 @@ try:
         print >>sys.stderr, 'received "%s"' % data
 finally:
     print >>sys.stderr, 'closing socket'
+    time.sleep(20) # For netstat
     sock.close()
