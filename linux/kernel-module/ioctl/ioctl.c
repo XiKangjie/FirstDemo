@@ -85,7 +85,7 @@ ioctl_get_nth_byte(int file_desc)
 main()
 {
     int file_desc, ret_val;
-    char *msg = "Message passed by ioctl\n";
+    char *msg = "Message passed by ioctl from user space.\n";
 
     file_desc = open(DEVICE_FILE_NAME, 0);
     if (file_desc < 0) {
