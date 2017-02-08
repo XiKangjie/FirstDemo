@@ -7,9 +7,11 @@ jmp short one
 two:
     pop rsi
     xor rax, rax
-    inc rax
-    xor rdi, rdi
-    inc rdi
+    ;inc rax
+    mov al, 1
+    ;xor rdi, rdi
+    ;inc rdi
+    mov rdi, rax
     xor rdx, rdx
     mov dl, 14 
     syscall
