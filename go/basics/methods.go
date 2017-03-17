@@ -23,14 +23,22 @@ type rect struct {
 }
 
 func (r *rect) area() int {
+	fmt.Printf("type r: %T\n", r)
 	return r.width * r.height
 }
 
 func (r rect) perim() int {
+	fmt.Printf("type r: %T\n", r)
 	return 2 * (r.width + r.height)
 }
 
+func (r *rect) mutate() {
+	r.width += 10
+	r.height += 10
+}
+
 func main() {
+	// Go automatically handles conversion between values and pointers for method calls.
 	r := rect{width: 10, height: 5}
 
 	fmt.Println("area:", r.area())
@@ -39,4 +47,8 @@ func main() {
 	rp := &r
 	fmt.Println("area:", rp.area())
 	fmt.Println("perim:", rp.perim())
+
+	fmt.Printf("before, width: %d, height: %d\n", r.width, r.height)
+	r.mutate()
+	fmt.Printf("after, width: %d, height: %d\n", r.width, r.height)
 }

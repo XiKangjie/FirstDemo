@@ -19,6 +19,7 @@ type circle struct {
 // To implement an interface in Go, we just need to
 // implement all the methods in the interface.
 
+// rect implements geometry
 func (r rect) area() float64 {
 	return r.width * r.height
 }
@@ -27,6 +28,7 @@ func (r rect) perim() float64 {
 	return 2 * (r.width + r.height)
 }
 
+// *circle implements geometry, but circle DOES NOT implement geometry
 func (c *circle) area() float64 {
 	return math.Pi * c.radius * c.radius
 }
@@ -44,11 +46,12 @@ func measure(g geometry) {
 func main() {
 	r := rect{width: 3, height: 4}
 	rp := &rect{width: 3, height: 4}
-	//c := circle{radius: 5}
+	c := circle{radius: 5}
 	cp := &circle{radius: 5}
 
 	measure(r)
 	measure(rp)
-	//measure(c) // error
+	//measure(c) // error, because circle is not geometry, but *circle is.
+	fmt.Printf("c area: %f, perim: %f\n", c.area(), c.perim())
 	measure(cp)
 }
