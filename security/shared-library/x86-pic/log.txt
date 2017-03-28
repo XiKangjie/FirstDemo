@@ -1,0 +1,781 @@
+$ readelf -h libmlpic_dataonly.so
+
+ELF Header:
+  Magic:   7f 45 4c 46 01 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF32
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              DYN (Shared object file)
+  Machine:                           Intel 80386
+  Version:                           0x1
+  Entry point address:               0x340
+  Start of program headers:          52 (bytes into file)
+  Start of section headers:          1700 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               52 (bytes)
+  Size of program headers:           32 (bytes)
+  Number of program headers:         5
+  Size of section headers:           40 (bytes)
+  Number of section headers:         27
+  Section header string table index: 24
+
+
+
+$ objdump -d -M intel libmlpic_dataonly.so
+
+libmlpic_dataonly.so:     file format elf32-i386
+
+
+Disassembly of section .init:
+
+000002d4 <_init>:
+ 2d4:	55                   	push   ebp
+ 2d5:	89 e5                	mov    ebp,esp
+ 2d7:	53                   	push   ebx
+ 2d8:	83 ec 04             	sub    esp,0x4
+ 2db:	e8 00 00 00 00       	call   2e0 <_init+0xc>
+ 2e0:	5b                   	pop    ebx
+ 2e1:	81 c3 a0 12 00 00    	add    ebx,0x12a0
+ 2e7:	8b 93 f0 ff ff ff    	mov    edx,DWORD PTR [ebx-0x10]
+ 2ed:	85 d2                	test   edx,edx
+ 2ef:	74 05                	je     2f6 <_init+0x22>
+ 2f1:	e8 1e 00 00 00       	call   314 <__gmon_start__@plt>
+ 2f6:	e8 d5 00 00 00       	call   3d0 <frame_dummy>
+ 2fb:	e8 40 01 00 00       	call   440 <__do_global_ctors_aux>
+ 300:	58                   	pop    eax
+ 301:	5b                   	pop    ebx
+ 302:	c9                   	leave  
+ 303:	c3                   	ret    
+
+Disassembly of section .plt:
+
+00000304 <__gmon_start__@plt-0x10>:
+ 304:	ff b3 04 00 00 00    	push   DWORD PTR [ebx+0x4]
+ 30a:	ff a3 08 00 00 00    	jmp    DWORD PTR [ebx+0x8]
+ 310:	00 00                	add    BYTE PTR [eax],al
+	...
+
+00000314 <__gmon_start__@plt>:
+ 314:	ff a3 0c 00 00 00    	jmp    DWORD PTR [ebx+0xc]
+ 31a:	68 00 00 00 00       	push   0x0
+ 31f:	e9 e0 ff ff ff       	jmp    304 <_init+0x30>
+
+00000324 <__cxa_finalize@plt>:
+ 324:	ff a3 10 00 00 00    	jmp    DWORD PTR [ebx+0x10]
+ 32a:	68 08 00 00 00       	push   0x8
+ 32f:	e9 d0 ff ff ff       	jmp    304 <_init+0x30>
+
+Disassembly of section .text:
+
+00000340 <__do_global_dtors_aux>:
+ 340:	55                   	push   ebp
+ 341:	89 e5                	mov    ebp,esp
+ 343:	56                   	push   esi
+ 344:	53                   	push   ebx
+ 345:	e8 bf 00 00 00       	call   409 <__i686.get_pc_thunk.bx>
+ 34a:	81 c3 36 12 00 00    	add    ebx,0x1236
+ 350:	8d 64 24 f0          	lea    esp,[esp-0x10]
+ 354:	80 bb 18 00 00 00 00 	cmp    BYTE PTR [ebx+0x18],0x0
+ 35b:	75 5c                	jne    3b9 <__do_global_dtors_aux+0x79>
+ 35d:	8b 83 fc ff ff ff    	mov    eax,DWORD PTR [ebx-0x4]
+ 363:	85 c0                	test   eax,eax
+ 365:	74 0e                	je     375 <__do_global_dtors_aux+0x35>
+ 367:	8d 83 2c ff ff ff    	lea    eax,[ebx-0xd4]
+ 36d:	89 04 24             	mov    DWORD PTR [esp],eax
+ 370:	e8 af ff ff ff       	call   324 <__cxa_finalize@plt>
+ 375:	8d b3 24 ff ff ff    	lea    esi,[ebx-0xdc]
+ 37b:	8d 93 20 ff ff ff    	lea    edx,[ebx-0xe0]
+ 381:	29 d6                	sub    esi,edx
+ 383:	8b 83 1c 00 00 00    	mov    eax,DWORD PTR [ebx+0x1c]
+ 389:	c1 fe 02             	sar    esi,0x2
+ 38c:	83 ee 01             	sub    esi,0x1
+ 38f:	39 f0                	cmp    eax,esi
+ 391:	73 1f                	jae    3b2 <__do_global_dtors_aux+0x72>
+ 393:	90                   	nop
+ 394:	8d 74 26 00          	lea    esi,[esi+eiz*1+0x0]
+ 398:	83 c0 01             	add    eax,0x1
+ 39b:	89 83 1c 00 00 00    	mov    DWORD PTR [ebx+0x1c],eax
+ 3a1:	ff 94 83 20 ff ff ff 	call   DWORD PTR [ebx+eax*4-0xe0]
+ 3a8:	8b 83 1c 00 00 00    	mov    eax,DWORD PTR [ebx+0x1c]
+ 3ae:	39 f0                	cmp    eax,esi
+ 3b0:	72 e6                	jb     398 <__do_global_dtors_aux+0x58>
+ 3b2:	c6 83 18 00 00 00 01 	mov    BYTE PTR [ebx+0x18],0x1
+ 3b9:	8d 64 24 10          	lea    esp,[esp+0x10]
+ 3bd:	5b                   	pop    ebx
+ 3be:	5e                   	pop    esi
+ 3bf:	5d                   	pop    ebp
+ 3c0:	c3                   	ret    
+ 3c1:	eb 0d                	jmp    3d0 <frame_dummy>
+ 3c3:	90                   	nop
+ 3c4:	90                   	nop
+ 3c5:	90                   	nop
+ 3c6:	90                   	nop
+ 3c7:	90                   	nop
+ 3c8:	90                   	nop
+ 3c9:	90                   	nop
+ 3ca:	90                   	nop
+ 3cb:	90                   	nop
+ 3cc:	90                   	nop
+ 3cd:	90                   	nop
+ 3ce:	90                   	nop
+ 3cf:	90                   	nop
+
+000003d0 <frame_dummy>:
+ 3d0:	55                   	push   ebp
+ 3d1:	89 e5                	mov    ebp,esp
+ 3d3:	53                   	push   ebx
+ 3d4:	e8 30 00 00 00       	call   409 <__i686.get_pc_thunk.bx>
+ 3d9:	81 c3 a7 11 00 00    	add    ebx,0x11a7
+ 3df:	8d 64 24 ec          	lea    esp,[esp-0x14]
+ 3e3:	8b 93 28 ff ff ff    	mov    edx,DWORD PTR [ebx-0xd8]
+ 3e9:	85 d2                	test   edx,edx
+ 3eb:	74 15                	je     402 <frame_dummy+0x32>
+ 3ed:	8b 83 f4 ff ff ff    	mov    eax,DWORD PTR [ebx-0xc]
+ 3f3:	85 c0                	test   eax,eax
+ 3f5:	74 0b                	je     402 <frame_dummy+0x32>
+ 3f7:	8d 93 28 ff ff ff    	lea    edx,[ebx-0xd8]
+ 3fd:	89 14 24             	mov    DWORD PTR [esp],edx
+ 400:	ff d0                	call   eax
+ 402:	8d 64 24 14          	lea    esp,[esp+0x14]
+ 406:	5b                   	pop    ebx
+ 407:	5d                   	pop    ebp
+ 408:	c3                   	ret    
+
+00000409 <__i686.get_pc_thunk.bx>:
+ 409:	8b 1c 24             	mov    ebx,DWORD PTR [esp]
+ 40c:	c3                   	ret    
+ 40d:	90                   	nop
+ 40e:	90                   	nop
+ 40f:	90                   	nop
+
+00000410 <ml_func>:
+ 410:	55                   	push   ebp
+ 411:	89 e5                	mov    ebp,esp
+ 413:	e8 16 00 00 00       	call   42e <__i686.get_pc_thunk.cx>
+ 418:	81 c1 68 11 00 00    	add    ecx,0x1168
+ 41e:	8b 81 f8 ff ff ff    	mov    eax,DWORD PTR [ecx-0x8]
+ 424:	8b 00                	mov    eax,DWORD PTR [eax]
+ 426:	03 45 08             	add    eax,DWORD PTR [ebp+0x8]
+ 429:	03 45 0c             	add    eax,DWORD PTR [ebp+0xc]
+ 42c:	5d                   	pop    ebp
+ 42d:	c3                   	ret    
+
+0000042e <__i686.get_pc_thunk.cx>:
+ 42e:	8b 0c 24             	mov    ecx,DWORD PTR [esp]
+ 431:	c3                   	ret    
+ 432:	90                   	nop
+ 433:	90                   	nop
+ 434:	90                   	nop
+ 435:	90                   	nop
+ 436:	90                   	nop
+ 437:	90                   	nop
+ 438:	90                   	nop
+ 439:	90                   	nop
+ 43a:	90                   	nop
+ 43b:	90                   	nop
+ 43c:	90                   	nop
+ 43d:	90                   	nop
+ 43e:	90                   	nop
+ 43f:	90                   	nop
+
+00000440 <__do_global_ctors_aux>:
+ 440:	55                   	push   ebp
+ 441:	89 e5                	mov    ebp,esp
+ 443:	56                   	push   esi
+ 444:	53                   	push   ebx
+ 445:	e8 bf ff ff ff       	call   409 <__i686.get_pc_thunk.bx>
+ 44a:	81 c3 36 11 00 00    	add    ebx,0x1136
+ 450:	8b 83 18 ff ff ff    	mov    eax,DWORD PTR [ebx-0xe8]
+ 456:	83 f8 ff             	cmp    eax,0xffffffff
+ 459:	74 19                	je     474 <__do_global_ctors_aux+0x34>
+ 45b:	8d b3 18 ff ff ff    	lea    esi,[ebx-0xe8]
+ 461:	8d b4 26 00 00 00 00 	lea    esi,[esi+eiz*1+0x0]
+ 468:	8d 76 fc             	lea    esi,[esi-0x4]
+ 46b:	ff d0                	call   eax
+ 46d:	8b 06                	mov    eax,DWORD PTR [esi]
+ 46f:	83 f8 ff             	cmp    eax,0xffffffff
+ 472:	75 f4                	jne    468 <__do_global_ctors_aux+0x28>
+ 474:	5b                   	pop    ebx
+ 475:	5e                   	pop    esi
+ 476:	5d                   	pop    ebp
+ 477:	c3                   	ret    
+
+Disassembly of section .fini:
+
+00000478 <_fini>:
+ 478:	55                   	push   ebp
+ 479:	89 e5                	mov    ebp,esp
+ 47b:	53                   	push   ebx
+ 47c:	83 ec 04             	sub    esp,0x4
+ 47f:	e8 00 00 00 00       	call   484 <_fini+0xc>
+ 484:	5b                   	pop    ebx
+ 485:	81 c3 fc 10 00 00    	add    ebx,0x10fc
+ 48b:	e8 b0 fe ff ff       	call   340 <__do_global_dtors_aux>
+ 490:	59                   	pop    ecx
+ 491:	5b                   	pop    ebx
+ 492:	c9                   	leave  
+ 493:	c3                   	ret    
+
+
+
+$ readelf -r libmlpic_dataonly.so
+
+Relocation section '.rel.dyn' at offset 0x29c contains 5 entries:
+ Offset     Info    Type            Sym.Value  Sym. Name
+000014ac  00000008 R_386_RELATIVE   
+00001570  00000106 R_386_GLOB_DAT    00000000   __gmon_start__
+00001574  00000206 R_386_GLOB_DAT    00000000   _Jv_RegisterClasses
+00001578  00000406 R_386_GLOB_DAT    00001594   myglob
+0000157c  00000306 R_386_GLOB_DAT    00000000   __cxa_finalize
+
+Relocation section '.rel.plt' at offset 0x2c4 contains 2 entries:
+ Offset     Info    Type            Sym.Value  Sym. Name
+0000158c  00000107 R_386_JUMP_SLOT   00000000   __gmon_start__
+00001590  00000307 R_386_JUMP_SLOT   00000000   __cxa_finalize
+
+
+
+
+$ readelf -h libmlpic.so
+
+ELF Header:
+  Magic:   7f 45 4c 46 01 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF32
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              DYN (Shared object file)
+  Machine:                           Intel 80386
+  Version:                           0x1
+  Entry point address:               0x370
+  Start of program headers:          52 (bytes into file)
+  Start of section headers:          2584 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               52 (bytes)
+  Size of program headers:           32 (bytes)
+  Number of program headers:         5
+  Size of section headers:           40 (bytes)
+  Number of section headers:         34
+  Section header string table index: 31
+
+
+
+# objdump -d -M intel libmlpic.so
+
+libmlpic.so:     file format elf32-i386
+
+
+Disassembly of section .init:
+
+00000300 <_init>:
+ 300:	55                   	push   ebp
+ 301:	89 e5                	mov    ebp,esp
+ 303:	53                   	push   ebx
+ 304:	83 ec 04             	sub    esp,0x4
+ 307:	e8 00 00 00 00       	call   30c <_init+0xc>
+ 30c:	5b                   	pop    ebx
+ 30d:	81 c3 d4 12 00 00    	add    ebx,0x12d4
+ 313:	8b 93 f0 ff ff ff    	mov    edx,DWORD PTR [ebx-0x10]
+ 319:	85 d2                	test   edx,edx
+ 31b:	74 05                	je     322 <_init+0x22>
+ 31d:	e8 1e 00 00 00       	call   340 <__gmon_start__@plt>
+ 322:	e8 d9 00 00 00       	call   400 <frame_dummy>
+ 327:	e8 74 01 00 00       	call   4a0 <__do_global_ctors_aux>
+ 32c:	58                   	pop    eax
+ 32d:	5b                   	pop    ebx
+ 32e:	c9                   	leave  
+ 32f:	c3                   	ret    
+
+Disassembly of section .plt:
+
+00000330 <__gmon_start__@plt-0x10>:
+ 330:	ff b3 04 00 00 00    	push   DWORD PTR [ebx+0x4]
+ 336:	ff a3 08 00 00 00    	jmp    DWORD PTR [ebx+0x8]
+ 33c:	00 00                	add    BYTE PTR [eax],al
+	...
+
+00000340 <__gmon_start__@plt>:
+ 340:	ff a3 0c 00 00 00    	jmp    DWORD PTR [ebx+0xc]
+ 346:	68 00 00 00 00       	push   0x0
+ 34b:	e9 e0 ff ff ff       	jmp    330 <_init+0x30>
+
+00000350 <ml_util_func@plt>:
+ 350:	ff a3 10 00 00 00    	jmp    DWORD PTR [ebx+0x10]
+ 356:	68 08 00 00 00       	push   0x8
+ 35b:	e9 d0 ff ff ff       	jmp    330 <_init+0x30>
+
+00000360 <__cxa_finalize@plt>:
+ 360:	ff a3 14 00 00 00    	jmp    DWORD PTR [ebx+0x14]
+ 366:	68 10 00 00 00       	push   0x10
+ 36b:	e9 c0 ff ff ff       	jmp    330 <_init+0x30>
+
+Disassembly of section .text:
+
+00000370 <__do_global_dtors_aux>:
+ 370:	55                   	push   ebp
+ 371:	89 e5                	mov    ebp,esp
+ 373:	56                   	push   esi
+ 374:	53                   	push   ebx
+ 375:	e8 bf 00 00 00       	call   439 <__i686.get_pc_thunk.bx>
+ 37a:	81 c3 66 12 00 00    	add    ebx,0x1266
+ 380:	8d 64 24 f0          	lea    esp,[esp-0x10]
+ 384:	80 bb 1c 00 00 00 00 	cmp    BYTE PTR [ebx+0x1c],0x0
+ 38b:	75 5c                	jne    3e9 <__do_global_dtors_aux+0x79>
+ 38d:	8b 83 fc ff ff ff    	mov    eax,DWORD PTR [ebx-0x4]
+ 393:	85 c0                	test   eax,eax
+ 395:	74 0e                	je     3a5 <__do_global_dtors_aux+0x35>
+ 397:	8d 83 2c ff ff ff    	lea    eax,[ebx-0xd4]
+ 39d:	89 04 24             	mov    DWORD PTR [esp],eax
+ 3a0:	e8 bb ff ff ff       	call   360 <__cxa_finalize@plt>
+ 3a5:	8d b3 24 ff ff ff    	lea    esi,[ebx-0xdc]
+ 3ab:	8d 93 20 ff ff ff    	lea    edx,[ebx-0xe0]
+ 3b1:	29 d6                	sub    esi,edx
+ 3b3:	8b 83 20 00 00 00    	mov    eax,DWORD PTR [ebx+0x20]
+ 3b9:	c1 fe 02             	sar    esi,0x2
+ 3bc:	83 ee 01             	sub    esi,0x1
+ 3bf:	39 f0                	cmp    eax,esi
+ 3c1:	73 1f                	jae    3e2 <__do_global_dtors_aux+0x72>
+ 3c3:	90                   	nop
+ 3c4:	8d 74 26 00          	lea    esi,[esi+eiz*1+0x0]
+ 3c8:	83 c0 01             	add    eax,0x1
+ 3cb:	89 83 20 00 00 00    	mov    DWORD PTR [ebx+0x20],eax
+ 3d1:	ff 94 83 20 ff ff ff 	call   DWORD PTR [ebx+eax*4-0xe0]
+ 3d8:	8b 83 20 00 00 00    	mov    eax,DWORD PTR [ebx+0x20]
+ 3de:	39 f0                	cmp    eax,esi
+ 3e0:	72 e6                	jb     3c8 <__do_global_dtors_aux+0x58>
+ 3e2:	c6 83 1c 00 00 00 01 	mov    BYTE PTR [ebx+0x1c],0x1
+ 3e9:	8d 64 24 10          	lea    esp,[esp+0x10]
+ 3ed:	5b                   	pop    ebx
+ 3ee:	5e                   	pop    esi
+ 3ef:	5d                   	pop    ebp
+ 3f0:	c3                   	ret    
+ 3f1:	eb 0d                	jmp    400 <frame_dummy>
+ 3f3:	90                   	nop
+ 3f4:	90                   	nop
+ 3f5:	90                   	nop
+ 3f6:	90                   	nop
+ 3f7:	90                   	nop
+ 3f8:	90                   	nop
+ 3f9:	90                   	nop
+ 3fa:	90                   	nop
+ 3fb:	90                   	nop
+ 3fc:	90                   	nop
+ 3fd:	90                   	nop
+ 3fe:	90                   	nop
+ 3ff:	90                   	nop
+
+00000400 <frame_dummy>:
+ 400:	55                   	push   ebp
+ 401:	89 e5                	mov    ebp,esp
+ 403:	53                   	push   ebx
+ 404:	e8 30 00 00 00       	call   439 <__i686.get_pc_thunk.bx>
+ 409:	81 c3 d7 11 00 00    	add    ebx,0x11d7
+ 40f:	8d 64 24 ec          	lea    esp,[esp-0x14]
+ 413:	8b 93 28 ff ff ff    	mov    edx,DWORD PTR [ebx-0xd8]
+ 419:	85 d2                	test   edx,edx
+ 41b:	74 15                	je     432 <frame_dummy+0x32>
+ 41d:	8b 83 f4 ff ff ff    	mov    eax,DWORD PTR [ebx-0xc]
+ 423:	85 c0                	test   eax,eax
+ 425:	74 0b                	je     432 <frame_dummy+0x32>
+ 427:	8d 93 28 ff ff ff    	lea    edx,[ebx-0xd8]
+ 42d:	89 14 24             	mov    DWORD PTR [esp],edx
+ 430:	ff d0                	call   eax
+ 432:	8d 64 24 14          	lea    esp,[esp+0x14]
+ 436:	5b                   	pop    ebx
+ 437:	5d                   	pop    ebp
+ 438:	c3                   	ret    
+
+00000439 <__i686.get_pc_thunk.bx>:
+ 439:	8b 1c 24             	mov    ebx,DWORD PTR [esp]
+ 43c:	c3                   	ret    
+ 43d:	90                   	nop
+ 43e:	90                   	nop
+ 43f:	90                   	nop
+
+00000440 <ml_util_func>:
+ 440:	55                   	push   ebp
+ 441:	89 e5                	mov    ebp,esp
+ 443:	8b 45 08             	mov    eax,DWORD PTR [ebp+0x8]
+ 446:	83 c0 01             	add    eax,0x1
+ 449:	5d                   	pop    ebp
+ 44a:	c3                   	ret    
+
+0000044b <ml_func>:
+ 44b:	55                   	push   ebp
+ 44c:	89 e5                	mov    ebp,esp
+ 44e:	53                   	push   ebx
+ 44f:	83 ec 24             	sub    esp,0x24
+ 452:	e8 e2 ff ff ff       	call   439 <__i686.get_pc_thunk.bx>
+ 457:	81 c3 89 11 00 00    	add    ebx,0x1189
+ 45d:	8b 45 08             	mov    eax,DWORD PTR [ebp+0x8]
+ 460:	89 04 24             	mov    DWORD PTR [esp],eax
+ 463:	e8 e8 fe ff ff       	call   350 <ml_util_func@plt>
+ 468:	03 45 0c             	add    eax,DWORD PTR [ebp+0xc]
+ 46b:	89 45 f4             	mov    DWORD PTR [ebp-0xc],eax
+ 46e:	8b 83 f8 ff ff ff    	mov    eax,DWORD PTR [ebx-0x8]
+ 474:	8b 00                	mov    eax,DWORD PTR [eax]
+ 476:	89 c2                	mov    edx,eax
+ 478:	03 55 f4             	add    edx,DWORD PTR [ebp-0xc]
+ 47b:	8b 83 f8 ff ff ff    	mov    eax,DWORD PTR [ebx-0x8]
+ 481:	89 10                	mov    DWORD PTR [eax],edx
+ 483:	8b 83 f8 ff ff ff    	mov    eax,DWORD PTR [ebx-0x8]
+ 489:	8b 00                	mov    eax,DWORD PTR [eax]
+ 48b:	03 45 0c             	add    eax,DWORD PTR [ebp+0xc]
+ 48e:	83 c4 24             	add    esp,0x24
+ 491:	5b                   	pop    ebx
+ 492:	5d                   	pop    ebp
+ 493:	c3                   	ret    
+ 494:	90                   	nop
+ 495:	90                   	nop
+ 496:	90                   	nop
+ 497:	90                   	nop
+ 498:	90                   	nop
+ 499:	90                   	nop
+ 49a:	90                   	nop
+ 49b:	90                   	nop
+ 49c:	90                   	nop
+ 49d:	90                   	nop
+ 49e:	90                   	nop
+ 49f:	90                   	nop
+
+000004a0 <__do_global_ctors_aux>:
+ 4a0:	55                   	push   ebp
+ 4a1:	89 e5                	mov    ebp,esp
+ 4a3:	56                   	push   esi
+ 4a4:	53                   	push   ebx
+ 4a5:	e8 8f ff ff ff       	call   439 <__i686.get_pc_thunk.bx>
+ 4aa:	81 c3 36 11 00 00    	add    ebx,0x1136
+ 4b0:	8b 83 18 ff ff ff    	mov    eax,DWORD PTR [ebx-0xe8]
+ 4b6:	83 f8 ff             	cmp    eax,0xffffffff
+ 4b9:	74 19                	je     4d4 <__do_global_ctors_aux+0x34>
+ 4bb:	8d b3 18 ff ff ff    	lea    esi,[ebx-0xe8]
+ 4c1:	8d b4 26 00 00 00 00 	lea    esi,[esi+eiz*1+0x0]
+ 4c8:	8d 76 fc             	lea    esi,[esi-0x4]
+ 4cb:	ff d0                	call   eax
+ 4cd:	8b 06                	mov    eax,DWORD PTR [esi]
+ 4cf:	83 f8 ff             	cmp    eax,0xffffffff
+ 4d2:	75 f4                	jne    4c8 <__do_global_ctors_aux+0x28>
+ 4d4:	5b                   	pop    ebx
+ 4d5:	5e                   	pop    esi
+ 4d6:	5d                   	pop    ebp
+ 4d7:	c3                   	ret    
+
+Disassembly of section .fini:
+
+000004d8 <_fini>:
+ 4d8:	55                   	push   ebp
+ 4d9:	89 e5                	mov    ebp,esp
+ 4db:	53                   	push   ebx
+ 4dc:	83 ec 04             	sub    esp,0x4
+ 4df:	e8 00 00 00 00       	call   4e4 <_fini+0xc>
+ 4e4:	5b                   	pop    ebx
+ 4e5:	81 c3 fc 10 00 00    	add    ebx,0x10fc
+ 4eb:	e8 80 fe ff ff       	call   370 <__do_global_dtors_aux>
+ 4f0:	59                   	pop    ecx
+ 4f1:	5b                   	pop    ebx
+ 4f2:	c9                   	leave  
+ 4f3:	c3                   	ret    
+
+
+# readelf -x .got.plt libmlpic.so
+
+Hex dump of section '.got.plt':
+  0x000015e0 10150000 00000000 00000000 46030000 ............F...
+  0x000015f0 56030000 66030000                   V...f...
+
+# readelf -r ligmlpic.so
+
+Relocation section '.rel.dyn' at offset 0x2c0 contains 5 entries:
+ Offset     Info    Type            Sym.Value  Sym. Name
+0000150c  00000008 R_386_RELATIVE   
+000015d0  00000106 R_386_GLOB_DAT    00000000   __gmon_start__
+000015d4  00000206 R_386_GLOB_DAT    00000000   _Jv_RegisterClasses
+000015d8  00000406 R_386_GLOB_DAT    000015f8   myglob
+000015dc  00000306 R_386_GLOB_DAT    00000000   __cxa_finalize
+
+Relocation section '.rel.plt' at offset 0x2e8 contains 3 entries:
+ Offset     Info    Type            Sym.Value  Sym. Name
+000015ec  00000107 R_386_JUMP_SLOT   00000000   __gmon_start__
+000015f0  00000507 R_386_JUMP_SLOT   00000440   ml_util_func
+000015f4  00000307 R_386_JUMP_SLOT   00000000   __cxa_finalize
+
+
+
+$ readelf -h driver
+
+ELF Header:
+  Magic:   7f 45 4c 46 01 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF32
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              EXEC (Executable file)
+  Machine:                           Intel 80386
+  Version:                           0x1
+  Entry point address:               0x80483d0
+  Start of program headers:          52 (bytes into file)
+  Start of section headers:          2608 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               52 (bytes)
+  Size of program headers:           32 (bytes)
+  Number of program headers:         8
+  Size of section headers:           40 (bytes)
+  Number of section headers:         37
+  Section header string table index: 34
+
+
+$ objdump -d -M intel driver
+
+driver:     file format elf32-i386
+
+
+Disassembly of section .init:
+
+08048360 <_init>:
+ 8048360:	55                   	push   ebp
+ 8048361:	89 e5                	mov    ebp,esp
+ 8048363:	53                   	push   ebx
+ 8048364:	83 ec 04             	sub    esp,0x4
+ 8048367:	e8 00 00 00 00       	call   804836c <_init+0xc>
+ 804836c:	5b                   	pop    ebx
+ 804836d:	81 c3 90 13 00 00    	add    ebx,0x1390
+ 8048373:	8b 93 fc ff ff ff    	mov    edx,DWORD PTR [ebx-0x4]
+ 8048379:	85 d2                	test   edx,edx
+ 804837b:	74 05                	je     8048382 <_init+0x22>
+ 804837d:	e8 2e 00 00 00       	call   80483b0 <__gmon_start__@plt>
+ 8048382:	e8 d9 00 00 00       	call   8048460 <frame_dummy>
+ 8048387:	e8 94 01 00 00       	call   8048520 <__do_global_ctors_aux>
+ 804838c:	58                   	pop    eax
+ 804838d:	5b                   	pop    ebx
+ 804838e:	c9                   	leave  
+ 804838f:	c3                   	ret    
+
+Disassembly of section .plt:
+
+08048390 <ml_func@plt-0x10>:
+ 8048390:	ff 35 00 97 04 08    	push   DWORD PTR ds:0x8049700
+ 8048396:	ff 25 04 97 04 08    	jmp    DWORD PTR ds:0x8049704
+ 804839c:	00 00                	add    BYTE PTR [eax],al
+	...
+
+080483a0 <ml_func@plt>:
+ 80483a0:	ff 25 08 97 04 08    	jmp    DWORD PTR ds:0x8049708
+ 80483a6:	68 00 00 00 00       	push   0x0
+ 80483ab:	e9 e0 ff ff ff       	jmp    8048390 <_init+0x30>
+
+080483b0 <__gmon_start__@plt>:
+ 80483b0:	ff 25 0c 97 04 08    	jmp    DWORD PTR ds:0x804970c
+ 80483b6:	68 08 00 00 00       	push   0x8
+ 80483bb:	e9 d0 ff ff ff       	jmp    8048390 <_init+0x30>
+
+080483c0 <__libc_start_main@plt>:
+ 80483c0:	ff 25 10 97 04 08    	jmp    DWORD PTR ds:0x8049710
+ 80483c6:	68 10 00 00 00       	push   0x10
+ 80483cb:	e9 c0 ff ff ff       	jmp    8048390 <_init+0x30>
+
+Disassembly of section .text:
+
+080483d0 <_start>:
+ 80483d0:	31 ed                	xor    ebp,ebp
+ 80483d2:	5e                   	pop    esi
+ 80483d3:	89 e1                	mov    ecx,esp
+ 80483d5:	83 e4 f0             	and    esp,0xfffffff0
+ 80483d8:	50                   	push   eax
+ 80483d9:	54                   	push   esp
+ 80483da:	52                   	push   edx
+ 80483db:	68 b0 84 04 08       	push   0x80484b0
+ 80483e0:	68 c0 84 04 08       	push   0x80484c0
+ 80483e5:	51                   	push   ecx
+ 80483e6:	56                   	push   esi
+ 80483e7:	68 84 84 04 08       	push   0x8048484
+ 80483ec:	e8 cf ff ff ff       	call   80483c0 <__libc_start_main@plt>
+ 80483f1:	f4                   	hlt    
+ 80483f2:	90                   	nop
+ 80483f3:	90                   	nop
+ 80483f4:	90                   	nop
+ 80483f5:	90                   	nop
+ 80483f6:	90                   	nop
+ 80483f7:	90                   	nop
+ 80483f8:	90                   	nop
+ 80483f9:	90                   	nop
+ 80483fa:	90                   	nop
+ 80483fb:	90                   	nop
+ 80483fc:	90                   	nop
+ 80483fd:	90                   	nop
+ 80483fe:	90                   	nop
+ 80483ff:	90                   	nop
+
+08048400 <__do_global_dtors_aux>:
+ 8048400:	55                   	push   ebp
+ 8048401:	89 e5                	mov    ebp,esp
+ 8048403:	53                   	push   ebx
+ 8048404:	8d 64 24 fc          	lea    esp,[esp-0x4]
+ 8048408:	80 3d 18 97 04 08 00 	cmp    BYTE PTR ds:0x8049718,0x0
+ 804840f:	75 3e                	jne    804844f <__do_global_dtors_aux+0x4f>
+ 8048411:	bb 20 96 04 08       	mov    ebx,0x8049620
+ 8048416:	a1 1c 97 04 08       	mov    eax,ds:0x804971c
+ 804841b:	81 eb 1c 96 04 08    	sub    ebx,0x804961c
+ 8048421:	c1 fb 02             	sar    ebx,0x2
+ 8048424:	83 eb 01             	sub    ebx,0x1
+ 8048427:	39 d8                	cmp    eax,ebx
+ 8048429:	73 1d                	jae    8048448 <__do_global_dtors_aux+0x48>
+ 804842b:	90                   	nop
+ 804842c:	8d 74 26 00          	lea    esi,[esi+eiz*1+0x0]
+ 8048430:	83 c0 01             	add    eax,0x1
+ 8048433:	a3 1c 97 04 08       	mov    ds:0x804971c,eax
+ 8048438:	ff 14 85 1c 96 04 08 	call   DWORD PTR [eax*4+0x804961c]
+ 804843f:	a1 1c 97 04 08       	mov    eax,ds:0x804971c
+ 8048444:	39 d8                	cmp    eax,ebx
+ 8048446:	72 e8                	jb     8048430 <__do_global_dtors_aux+0x30>
+ 8048448:	c6 05 18 97 04 08 01 	mov    BYTE PTR ds:0x8049718,0x1
+ 804844f:	8d 64 24 04          	lea    esp,[esp+0x4]
+ 8048453:	5b                   	pop    ebx
+ 8048454:	5d                   	pop    ebp
+ 8048455:	c3                   	ret    
+ 8048456:	8d 76 00             	lea    esi,[esi+0x0]
+ 8048459:	8d bc 27 00 00 00 00 	lea    edi,[edi+eiz*1+0x0]
+
+08048460 <frame_dummy>:
+ 8048460:	55                   	push   ebp
+ 8048461:	89 e5                	mov    ebp,esp
+ 8048463:	8d 64 24 e8          	lea    esp,[esp-0x18]
+ 8048467:	a1 24 96 04 08       	mov    eax,ds:0x8049624
+ 804846c:	85 c0                	test   eax,eax
+ 804846e:	74 12                	je     8048482 <frame_dummy+0x22>
+ 8048470:	b8 00 00 00 00       	mov    eax,0x0
+ 8048475:	85 c0                	test   eax,eax
+ 8048477:	74 09                	je     8048482 <frame_dummy+0x22>
+ 8048479:	c7 04 24 24 96 04 08 	mov    DWORD PTR [esp],0x8049624
+ 8048480:	ff d0                	call   eax
+ 8048482:	c9                   	leave  
+ 8048483:	c3                   	ret    
+
+08048484 <main>:
+ 8048484:	55                   	push   ebp
+ 8048485:	89 e5                	mov    ebp,esp
+ 8048487:	83 e4 f0             	and    esp,0xfffffff0
+ 804848a:	83 ec 10             	sub    esp,0x10
+ 804848d:	c7 44 24 04 02 00 00 	mov    DWORD PTR [esp+0x4],0x2
+ 8048494:	00 
+ 8048495:	c7 04 24 01 00 00 00 	mov    DWORD PTR [esp],0x1
+ 804849c:	e8 ff fe ff ff       	call   80483a0 <ml_func@plt>
+ 80484a1:	b8 00 00 00 00       	mov    eax,0x0
+ 80484a6:	c9                   	leave  
+ 80484a7:	c3                   	ret    
+ 80484a8:	90                   	nop
+ 80484a9:	90                   	nop
+ 80484aa:	90                   	nop
+ 80484ab:	90                   	nop
+ 80484ac:	90                   	nop
+ 80484ad:	90                   	nop
+ 80484ae:	90                   	nop
+ 80484af:	90                   	nop
+
+080484b0 <__libc_csu_fini>:
+ 80484b0:	55                   	push   ebp
+ 80484b1:	89 e5                	mov    ebp,esp
+ 80484b3:	5d                   	pop    ebp
+ 80484b4:	c3                   	ret    
+ 80484b5:	66 66 2e 0f 1f 84 00 	data32 nop WORD PTR cs:[eax+eax*1+0x0]
+ 80484bc:	00 00 00 00 
+
+080484c0 <__libc_csu_init>:
+ 80484c0:	55                   	push   ebp
+ 80484c1:	89 e5                	mov    ebp,esp
+ 80484c3:	57                   	push   edi
+ 80484c4:	56                   	push   esi
+ 80484c5:	53                   	push   ebx
+ 80484c6:	e8 4f 00 00 00       	call   804851a <__i686.get_pc_thunk.bx>
+ 80484cb:	81 c3 31 12 00 00    	add    ebx,0x1231
+ 80484d1:	83 ec 1c             	sub    esp,0x1c
+ 80484d4:	e8 87 fe ff ff       	call   8048360 <_init>
+ 80484d9:	8d bb 18 ff ff ff    	lea    edi,[ebx-0xe8]
+ 80484df:	8d 83 18 ff ff ff    	lea    eax,[ebx-0xe8]
+ 80484e5:	29 c7                	sub    edi,eax
+ 80484e7:	c1 ff 02             	sar    edi,0x2
+ 80484ea:	85 ff                	test   edi,edi
+ 80484ec:	74 24                	je     8048512 <__libc_csu_init+0x52>
+ 80484ee:	31 f6                	xor    esi,esi
+ 80484f0:	8b 45 10             	mov    eax,DWORD PTR [ebp+0x10]
+ 80484f3:	89 44 24 08          	mov    DWORD PTR [esp+0x8],eax
+ 80484f7:	8b 45 0c             	mov    eax,DWORD PTR [ebp+0xc]
+ 80484fa:	89 44 24 04          	mov    DWORD PTR [esp+0x4],eax
+ 80484fe:	8b 45 08             	mov    eax,DWORD PTR [ebp+0x8]
+ 8048501:	89 04 24             	mov    DWORD PTR [esp],eax
+ 8048504:	ff 94 b3 18 ff ff ff 	call   DWORD PTR [ebx+esi*4-0xe8]
+ 804850b:	83 c6 01             	add    esi,0x1
+ 804850e:	39 fe                	cmp    esi,edi
+ 8048510:	72 de                	jb     80484f0 <__libc_csu_init+0x30>
+ 8048512:	83 c4 1c             	add    esp,0x1c
+ 8048515:	5b                   	pop    ebx
+ 8048516:	5e                   	pop    esi
+ 8048517:	5f                   	pop    edi
+ 8048518:	5d                   	pop    ebp
+ 8048519:	c3                   	ret    
+
+0804851a <__i686.get_pc_thunk.bx>:
+ 804851a:	8b 1c 24             	mov    ebx,DWORD PTR [esp]
+ 804851d:	c3                   	ret    
+ 804851e:	90                   	nop
+ 804851f:	90                   	nop
+
+08048520 <__do_global_ctors_aux>:
+ 8048520:	55                   	push   ebp
+ 8048521:	89 e5                	mov    ebp,esp
+ 8048523:	53                   	push   ebx
+ 8048524:	8d 64 24 fc          	lea    esp,[esp-0x4]
+ 8048528:	a1 14 96 04 08       	mov    eax,ds:0x8049614
+ 804852d:	83 f8 ff             	cmp    eax,0xffffffff
+ 8048530:	74 12                	je     8048544 <__do_global_ctors_aux+0x24>
+ 8048532:	bb 14 96 04 08       	mov    ebx,0x8049614
+ 8048537:	90                   	nop
+ 8048538:	8d 5b fc             	lea    ebx,[ebx-0x4]
+ 804853b:	ff d0                	call   eax
+ 804853d:	8b 03                	mov    eax,DWORD PTR [ebx]
+ 804853f:	83 f8 ff             	cmp    eax,0xffffffff
+ 8048542:	75 f4                	jne    8048538 <__do_global_ctors_aux+0x18>
+ 8048544:	8d 64 24 04          	lea    esp,[esp+0x4]
+ 8048548:	5b                   	pop    ebx
+ 8048549:	5d                   	pop    ebp
+ 804854a:	c3                   	ret    
+ 804854b:	90                   	nop
+
+Disassembly of section .fini:
+
+0804854c <_fini>:
+ 804854c:	55                   	push   ebp
+ 804854d:	89 e5                	mov    ebp,esp
+ 804854f:	53                   	push   ebx
+ 8048550:	83 ec 04             	sub    esp,0x4
+ 8048553:	e8 00 00 00 00       	call   8048558 <_fini+0xc>
+ 8048558:	5b                   	pop    ebx
+ 8048559:	81 c3 a4 11 00 00    	add    ebx,0x11a4
+ 804855f:	e8 9c fe ff ff       	call   8048400 <__do_global_dtors_aux>
+ 8048564:	59                   	pop    ecx
+ 8048565:	5b                   	pop    ebx
+ 8048566:	c9                   	leave  
+ 8048567:	c3                   	ret    
+
+
+$ readelf -x .got.plt driver
+
+Hex dump of section '.got.plt':
+  0x080496fc 28960408 00000000 00000000 a6830408 (...............
+  0x0804970c b6830408 c6830408                   ........
+
+
+$ readelf -r driver
+
+Relocation section '.rel.dyn' at offset 0x340 contains 1 entries:
+ Offset     Info    Type            Sym.Value  Sym. Name
+080496f8  00000206 R_386_GLOB_DAT    00000000   __gmon_start__
+
+Relocation section '.rel.plt' at offset 0x348 contains 3 entries:
+ Offset     Info    Type            Sym.Value  Sym. Name
+08049708  00000107 R_386_JUMP_SLOT   00000000   ml_func
+0804970c  00000207 R_386_JUMP_SLOT   00000000   __gmon_start__
+08049710  00000407 R_386_JUMP_SLOT   00000000   __libc_start_main
