@@ -1,0 +1,385 @@
+$ readelf -h libmlpic_dataonly.so
+
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              DYN (Shared object file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x4d0
+  Start of program headers:          64 (bytes into file)
+  Start of section headers:          3016 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           56 (bytes)
+  Number of program headers:         6
+  Size of section headers:           64 (bytes)
+  Number of section headers:         34
+  Section header string table index: 31
+
+
+$ objdump -d -M intel libmlpic_dataonly.so
+
+libmlpic_dataonly.so:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+0000000000000478 <_init>:
+ 478:	48 83 ec 08          	sub    rsp,0x8
+ 47c:	48 8b 05 6d 03 20 00 	mov    rax,QWORD PTR [rip+0x20036d]        # 2007f0 <_DYNAMIC+0x180>
+ 483:	48 85 c0             	test   rax,rax
+ 486:	74 05                	je     48d <_init+0x15>
+ 488:	e8 1f 00 00 00       	call   4ac <__gmon_start__@plt>
+ 48d:	e8 be 00 00 00       	call   550 <frame_dummy>
+ 492:	e8 09 01 00 00       	call   5a0 <__do_global_ctors_aux>
+ 497:	48 83 c4 08          	add    rsp,0x8
+ 49b:	c3                   	ret    
+
+Disassembly of section .plt:
+
+000000000000049c <__gmon_start__@plt-0x10>:
+ 49c:	ff 35 76 03 20 00    	push   QWORD PTR [rip+0x200376]        # 200818 <_GLOBAL_OFFSET_TABLE_+0x8>
+ 4a2:	ff 25 78 03 20 00    	jmp    QWORD PTR [rip+0x200378]        # 200820 <_GLOBAL_OFFSET_TABLE_+0x10>
+ 4a8:	0f 1f 40 00          	nop    DWORD PTR [rax+0x0]
+
+00000000000004ac <__gmon_start__@plt>:
+ 4ac:	ff 25 76 03 20 00    	jmp    QWORD PTR [rip+0x200376]        # 200828 <_GLOBAL_OFFSET_TABLE_+0x18>
+ 4b2:	68 00 00 00 00       	push   0x0
+ 4b7:	e9 e0 ff ff ff       	jmp    49c <_init+0x24>
+
+00000000000004bc <__cxa_finalize@plt>:
+ 4bc:	ff 25 6e 03 20 00    	jmp    QWORD PTR [rip+0x20036e]        # 200830 <_GLOBAL_OFFSET_TABLE_+0x20>
+ 4c2:	68 01 00 00 00       	push   0x1
+ 4c7:	e9 d0 ff ff ff       	jmp    49c <_init+0x24>
+
+Disassembly of section .text:
+
+00000000000004d0 <__do_global_dtors_aux>:
+ 4d0:	55                   	push   rbp
+ 4d1:	80 3d 68 03 20 00 00 	cmp    BYTE PTR [rip+0x200368],0x0        # 200840 <completed.6349>
+ 4d8:	48 89 e5             	mov    rbp,rsp
+ 4db:	41 54                	push   r12
+ 4dd:	53                   	push   rbx
+ 4de:	75 62                	jne    542 <__do_global_dtors_aux+0x72>
+ 4e0:	48 83 3d 20 03 20 00 	cmp    QWORD PTR [rip+0x200320],0x0        # 200808 <_DYNAMIC+0x198>
+ 4e7:	00 
+ 4e8:	74 0c                	je     4f6 <__do_global_dtors_aux+0x26>
+ 4ea:	48 8d 3d 77 01 20 00 	lea    rdi,[rip+0x200177]        # 200668 <__dso_handle>
+ 4f1:	e8 c6 ff ff ff       	call   4bc <__cxa_finalize@plt>
+ 4f6:	48 8d 1d 5b 01 20 00 	lea    rbx,[rip+0x20015b]        # 200658 <__DTOR_END__>
+ 4fd:	4c 8d 25 4c 01 20 00 	lea    r12,[rip+0x20014c]        # 200650 <__DTOR_LIST__>
+ 504:	48 8b 05 3d 03 20 00 	mov    rax,QWORD PTR [rip+0x20033d]        # 200848 <dtor_idx.6351>
+ 50b:	4c 29 e3             	sub    rbx,r12
+ 50e:	48 c1 fb 03          	sar    rbx,0x3
+ 512:	48 83 eb 01          	sub    rbx,0x1
+ 516:	48 39 d8             	cmp    rax,rbx
+ 519:	73 20                	jae    53b <__do_global_dtors_aux+0x6b>
+ 51b:	0f 1f 44 00 00       	nop    DWORD PTR [rax+rax*1+0x0]
+ 520:	48 83 c0 01          	add    rax,0x1
+ 524:	48 89 05 1d 03 20 00 	mov    QWORD PTR [rip+0x20031d],rax        # 200848 <dtor_idx.6351>
+ 52b:	41 ff 14 c4          	call   QWORD PTR [r12+rax*8]
+ 52f:	48 8b 05 12 03 20 00 	mov    rax,QWORD PTR [rip+0x200312]        # 200848 <dtor_idx.6351>
+ 536:	48 39 d8             	cmp    rax,rbx
+ 539:	72 e5                	jb     520 <__do_global_dtors_aux+0x50>
+ 53b:	c6 05 fe 02 20 00 01 	mov    BYTE PTR [rip+0x2002fe],0x1        # 200840 <completed.6349>
+ 542:	5b                   	pop    rbx
+ 543:	41 5c                	pop    r12
+ 545:	c9                   	leave  
+ 546:	c3                   	ret    
+ 547:	66 0f 1f 84 00 00 00 	nop    WORD PTR [rax+rax*1+0x0]
+ 54e:	00 00 
+
+0000000000000550 <frame_dummy>:
+ 550:	48 83 3d 08 01 20 00 	cmp    QWORD PTR [rip+0x200108],0x0        # 200660 <__JCR_END__>
+ 557:	00 
+ 558:	55                   	push   rbp
+ 559:	48 89 e5             	mov    rbp,rsp
+ 55c:	74 1a                	je     578 <frame_dummy+0x28>
+ 55e:	48 8b 05 93 02 20 00 	mov    rax,QWORD PTR [rip+0x200293]        # 2007f8 <_DYNAMIC+0x188>
+ 565:	48 85 c0             	test   rax,rax
+ 568:	74 0e                	je     578 <frame_dummy+0x28>
+ 56a:	48 8d 3d ef 00 20 00 	lea    rdi,[rip+0x2000ef]        # 200660 <__JCR_END__>
+ 571:	c9                   	leave  
+ 572:	ff e0                	jmp    rax
+ 574:	0f 1f 40 00          	nop    DWORD PTR [rax+0x0]
+ 578:	c9                   	leave  
+ 579:	c3                   	ret    
+ 57a:	90                   	nop
+ 57b:	90                   	nop
+
+000000000000057c <ml_func>:
+ 57c:	55                   	push   rbp
+ 57d:	48 89 e5             	mov    rbp,rsp
+ 580:	89 7d fc             	mov    DWORD PTR [rbp-0x4],edi
+ 583:	89 75 f8             	mov    DWORD PTR [rbp-0x8],esi
+ 586:	48 8b 05 73 02 20 00 	mov    rax,QWORD PTR [rip+0x200273]        # 200800 <_DYNAMIC+0x190>
+ 58d:	8b 00                	mov    eax,DWORD PTR [rax]
+ 58f:	03 45 fc             	add    eax,DWORD PTR [rbp-0x4]
+ 592:	03 45 f8             	add    eax,DWORD PTR [rbp-0x8]
+ 595:	c9                   	leave  
+ 596:	c3                   	ret    
+ 597:	90                   	nop
+ 598:	90                   	nop
+ 599:	90                   	nop
+ 59a:	90                   	nop
+ 59b:	90                   	nop
+ 59c:	90                   	nop
+ 59d:	90                   	nop
+ 59e:	90                   	nop
+ 59f:	90                   	nop
+
+00000000000005a0 <__do_global_ctors_aux>:
+ 5a0:	55                   	push   rbp
+ 5a1:	48 89 e5             	mov    rbp,rsp
+ 5a4:	53                   	push   rbx
+ 5a5:	48 83 ec 08          	sub    rsp,0x8
+ 5a9:	48 8b 05 90 00 20 00 	mov    rax,QWORD PTR [rip+0x200090]        # 200640 <__CTOR_LIST__>
+ 5b0:	48 83 f8 ff          	cmp    rax,0xffffffffffffffff
+ 5b4:	74 19                	je     5cf <__do_global_ctors_aux+0x2f>
+ 5b6:	48 8d 1d 83 00 20 00 	lea    rbx,[rip+0x200083]        # 200640 <__CTOR_LIST__>
+ 5bd:	0f 1f 00             	nop    DWORD PTR [rax]
+ 5c0:	48 83 eb 08          	sub    rbx,0x8
+ 5c4:	ff d0                	call   rax
+ 5c6:	48 8b 03             	mov    rax,QWORD PTR [rbx]
+ 5c9:	48 83 f8 ff          	cmp    rax,0xffffffffffffffff
+ 5cd:	75 f1                	jne    5c0 <__do_global_ctors_aux+0x20>
+ 5cf:	48 83 c4 08          	add    rsp,0x8
+ 5d3:	5b                   	pop    rbx
+ 5d4:	c9                   	leave  
+ 5d5:	c3                   	ret    
+ 5d6:	90                   	nop
+ 5d7:	90                   	nop
+
+Disassembly of section .fini:
+
+00000000000005d8 <_fini>:
+ 5d8:	48 83 ec 08          	sub    rsp,0x8
+ 5dc:	e8 ef fe ff ff       	call   4d0 <__do_global_dtors_aux>
+ 5e1:	48 83 c4 08          	add    rsp,0x8
+ 5e5:	c3                   	ret    
+
+
+
+$ readelf -r libmlpic_dataonly.so
+
+Relocation section '.rela.dyn' at offset 0x3d0 contains 5 entries:
+  Offset          Info           Type           Sym. Value    Sym. Name + Addend
+000000200668  000000000008 R_X86_64_RELATIVE                    0000000000200668
+0000002007f0  000200000006 R_X86_64_GLOB_DAT 0000000000000000 __gmon_start__ + 0
+0000002007f8  000300000006 R_X86_64_GLOB_DAT 0000000000000000 _Jv_RegisterClasses + 0
+000000200800  000500000006 R_X86_64_GLOB_DAT 0000000000200838 myglob + 0
+000000200808  000400000006 R_X86_64_GLOB_DAT 0000000000000000 __cxa_finalize + 0
+
+Relocation section '.rela.plt' at offset 0x448 contains 2 entries:
+  Offset          Info           Type           Sym. Value    Sym. Name + Addend
+000000200828  000200000007 R_X86_64_JUMP_SLO 0000000000000000 __gmon_start__ + 0
+000000200830  000400000007 R_X86_64_JUMP_SLO 0000000000000000 __cxa_finalize + 0
+
+
+
+
+$ readelf -h libmlpic.so
+
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              DYN (Shared object file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x530
+  Start of program headers:          64 (bytes into file)
+  Start of section headers:          3304 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           56 (bytes)
+  Number of program headers:         6
+  Size of section headers:           64 (bytes)
+  Number of section headers:         34
+  Section header string table index: 31
+
+
+
+$ objdump -d -M intel libmlpic.so
+
+libmlpic.so:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+00000000000004c0 <_init>:
+ 4c0:	48 83 ec 08          	sub    rsp,0x8
+ 4c4:	48 8b 05 dd 03 20 00 	mov    rax,QWORD PTR [rip+0x2003dd]        # 2008a8 <_DYNAMIC+0x180>
+ 4cb:	48 85 c0             	test   rax,rax
+ 4ce:	74 05                	je     4d5 <_init+0x15>
+ 4d0:	e8 1f 00 00 00       	call   4f4 <__gmon_start__@plt>
+ 4d5:	e8 d6 00 00 00       	call   5b0 <frame_dummy>
+ 4da:	e8 51 01 00 00       	call   630 <__do_global_ctors_aux>
+ 4df:	48 83 c4 08          	add    rsp,0x8
+ 4e3:	c3                   	ret    
+
+Disassembly of section .plt:
+
+00000000000004e4 <__gmon_start__@plt-0x10>:
+ 4e4:	ff 35 e6 03 20 00    	push   QWORD PTR [rip+0x2003e6]        # 2008d0 <_GLOBAL_OFFSET_TABLE_+0x8>
+ 4ea:	ff 25 e8 03 20 00    	jmp    QWORD PTR [rip+0x2003e8]        # 2008d8 <_GLOBAL_OFFSET_TABLE_+0x10>
+ 4f0:	0f 1f 40 00          	nop    DWORD PTR [rax+0x0]
+
+00000000000004f4 <__gmon_start__@plt>:
+ 4f4:	ff 25 e6 03 20 00    	jmp    QWORD PTR [rip+0x2003e6]        # 2008e0 <_GLOBAL_OFFSET_TABLE_+0x18>
+ 4fa:	68 00 00 00 00       	push   0x0
+ 4ff:	e9 e0 ff ff ff       	jmp    4e4 <_init+0x24>
+
+0000000000000504 <__cxa_finalize@plt>:
+ 504:	ff 25 de 03 20 00    	jmp    QWORD PTR [rip+0x2003de]        # 2008e8 <_GLOBAL_OFFSET_TABLE_+0x20>
+ 50a:	68 01 00 00 00       	push   0x1
+ 50f:	e9 d0 ff ff ff       	jmp    4e4 <_init+0x24>
+
+0000000000000514 <ml_util_func@plt>:
+ 514:	ff 25 d6 03 20 00    	jmp    QWORD PTR [rip+0x2003d6]        # 2008f0 <_GLOBAL_OFFSET_TABLE_+0x28>
+ 51a:	68 02 00 00 00       	push   0x2
+ 51f:	e9 c0 ff ff ff       	jmp    4e4 <_init+0x24>
+
+Disassembly of section .text:
+
+0000000000000530 <__do_global_dtors_aux>:
+ 530:	55                   	push   rbp
+ 531:	80 3d c8 03 20 00 00 	cmp    BYTE PTR [rip+0x2003c8],0x0        # 200900 <completed.6349>
+ 538:	48 89 e5             	mov    rbp,rsp
+ 53b:	41 54                	push   r12
+ 53d:	53                   	push   rbx
+ 53e:	75 62                	jne    5a2 <__do_global_dtors_aux+0x72>
+ 540:	48 83 3d 78 03 20 00 	cmp    QWORD PTR [rip+0x200378],0x0        # 2008c0 <_DYNAMIC+0x198>
+ 547:	00 
+ 548:	74 0c                	je     556 <__do_global_dtors_aux+0x26>
+ 54a:	48 8d 3d cf 01 20 00 	lea    rdi,[rip+0x2001cf]        # 200720 <__dso_handle>
+ 551:	e8 ae ff ff ff       	call   504 <__cxa_finalize@plt>
+ 556:	48 8d 1d b3 01 20 00 	lea    rbx,[rip+0x2001b3]        # 200710 <__DTOR_END__>
+ 55d:	4c 8d 25 a4 01 20 00 	lea    r12,[rip+0x2001a4]        # 200708 <__DTOR_LIST__>
+ 564:	48 8b 05 9d 03 20 00 	mov    rax,QWORD PTR [rip+0x20039d]        # 200908 <dtor_idx.6351>
+ 56b:	4c 29 e3             	sub    rbx,r12
+ 56e:	48 c1 fb 03          	sar    rbx,0x3
+ 572:	48 83 eb 01          	sub    rbx,0x1
+ 576:	48 39 d8             	cmp    rax,rbx
+ 579:	73 20                	jae    59b <__do_global_dtors_aux+0x6b>
+ 57b:	0f 1f 44 00 00       	nop    DWORD PTR [rax+rax*1+0x0]
+ 580:	48 83 c0 01          	add    rax,0x1
+ 584:	48 89 05 7d 03 20 00 	mov    QWORD PTR [rip+0x20037d],rax        # 200908 <dtor_idx.6351>
+ 58b:	41 ff 14 c4          	call   QWORD PTR [r12+rax*8]
+ 58f:	48 8b 05 72 03 20 00 	mov    rax,QWORD PTR [rip+0x200372]        # 200908 <dtor_idx.6351>
+ 596:	48 39 d8             	cmp    rax,rbx
+ 599:	72 e5                	jb     580 <__do_global_dtors_aux+0x50>
+ 59b:	c6 05 5e 03 20 00 01 	mov    BYTE PTR [rip+0x20035e],0x1        # 200900 <completed.6349>
+ 5a2:	5b                   	pop    rbx
+ 5a3:	41 5c                	pop    r12
+ 5a5:	c9                   	leave  
+ 5a6:	c3                   	ret    
+ 5a7:	66 0f 1f 84 00 00 00 	nop    WORD PTR [rax+rax*1+0x0]
+ 5ae:	00 00 
+
+00000000000005b0 <frame_dummy>:
+ 5b0:	48 83 3d 60 01 20 00 	cmp    QWORD PTR [rip+0x200160],0x0        # 200718 <__JCR_END__>
+ 5b7:	00 
+ 5b8:	55                   	push   rbp
+ 5b9:	48 89 e5             	mov    rbp,rsp
+ 5bc:	74 1a                	je     5d8 <frame_dummy+0x28>
+ 5be:	48 8b 05 eb 02 20 00 	mov    rax,QWORD PTR [rip+0x2002eb]        # 2008b0 <_DYNAMIC+0x188>
+ 5c5:	48 85 c0             	test   rax,rax
+ 5c8:	74 0e                	je     5d8 <frame_dummy+0x28>
+ 5ca:	48 8d 3d 47 01 20 00 	lea    rdi,[rip+0x200147]        # 200718 <__JCR_END__>
+ 5d1:	c9                   	leave  
+ 5d2:	ff e0                	jmp    rax
+ 5d4:	0f 1f 40 00          	nop    DWORD PTR [rax+0x0]
+ 5d8:	c9                   	leave  
+ 5d9:	c3                   	ret    
+ 5da:	90                   	nop
+ 5db:	90                   	nop
+
+00000000000005dc <ml_util_func>:
+ 5dc:	55                   	push   rbp
+ 5dd:	48 89 e5             	mov    rbp,rsp
+ 5e0:	89 7d fc             	mov    DWORD PTR [rbp-0x4],edi
+ 5e3:	8b 45 fc             	mov    eax,DWORD PTR [rbp-0x4]
+ 5e6:	83 c0 01             	add    eax,0x1
+ 5e9:	c9                   	leave  
+ 5ea:	c3                   	ret    
+
+00000000000005eb <ml_func>:
+ 5eb:	55                   	push   rbp
+ 5ec:	48 89 e5             	mov    rbp,rsp
+ 5ef:	48 83 ec 20          	sub    rsp,0x20
+ 5f3:	89 7d ec             	mov    DWORD PTR [rbp-0x14],edi
+ 5f6:	89 75 e8             	mov    DWORD PTR [rbp-0x18],esi
+ 5f9:	8b 45 ec             	mov    eax,DWORD PTR [rbp-0x14]
+ 5fc:	89 c7                	mov    edi,eax
+ 5fe:	e8 11 ff ff ff       	call   514 <ml_util_func@plt>
+ 603:	03 45 e8             	add    eax,DWORD PTR [rbp-0x18]
+ 606:	89 45 fc             	mov    DWORD PTR [rbp-0x4],eax
+ 609:	48 8b 05 a8 02 20 00 	mov    rax,QWORD PTR [rip+0x2002a8]        # 2008b8 <_DYNAMIC+0x190>
+ 610:	8b 00                	mov    eax,DWORD PTR [rax]
+ 612:	89 c2                	mov    edx,eax
+ 614:	03 55 fc             	add    edx,DWORD PTR [rbp-0x4]
+ 617:	48 8b 05 9a 02 20 00 	mov    rax,QWORD PTR [rip+0x20029a]        # 2008b8 <_DYNAMIC+0x190>
+ 61e:	89 10                	mov    DWORD PTR [rax],edx
+ 620:	48 8b 05 91 02 20 00 	mov    rax,QWORD PTR [rip+0x200291]        # 2008b8 <_DYNAMIC+0x190>
+ 627:	8b 00                	mov    eax,DWORD PTR [rax]
+ 629:	03 45 e8             	add    eax,DWORD PTR [rbp-0x18]
+ 62c:	c9                   	leave  
+ 62d:	c3                   	ret    
+ 62e:	90                   	nop
+ 62f:	90                   	nop
+
+0000000000000630 <__do_global_ctors_aux>:
+ 630:	55                   	push   rbp
+ 631:	48 89 e5             	mov    rbp,rsp
+ 634:	53                   	push   rbx
+ 635:	48 83 ec 08          	sub    rsp,0x8
+ 639:	48 8b 05 b8 00 20 00 	mov    rax,QWORD PTR [rip+0x2000b8]        # 2006f8 <__CTOR_LIST__>
+ 640:	48 83 f8 ff          	cmp    rax,0xffffffffffffffff
+ 644:	74 19                	je     65f <__do_global_ctors_aux+0x2f>
+ 646:	48 8d 1d ab 00 20 00 	lea    rbx,[rip+0x2000ab]        # 2006f8 <__CTOR_LIST__>
+ 64d:	0f 1f 00             	nop    DWORD PTR [rax]
+ 650:	48 83 eb 08          	sub    rbx,0x8
+ 654:	ff d0                	call   rax
+ 656:	48 8b 03             	mov    rax,QWORD PTR [rbx]
+ 659:	48 83 f8 ff          	cmp    rax,0xffffffffffffffff
+ 65d:	75 f1                	jne    650 <__do_global_ctors_aux+0x20>
+ 65f:	48 83 c4 08          	add    rsp,0x8
+ 663:	5b                   	pop    rbx
+ 664:	c9                   	leave  
+ 665:	c3                   	ret    
+ 666:	90                   	nop
+ 667:	90                   	nop
+
+Disassembly of section .fini:
+
+0000000000000668 <_fini>:
+ 668:	48 83 ec 08          	sub    rsp,0x8
+ 66c:	e8 bf fe ff ff       	call   530 <__do_global_dtors_aux>
+ 671:	48 83 c4 08          	add    rsp,0x8
+ 675:	c3                   	ret    
+
+
+$ readelf -r libmlpic.so
+
+Relocation section '.rela.dyn' at offset 0x400 contains 5 entries:
+  Offset          Info           Type           Sym. Value    Sym. Name + Addend
+000000200720  000000000008 R_X86_64_RELATIVE                    0000000000200720
+0000002008a8  000200000006 R_X86_64_GLOB_DAT 0000000000000000 __gmon_start__ + 0
+0000002008b0  000300000006 R_X86_64_GLOB_DAT 0000000000000000 _Jv_RegisterClasses + 0
+0000002008b8  000500000006 R_X86_64_GLOB_DAT 00000000002008f8 myglob + 0
+0000002008c0  000400000006 R_X86_64_GLOB_DAT 0000000000000000 __cxa_finalize + 0
+
+Relocation section '.rela.plt' at offset 0x478 contains 3 entries:
+  Offset          Info           Type           Sym. Value    Sym. Name + Addend
+0000002008e0  000200000007 R_X86_64_JUMP_SLO 0000000000000000 __gmon_start__ + 0
+0000002008e8  000400000007 R_X86_64_JUMP_SLO 0000000000000000 __cxa_finalize + 0
+0000002008f0  000600000007 R_X86_64_JUMP_SLO 00000000000005dc ml_util_func + 0
