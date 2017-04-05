@@ -1,0 +1,487 @@
+$ ./addr hello
+Address of a: 0x7ffffe95c7cc
+
+Allocated space in the heap: 0xb3a010
+
+Address of function main: 0x400684
+First bytes of the main function:
+	55 48 89 e5 48 83 ec 40 89 7d dc 48 89 75 d0 
+
+Address of the count of arguments: 0x7ffffe95c7bc
+Address of the array of arguments: 0x7ffffe95c8c8
+Addresses of the arguments:
+	[./addr]:0x7ffffe95e639 [hello]:0x7ffffe95e640 
+
+Address of the array of environment variables: 0x7ffffe95c8e0
+Address of the first environment variable: 
+	[0x7ffffe95e646]:"NVM_RC_VERSION="
+	[0x7ffffe95e656]:"VIRTUALENVWRAPPER_SCRIPT=/usr/local/Python-2.7.10/bin/virtualenvwrapper.sh"
+	[0x7ffffe95e6a1]:"VIRTUALENVWRAPPER_PROJECT_FILENAME=.project"
+
+// argv and env arrays next to each other
+0x7ffffe95c8e0 - 0x7ffffe95c8c8 = 0x18 = 24 (addr[0] == "./addr", addr[1] == "hello", addr[2] == NULL)
+
+0x7ffffe95e646 - 0x7ffffe95e640 = 0x6 (addr[1] == "hello") 
+
+./addr\0hello\0NVM_RC_VERSION=\0VIRTUALENVWRAPPER_SCRIPT=/usr/local/Python-2.7.10/bin/virtualenvwrapper.sh\0
+
+
+
+$ ./addr hello world!
+Address of a: 0x7fff8dedda3c
+
+Allocated space in the heap: 0x1b7a010
+
+Address of function main: 0x400684
+First bytes of the main function:
+	55 48 89 e5 48 83 ec 40 89 7d dc 48 89 75 d0 
+
+Address of the count of arguments: 0x7fff8dedda2c
+Address of the array of arguments: 0x7fff8deddb38
+Addresses of the arguments:
+	[./addr]:0x7fff8dedf632 [hello]:0x7fff8dedf639 [world!]:0x7fff8dedf63f 
+
+Address of the array of environment variables: 0x7fff8deddb58
+Address of the first environment variable: 
+	[0x7fff8dedf646]:"NVM_RC_VERSION="
+	[0x7fff8dedf656]:"VIRTUALENVWRAPPER_SCRIPT=/usr/local/Python-2.7.10/bin/virtualenvwrapper.sh"
+	[0x7fff8dedf6a1]:"VIRTUALENVWRAPPER_PROJECT_FILENAME=.project"
+
+0x7fff8deddb58 - 0x7fff8deddb38 = 0x20 = 32
+0x7fff8dedf646 - 0x7fff8dedf63f = 0x7 
+./addr\0hello\0world!\0NVM_RC_VERSION=\0VIRTUALENVWRAPPER_SCRIPT=/usr/local/Python-2.7.10/bin/virtualenvwrapper.sh\0
+
+
+
+addr:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+0000000000400508 <_init>:
+  400508:	48 83 ec 08          	sub    rsp,0x8
+  40050c:	48 8b 05 95 08 20 00 	mov    rax,QWORD PTR [rip+0x200895]        # 600da8 <_DYNAMIC+0x190>
+  400513:	48 85 c0             	test   rax,rax
+  400516:	74 05                	je     40051d <_init+0x15>
+  400518:	e8 2f 00 00 00       	call   40054c <__gmon_start__@plt>
+  40051d:	e8 3e 01 00 00       	call   400660 <frame_dummy>
+  400522:	e8 f9 03 00 00       	call   400920 <__do_global_ctors_aux>
+  400527:	48 83 c4 08          	add    rsp,0x8
+  40052b:	c3                   	ret    
+
+Disassembly of section .plt:
+
+000000000040052c <printf@plt-0x10>:
+  40052c:	ff 35 86 08 20 00    	push   QWORD PTR [rip+0x200886]        # 600db8 <_GLOBAL_OFFSET_TABLE_+0x8>
+  400532:	ff 25 88 08 20 00    	jmp    QWORD PTR [rip+0x200888]        # 600dc0 <_GLOBAL_OFFSET_TABLE_+0x10>
+  400538:	0f 1f 40 00          	nop    DWORD PTR [rax+0x0]
+
+000000000040053c <printf@plt>:
+  40053c:	ff 25 86 08 20 00    	jmp    QWORD PTR [rip+0x200886]        # 600dc8 <_GLOBAL_OFFSET_TABLE_+0x18>
+  400542:	68 00 00 00 00       	push   0x0
+  400547:	e9 e0 ff ff ff       	jmp    40052c <_init+0x24>
+
+000000000040054c <__gmon_start__@plt>:
+  40054c:	ff 25 7e 08 20 00    	jmp    QWORD PTR [rip+0x20087e]        # 600dd0 <_GLOBAL_OFFSET_TABLE_+0x20>
+  400552:	68 01 00 00 00       	push   0x1
+  400557:	e9 d0 ff ff ff       	jmp    40052c <_init+0x24>
+
+000000000040055c <puts@plt>:
+  40055c:	ff 25 76 08 20 00    	jmp    QWORD PTR [rip+0x200876]        # 600dd8 <_GLOBAL_OFFSET_TABLE_+0x28>
+  400562:	68 02 00 00 00       	push   0x2
+  400567:	e9 c0 ff ff ff       	jmp    40052c <_init+0x24>
+
+000000000040056c <putchar@plt>:
+  40056c:	ff 25 6e 08 20 00    	jmp    QWORD PTR [rip+0x20086e]        # 600de0 <_GLOBAL_OFFSET_TABLE_+0x30>
+  400572:	68 03 00 00 00       	push   0x3
+  400577:	e9 b0 ff ff ff       	jmp    40052c <_init+0x24>
+
+000000000040057c <malloc@plt>:
+  40057c:	ff 25 66 08 20 00    	jmp    QWORD PTR [rip+0x200866]        # 600de8 <_GLOBAL_OFFSET_TABLE_+0x38>
+  400582:	68 04 00 00 00       	push   0x4
+  400587:	e9 a0 ff ff ff       	jmp    40052c <_init+0x24>
+
+000000000040058c <__libc_start_main@plt>:
+  40058c:	ff 25 5e 08 20 00    	jmp    QWORD PTR [rip+0x20085e]        # 600df0 <_GLOBAL_OFFSET_TABLE_+0x40>
+  400592:	68 05 00 00 00       	push   0x5
+  400597:	e9 90 ff ff ff       	jmp    40052c <_init+0x24>
+
+000000000040059c <getchar@plt>:
+  40059c:	ff 25 56 08 20 00    	jmp    QWORD PTR [rip+0x200856]        # 600df8 <_GLOBAL_OFFSET_TABLE_+0x48>
+  4005a2:	68 06 00 00 00       	push   0x6
+  4005a7:	e9 80 ff ff ff       	jmp    40052c <_init+0x24>
+
+00000000004005ac <fwrite@plt>:
+  4005ac:	ff 25 4e 08 20 00    	jmp    QWORD PTR [rip+0x20084e]        # 600e00 <_GLOBAL_OFFSET_TABLE_+0x50>
+  4005b2:	68 07 00 00 00       	push   0x7
+  4005b7:	e9 70 ff ff ff       	jmp    40052c <_init+0x24>
+
+Disassembly of section .text:
+
+00000000004005c0 <_start>:
+  4005c0:	31 ed                	xor    ebp,ebp
+  4005c2:	49 89 d1             	mov    r9,rdx
+  4005c5:	5e                   	pop    rsi
+  4005c6:	48 89 e2             	mov    rdx,rsp
+  4005c9:	48 83 e4 f0          	and    rsp,0xfffffffffffffff0
+  4005cd:	50                   	push   rax
+  4005ce:	54                   	push   rsp
+  4005cf:	49 c7 c0 10 09 40 00 	mov    r8,0x400910
+  4005d6:	48 c7 c1 a0 08 40 00 	mov    rcx,0x4008a0
+  4005dd:	48 c7 c7 84 06 40 00 	mov    rdi,0x400684
+  4005e4:	e8 a3 ff ff ff       	call   40058c <__libc_start_main@plt>
+  4005e9:	f4                   	hlt    
+  4005ea:	66 90                	xchg   ax,ax
+  4005ec:	90                   	nop
+  4005ed:	90                   	nop
+  4005ee:	90                   	nop
+  4005ef:	90                   	nop
+
+00000000004005f0 <__do_global_dtors_aux>:
+  4005f0:	55                   	push   rbp
+  4005f1:	48 89 e5             	mov    rbp,rsp
+  4005f4:	53                   	push   rbx
+  4005f5:	48 83 ec 08          	sub    rsp,0x8
+  4005f9:	80 3d 18 08 20 00 00 	cmp    BYTE PTR [rip+0x200818],0x0        # 600e18 <completed.6349>
+  400600:	75 4b                	jne    40064d <__do_global_dtors_aux+0x5d>
+  400602:	bb 08 0c 60 00       	mov    ebx,0x600c08
+  400607:	48 8b 05 12 08 20 00 	mov    rax,QWORD PTR [rip+0x200812]        # 600e20 <dtor_idx.6351>
+  40060e:	48 81 eb 00 0c 60 00 	sub    rbx,0x600c00
+  400615:	48 c1 fb 03          	sar    rbx,0x3
+  400619:	48 83 eb 01          	sub    rbx,0x1
+  40061d:	48 39 d8             	cmp    rax,rbx
+  400620:	73 24                	jae    400646 <__do_global_dtors_aux+0x56>
+  400622:	66 0f 1f 44 00 00    	nop    WORD PTR [rax+rax*1+0x0]
+  400628:	48 83 c0 01          	add    rax,0x1
+  40062c:	48 89 05 ed 07 20 00 	mov    QWORD PTR [rip+0x2007ed],rax        # 600e20 <dtor_idx.6351>
+  400633:	ff 14 c5 00 0c 60 00 	call   QWORD PTR [rax*8+0x600c00]
+  40063a:	48 8b 05 df 07 20 00 	mov    rax,QWORD PTR [rip+0x2007df]        # 600e20 <dtor_idx.6351>
+  400641:	48 39 d8             	cmp    rax,rbx
+  400644:	72 e2                	jb     400628 <__do_global_dtors_aux+0x38>
+  400646:	c6 05 cb 07 20 00 01 	mov    BYTE PTR [rip+0x2007cb],0x1        # 600e18 <completed.6349>
+  40064d:	48 83 c4 08          	add    rsp,0x8
+  400651:	5b                   	pop    rbx
+  400652:	c9                   	leave  
+  400653:	c3                   	ret    
+  400654:	66 66 66 2e 0f 1f 84 	data32 data32 nop WORD PTR cs:[rax+rax*1+0x0]
+  40065b:	00 00 00 00 00 
+
+0000000000400660 <frame_dummy>:
+  400660:	48 83 3d a8 05 20 00 	cmp    QWORD PTR [rip+0x2005a8],0x0        # 600c10 <__JCR_END__>
+  400667:	00 
+  400668:	55                   	push   rbp
+  400669:	48 89 e5             	mov    rbp,rsp
+  40066c:	74 12                	je     400680 <frame_dummy+0x20>
+  40066e:	b8 00 00 00 00       	mov    eax,0x0
+  400673:	48 85 c0             	test   rax,rax
+  400676:	74 08                	je     400680 <frame_dummy+0x20>
+  400678:	bf 10 0c 60 00       	mov    edi,0x600c10
+  40067d:	c9                   	leave  
+  40067e:	ff e0                	jmp    rax
+  400680:	c9                   	leave  
+  400681:	c3                   	ret    
+  400682:	90                   	nop
+  400683:	90                   	nop
+
+0000000000400684 <main>:
+ * main - print locations of various elements
+ *
+ * Return: EXIT_FAILURE if something failed. Otherwise EXIT_SUCCESS
+ */
+int main(int ac, char **av, char **env)
+{
+  400684:	55                   	push   rbp
+  400685:	48 89 e5             	mov    rbp,rsp
+  400688:	48 83 ec 40          	sub    rsp,0x40
+  40068c:	89 7d dc             	mov    DWORD PTR [rbp-0x24],edi
+  40068f:	48 89 75 d0          	mov    QWORD PTR [rbp-0x30],rsi
+  400693:	48 89 55 c8          	mov    QWORD PTR [rbp-0x38],rdx
+    int a;
+    void *p;
+    int i;
+    
+    // stack
+    printf("Address of a: %p\n", &a);
+  400697:	b8 78 09 40 00       	mov    eax,0x400978
+  40069c:	48 8d 55 ec          	lea    rdx,[rbp-0x14]
+  4006a0:	48 89 d6             	mov    rsi,rdx
+  4006a3:	48 89 c7             	mov    rdi,rax
+  4006a6:	b8 00 00 00 00       	mov    eax,0x0
+  4006ab:	e8 8c fe ff ff       	call   40053c <printf@plt>
+    printf("\n");
+  4006b0:	bf 0a 00 00 00       	mov    edi,0xa
+  4006b5:	e8 b2 fe ff ff       	call   40056c <putchar@plt>
+
+    // heap
+    p = malloc(98);
+  4006ba:	bf 62 00 00 00       	mov    edi,0x62
+  4006bf:	e8 b8 fe ff ff       	call   40057c <malloc@plt>
+  4006c4:	48 89 45 f0          	mov    QWORD PTR [rbp-0x10],rax
+    if (p == NULL)
+  4006c8:	48 83 7d f0 00       	cmp    QWORD PTR [rbp-0x10],0x0
+  4006cd:	75 2e                	jne    4006fd <main+0x79>
+    {
+            fprintf(stderr, "Can't malloc\n");
+  4006cf:	48 8b 05 3a 07 20 00 	mov    rax,QWORD PTR [rip+0x20073a]        # 600e10 <stderr@@GLIBC_2.2.5>
+  4006d6:	48 89 c2             	mov    rdx,rax
+  4006d9:	b8 8a 09 40 00       	mov    eax,0x40098a
+  4006de:	48 89 d1             	mov    rcx,rdx
+  4006e1:	ba 0d 00 00 00       	mov    edx,0xd
+  4006e6:	be 01 00 00 00       	mov    esi,0x1
+  4006eb:	48 89 c7             	mov    rdi,rax
+  4006ee:	e8 b9 fe ff ff       	call   4005ac <fwrite@plt>
+            return (EXIT_FAILURE);
+  4006f3:	b8 01 00 00 00       	mov    eax,0x1
+  4006f8:	e9 9e 01 00 00       	jmp    40089b <main+0x217>
+    }
+    printf("Allocated space in the heap: %p\n", p);
+  4006fd:	b8 98 09 40 00       	mov    eax,0x400998
+  400702:	48 8b 55 f0          	mov    rdx,QWORD PTR [rbp-0x10]
+  400706:	48 89 d6             	mov    rsi,rdx
+  400709:	48 89 c7             	mov    rdi,rax
+  40070c:	b8 00 00 00 00       	mov    eax,0x0
+  400711:	e8 26 fe ff ff       	call   40053c <printf@plt>
+    printf("\n");
+  400716:	bf 0a 00 00 00       	mov    edi,0xa
+  40071b:	e8 4c fe ff ff       	call   40056c <putchar@plt>
+
+    // code
+    printf("Address of function main: %p\n", main);
+  400720:	b8 b9 09 40 00       	mov    eax,0x4009b9
+  400725:	be 84 06 40 00       	mov    esi,0x400684
+  40072a:	48 89 c7             	mov    rdi,rax
+  40072d:	b8 00 00 00 00       	mov    eax,0x0
+  400732:	e8 05 fe ff ff       	call   40053c <printf@plt>
+    printf("First bytes of the main function:\n\t");
+  400737:	b8 d8 09 40 00       	mov    eax,0x4009d8
+  40073c:	48 89 c7             	mov    rdi,rax
+  40073f:	b8 00 00 00 00       	mov    eax,0x0
+  400744:	e8 f3 fd ff ff       	call   40053c <printf@plt>
+    for (i = 0; i < 15; i++)
+  400749:	c7 45 fc 00 00 00 00 	mov    DWORD PTR [rbp-0x4],0x0
+  400750:	eb 2c                	jmp    40077e <main+0xfa>
+    {
+            printf("%02x ", ((unsigned char *)main)[i]);
+  400752:	ba 84 06 40 00       	mov    edx,0x400684
+  400757:	8b 45 fc             	mov    eax,DWORD PTR [rbp-0x4]
+  40075a:	48 98                	cdqe   
+  40075c:	48 8d 04 02          	lea    rax,[rdx+rax*1]
+  400760:	0f b6 00             	movzx  eax,BYTE PTR [rax]
+  400763:	0f b6 d0             	movzx  edx,al
+  400766:	b8 fc 09 40 00       	mov    eax,0x4009fc
+  40076b:	89 d6                	mov    esi,edx
+  40076d:	48 89 c7             	mov    rdi,rax
+  400770:	b8 00 00 00 00       	mov    eax,0x0
+  400775:	e8 c2 fd ff ff       	call   40053c <printf@plt>
+    printf("\n");
+
+    // code
+    printf("Address of function main: %p\n", main);
+    printf("First bytes of the main function:\n\t");
+    for (i = 0; i < 15; i++)
+  40077a:	83 45 fc 01          	add    DWORD PTR [rbp-0x4],0x1
+  40077e:	83 7d fc 0e          	cmp    DWORD PTR [rbp-0x4],0xe
+  400782:	7e ce                	jle    400752 <main+0xce>
+    {
+            printf("%02x ", ((unsigned char *)main)[i]);
+    }
+    printf("\n\n");
+  400784:	bf 02 0a 40 00       	mov    edi,0x400a02
+  400789:	e8 ce fd ff ff       	call   40055c <puts@plt>
+
+    // argc argv
+    printf("Address of the count of arguments: %p\n", &ac);
+  40078e:	b8 08 0a 40 00       	mov    eax,0x400a08
+  400793:	48 8d 55 dc          	lea    rdx,[rbp-0x24]
+  400797:	48 89 d6             	mov    rsi,rdx
+  40079a:	48 89 c7             	mov    rdi,rax
+  40079d:	b8 00 00 00 00       	mov    eax,0x0
+  4007a2:	e8 95 fd ff ff       	call   40053c <printf@plt>
+    printf("Address of the array of arguments: %p\n", av);
+  4007a7:	b8 30 0a 40 00       	mov    eax,0x400a30
+  4007ac:	48 8b 55 d0          	mov    rdx,QWORD PTR [rbp-0x30]
+  4007b0:	48 89 d6             	mov    rsi,rdx
+  4007b3:	48 89 c7             	mov    rdi,rax
+  4007b6:	b8 00 00 00 00       	mov    eax,0x0
+  4007bb:	e8 7c fd ff ff       	call   40053c <printf@plt>
+    printf("Addresses of the arguments:\n\t");
+  4007c0:	b8 57 0a 40 00       	mov    eax,0x400a57
+  4007c5:	48 89 c7             	mov    rdi,rax
+  4007c8:	b8 00 00 00 00       	mov    eax,0x0
+  4007cd:	e8 6a fd ff ff       	call   40053c <printf@plt>
+    for (i = 0; i < ac; i++)
+  4007d2:	c7 45 fc 00 00 00 00 	mov    DWORD PTR [rbp-0x4],0x0
+  4007d9:	eb 39                	jmp    400814 <main+0x190>
+    {
+            printf("[%s]:%p ", av[i], av[i]);
+  4007db:	8b 45 fc             	mov    eax,DWORD PTR [rbp-0x4]
+  4007de:	48 98                	cdqe   
+  4007e0:	48 c1 e0 03          	shl    rax,0x3
+  4007e4:	48 03 45 d0          	add    rax,QWORD PTR [rbp-0x30]
+  4007e8:	48 8b 10             	mov    rdx,QWORD PTR [rax]
+  4007eb:	8b 45 fc             	mov    eax,DWORD PTR [rbp-0x4]
+  4007ee:	48 98                	cdqe   
+  4007f0:	48 c1 e0 03          	shl    rax,0x3
+  4007f4:	48 03 45 d0          	add    rax,QWORD PTR [rbp-0x30]
+  4007f8:	48 8b 08             	mov    rcx,QWORD PTR [rax]
+  4007fb:	b8 75 0a 40 00       	mov    eax,0x400a75
+  400800:	48 89 ce             	mov    rsi,rcx
+  400803:	48 89 c7             	mov    rdi,rax
+  400806:	b8 00 00 00 00       	mov    eax,0x0
+  40080b:	e8 2c fd ff ff       	call   40053c <printf@plt>
+
+    // argc argv
+    printf("Address of the count of arguments: %p\n", &ac);
+    printf("Address of the array of arguments: %p\n", av);
+    printf("Addresses of the arguments:\n\t");
+    for (i = 0; i < ac; i++)
+  400810:	83 45 fc 01          	add    DWORD PTR [rbp-0x4],0x1
+  400814:	8b 45 dc             	mov    eax,DWORD PTR [rbp-0x24]
+  400817:	39 45 fc             	cmp    DWORD PTR [rbp-0x4],eax
+  40081a:	7c bf                	jl     4007db <main+0x157>
+    {
+            printf("[%s]:%p ", av[i], av[i]);
+    }
+    printf("\n\n");
+  40081c:	bf 02 0a 40 00       	mov    edi,0x400a02
+  400821:	e8 36 fd ff ff       	call   40055c <puts@plt>
+
+    // env
+    printf("Address of the array of environment variables: %p\n", env);
+  400826:	b8 80 0a 40 00       	mov    eax,0x400a80
+  40082b:	48 8b 55 c8          	mov    rdx,QWORD PTR [rbp-0x38]
+  40082f:	48 89 d6             	mov    rsi,rdx
+  400832:	48 89 c7             	mov    rdi,rax
+  400835:	b8 00 00 00 00       	mov    eax,0x0
+  40083a:	e8 fd fc ff ff       	call   40053c <printf@plt>
+    printf("Address of the first environment variable: \n");
+  40083f:	bf b8 0a 40 00       	mov    edi,0x400ab8
+  400844:	e8 13 fd ff ff       	call   40055c <puts@plt>
+    for(i = 0; i < 3; i++)
+  400849:	c7 45 fc 00 00 00 00 	mov    DWORD PTR [rbp-0x4],0x0
+  400850:	eb 39                	jmp    40088b <main+0x207>
+    {
+        printf("\t[%p]:\"%s\"\n", env[i], env[i]);
+  400852:	8b 45 fc             	mov    eax,DWORD PTR [rbp-0x4]
+  400855:	48 98                	cdqe   
+  400857:	48 c1 e0 03          	shl    rax,0x3
+  40085b:	48 03 45 c8          	add    rax,QWORD PTR [rbp-0x38]
+  40085f:	48 8b 10             	mov    rdx,QWORD PTR [rax]
+  400862:	8b 45 fc             	mov    eax,DWORD PTR [rbp-0x4]
+  400865:	48 98                	cdqe   
+  400867:	48 c1 e0 03          	shl    rax,0x3
+  40086b:	48 03 45 c8          	add    rax,QWORD PTR [rbp-0x38]
+  40086f:	48 8b 08             	mov    rcx,QWORD PTR [rax]
+  400872:	b8 e4 0a 40 00       	mov    eax,0x400ae4
+  400877:	48 89 ce             	mov    rsi,rcx
+  40087a:	48 89 c7             	mov    rdi,rax
+  40087d:	b8 00 00 00 00       	mov    eax,0x0
+  400882:	e8 b5 fc ff ff       	call   40053c <printf@plt>
+    printf("\n\n");
+
+    // env
+    printf("Address of the array of environment variables: %p\n", env);
+    printf("Address of the first environment variable: \n");
+    for(i = 0; i < 3; i++)
+  400887:	83 45 fc 01          	add    DWORD PTR [rbp-0x4],0x1
+  40088b:	83 7d fc 02          	cmp    DWORD PTR [rbp-0x4],0x2
+  40088f:	7e c1                	jle    400852 <main+0x1ce>
+    {
+        printf("\t[%p]:\"%s\"\n", env[i], env[i]);
+    }
+    getchar();
+  400891:	e8 06 fd ff ff       	call   40059c <getchar@plt>
+    return (EXIT_SUCCESS);
+  400896:	b8 00 00 00 00       	mov    eax,0x0
+}
+  40089b:	c9                   	leave  
+  40089c:	c3                   	ret    
+  40089d:	90                   	nop
+  40089e:	90                   	nop
+  40089f:	90                   	nop
+
+00000000004008a0 <__libc_csu_init>:
+  4008a0:	41 57                	push   r15
+  4008a2:	41 89 ff             	mov    r15d,edi
+  4008a5:	41 56                	push   r14
+  4008a7:	49 89 f6             	mov    r14,rsi
+  4008aa:	41 55                	push   r13
+  4008ac:	49 89 d5             	mov    r13,rdx
+  4008af:	41 54                	push   r12
+  4008b1:	4c 8d 25 34 03 20 00 	lea    r12,[rip+0x200334]        # 600bec <__init_array_end>
+  4008b8:	55                   	push   rbp
+  4008b9:	48 8d 2d 2c 03 20 00 	lea    rbp,[rip+0x20032c]        # 600bec <__init_array_end>
+  4008c0:	53                   	push   rbx
+  4008c1:	4c 29 e5             	sub    rbp,r12
+  4008c4:	31 db                	xor    ebx,ebx
+  4008c6:	48 c1 fd 03          	sar    rbp,0x3
+  4008ca:	48 83 ec 08          	sub    rsp,0x8
+  4008ce:	e8 35 fc ff ff       	call   400508 <_init>
+  4008d3:	48 85 ed             	test   rbp,rbp
+  4008d6:	74 1e                	je     4008f6 <__libc_csu_init+0x56>
+  4008d8:	0f 1f 84 00 00 00 00 	nop    DWORD PTR [rax+rax*1+0x0]
+  4008df:	00 
+  4008e0:	4c 89 ea             	mov    rdx,r13
+  4008e3:	4c 89 f6             	mov    rsi,r14
+  4008e6:	44 89 ff             	mov    edi,r15d
+  4008e9:	41 ff 14 dc          	call   QWORD PTR [r12+rbx*8]
+  4008ed:	48 83 c3 01          	add    rbx,0x1
+  4008f1:	48 39 eb             	cmp    rbx,rbp
+  4008f4:	75 ea                	jne    4008e0 <__libc_csu_init+0x40>
+  4008f6:	48 83 c4 08          	add    rsp,0x8
+  4008fa:	5b                   	pop    rbx
+  4008fb:	5d                   	pop    rbp
+  4008fc:	41 5c                	pop    r12
+  4008fe:	41 5d                	pop    r13
+  400900:	41 5e                	pop    r14
+  400902:	41 5f                	pop    r15
+  400904:	c3                   	ret    
+  400905:	66 66 2e 0f 1f 84 00 	data32 nop WORD PTR cs:[rax+rax*1+0x0]
+  40090c:	00 00 00 00 
+
+0000000000400910 <__libc_csu_fini>:
+  400910:	f3 c3                	repz ret 
+  400912:	90                   	nop
+  400913:	90                   	nop
+  400914:	90                   	nop
+  400915:	90                   	nop
+  400916:	90                   	nop
+  400917:	90                   	nop
+  400918:	90                   	nop
+  400919:	90                   	nop
+  40091a:	90                   	nop
+  40091b:	90                   	nop
+  40091c:	90                   	nop
+  40091d:	90                   	nop
+  40091e:	90                   	nop
+  40091f:	90                   	nop
+
+0000000000400920 <__do_global_ctors_aux>:
+  400920:	55                   	push   rbp
+  400921:	48 89 e5             	mov    rbp,rsp
+  400924:	53                   	push   rbx
+  400925:	48 83 ec 08          	sub    rsp,0x8
+  400929:	48 8b 05 c0 02 20 00 	mov    rax,QWORD PTR [rip+0x2002c0]        # 600bf0 <__CTOR_LIST__>
+  400930:	48 83 f8 ff          	cmp    rax,0xffffffffffffffff
+  400934:	74 19                	je     40094f <__do_global_ctors_aux+0x2f>
+  400936:	bb f0 0b 60 00       	mov    ebx,0x600bf0
+  40093b:	0f 1f 44 00 00       	nop    DWORD PTR [rax+rax*1+0x0]
+  400940:	48 83 eb 08          	sub    rbx,0x8
+  400944:	ff d0                	call   rax
+  400946:	48 8b 03             	mov    rax,QWORD PTR [rbx]
+  400949:	48 83 f8 ff          	cmp    rax,0xffffffffffffffff
+  40094d:	75 f1                	jne    400940 <__do_global_ctors_aux+0x20>
+  40094f:	48 83 c4 08          	add    rsp,0x8
+  400953:	5b                   	pop    rbx
+  400954:	c9                   	leave  
+  400955:	c3                   	ret    
+  400956:	90                   	nop
+  400957:	90                   	nop
+
+Disassembly of section .fini:
+
+0000000000400958 <_fini>:
+  400958:	48 83 ec 08          	sub    rsp,0x8
+  40095c:	e8 8f fc ff ff       	call   4005f0 <__do_global_dtors_aux>
+  400961:	48 83 c4 08          	add    rsp,0x8
+  400965:	c3                   	ret    
