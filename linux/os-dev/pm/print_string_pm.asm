@@ -2,6 +2,7 @@
 ; Define some constants
 VIDEO_MEMORY equ 0xb8000
 WHITE_ON_BLACK equ 0x0f
+;BLACK_ON_WHITE equ 0xf0
 
 ; prints a null-terminated string pointed to by EDX
 print_string_pm:
@@ -13,7 +14,7 @@ print_string_pm_loop:
 	mov ah, WHITE_ON_BLACK		; Store the attributes in AH
 
 	cmp al, 0					; if (al == 0), at end of string , so
-	je done						; jump to done
+	je print_string_pm_done		; jump to done
 
 	mov [edx], ax				; Store char and attributes at current
 								; character cell.
