@@ -1,19 +1,43 @@
-all: 3-2-hello 3-5-addressing 3-6-stack 3-6-function 3-7-segment
+# Automatically generate lists of sources using wildcards.
+C_SOURCES = $(wildcard kernel/*.c drivers/*.c)
+HEADERS = $(wildcard kernel/*.h drivers/*.h)
 
-3-2-hello:
-	nasm -f bin -o 3-2-hello.bin 3-2-hello.asm
+# TODO: Make sources dep on all header files.
 
-3-5-addressing:
-	nasm -f bin -o 3-5-addressing.bin 3-5-addressing.asm
+# Convert the *.c filenames to *.o to give a list of object files to build
+OBJ = ${C_SOURCES:.c=.o}
 
-3-6-stack:
-	nasm -f bin -o 3-6-stack.bin 3-6-stack.asm
+# Default build target
+all: os-image
 
-3-6-function:
-	nasm -f bin -o 3-6-function.bin 3-6-function.asm
+# Run qemu to simulate booting of our code .
+run: all
+	qemu-system-i386 -drive format=raw,file=os-image -display curses
 
-3-7-segment:
-	nasm -f bin -o 3-7-segment.bin 3-7-segment.asm
+# This is the actual disk image that the computer loads
+# which is the combination of our compiled bootsector and kernel
+os-image: boot/boot_sector.bin kernel.bin
+	cat $^ > $@
 
-clean:
-	rm *.bin
+# This builds the binary of our kernel from two object files:
+# - the kernel_entry, which jumps to main() in our kernel
+# - the compiled C kernel
+kernel.bin: kernel/kernel_entry.o ${OBJ}
+	ld -m elf_i386 -o $@ -Ttext 0x1000 $^ --oformat binary
+
+# Generic rule for compiling C code to an object file
+# For simplicity, we C files depend on all header files .
+%.o: %.c ${HEADERS}
+	gcc -m32 -ffreestanding -c $< -o $@
+
+# Assemble the kernel_entry.
+%.o: %.asm
+	nasm $< -f elf32 -o $@
+
+%.bin: %.asm
+	nasm $< -f bin -o $@
+
+clean :
+	rm -fr *.bin *.dis *.o os-image
+	rm -fr kernel/*.o boot/*.bin drivers/*.o
+

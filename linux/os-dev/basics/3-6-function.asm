@@ -11,7 +11,7 @@ call print_string
 
 jmp $					; Hang
 
-%include "print/print_string.asm"
+%include "../print/print_string.asm"
 
 ; Data
 HELLO_MSG:
