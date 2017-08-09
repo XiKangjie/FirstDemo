@@ -1,0 +1,12 @@
+[i] Allocating a chunk malloc1 holding a UAFME struct
+[+] UAFME struct initialized with size: 8
+[i] good at 0x4005b4
+[i] bad at 0x4005c4
+[i] Calling malloc1's vulnfunc: 
+I AM GOOD :)
+[i] Freeing malloc1
+[i] Allocating a chunk malloc2 with 24(Assuming 64bit) byte size
+[i] Setting malloc2 to bad's pointer
+[i] Now calling malloc1 vulnfunc again...
+[i] malloc1 refs from 0x7ffd737c42d8 and malloc2 refs from 0x7ffd737c42d0
+I AM BAD >:|

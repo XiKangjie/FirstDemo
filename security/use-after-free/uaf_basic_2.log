@@ -1,0 +1,10 @@
+[i] Allocating a chunk malloc1 holding a UAFME struct
+[+] malloc1 at 0x125a010
+[i] good at 0x4005b4
+[i] bad at 0x4005c4
+I AM GOOD :)
+[i] Allocating a chunk malloc2 with 24(Assuming 64bit) byte size
+[i] Setting malloc2 to bad's pointer
+[+] malloc2 at 0x125a010
+[i] Now calling malloc1 vulnfunc again...
+I AM BAD >:|
