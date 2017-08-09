@@ -1,3 +1,5 @@
+// https://sensepost.com/blog/2017/linux-heap-exploitation-intro-series-used-and-abused-use-after-free/
+
 #include <malloc.h>
 #include <stdio.h>
 

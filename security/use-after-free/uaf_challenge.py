@@ -1,3 +1,5 @@
+# https://sensepost.com/blog/2017/linux-heap-exploitation-intro-series-used-and-abused-use-after-free/
+
 import socket
 import re
 import struct
