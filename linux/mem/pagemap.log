@@ -1,0 +1,97 @@
+$ ps -ef | grep bash
+
+14549     3576  3575  0 Oct25 pts/0    00:00:00 -bash
+14549     3619  3617  0 Oct25 pts/1    00:00:00 -bash
+
+$ cat /proc/3576/maps
+
+00400000-004d4000 r-xp 00000000 fd:01 1835010                            /bin/bash
+006d3000-006dc000 rw-p 000d3000 fd:01 1835010                            /bin/bash
+006dc000-006e2000 rw-p 00000000 00:00 0 
+00e3e000-0108a000 rw-p 00000000 00:00 0                                  [heap]
+7fd549a80000-7fd54ffa7000 r--p 00000000 fd:01 2753459                    /usr/lib/locale/locale-archive
+7fd54ffa7000-7fd54ffb2000 r-xp 00000000 fd:01 2621468                    /lib64/libnss_files-2.17.so
+7fd54ffb2000-7fd5501b1000 ---p 0000b000 fd:01 2621468                    /lib64/libnss_files-2.17.so
+7fd5501b1000-7fd5501b2000 r--p 0000a000 fd:01 2621468                    /lib64/libnss_files-2.17.so
+7fd5501b2000-7fd5501b3000 rw-p 0000b000 fd:01 2621468                    /lib64/libnss_files-2.17.so
+7fd5501b3000-7fd550369000 r-xp 00000000 fd:01 2621452                    /lib64/libc-2.17.so
+7fd550369000-7fd550569000 ---p 001b6000 fd:01 2621452                    /lib64/libc-2.17.so
+7fd550569000-7fd55056d000 r--p 001b6000 fd:01 2621452                    /lib64/libc-2.17.so
+7fd55056d000-7fd55056f000 rw-p 001ba000 fd:01 2621452                    /lib64/libc-2.17.so
+7fd55056f000-7fd550574000 rw-p 00000000 00:00 0 
+7fd550574000-7fd550577000 r-xp 00000000 fd:01 2621876                    /lib64/libdl-2.17.so
+7fd550577000-7fd550776000 ---p 00003000 fd:01 2621876                    /lib64/libdl-2.17.so
+7fd550776000-7fd550777000 r--p 00002000 fd:01 2621876                    /lib64/libdl-2.17.so
+7fd550777000-7fd550778000 rw-p 00003000 fd:01 2621876                    /lib64/libdl-2.17.so
+7fd550778000-7fd550795000 r-xp 00000000 fd:01 2621496                    /lib64/libtinfo.so.5.7
+7fd550795000-7fd550995000 ---p 0001d000 fd:01 2621496                    /lib64/libtinfo.so.5.7
+7fd550995000-7fd550999000 rw-p 0001d000 fd:01 2621496                    /lib64/libtinfo.so.5.7
+7fd550999000-7fd5509ba000 r-xp 00000000 fd:01 2621480                    /lib64/ld-2.17.so
+7fd550ba8000-7fd550bab000 rw-p 00000000 00:00 0 
+7fd550baf000-7fd550bb6000 r--s 00000000 fd:01 2753471                    /usr/lib64/gconv/gconv-modules.cache
+7fd550bb6000-7fd550bb9000 rw-p 00000000 00:00 0 
+7fd550bb9000-7fd550bba000 r--p 00020000 fd:01 2621480                    /lib64/ld-2.17.so
+7fd550bba000-7fd550bbb000 rw-p 00021000 fd:01 2621480                    /lib64/ld-2.17.so
+7fd550bbb000-7fd550bbc000 rw-p 00000000 00:00 0 
+7fff5cd69000-7fff5cd8a000 rw-p 00000000 00:00 0                          [stack]
+7fff5cdc7000-7fff5cdc9000 r--p 00000000 00:00 0                          [vvar]
+7fff5cdc9000-7fff5cdcb000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+$ cat /proc/3619/maps
+
+00400000-004d4000 r-xp 00000000 fd:01 1835010                            /bin/bash
+006d3000-006dc000 rw-p 000d3000 fd:01 1835010                            /bin/bash
+006dc000-006e2000 rw-p 00000000 00:00 0 
+0262e000-0289d000 rw-p 00000000 00:00 0                                  [heap]
+7f2cd9f00000-7f2cd9f0b000 r-xp 00000000 fd:01 2621468                    /lib64/libnss_files-2.17.so
+7f2cd9f0b000-7f2cda10a000 ---p 0000b000 fd:01 2621468                    /lib64/libnss_files-2.17.so
+7f2cda10a000-7f2cda10b000 r--p 0000a000 fd:01 2621468                    /lib64/libnss_files-2.17.so
+7f2cda10b000-7f2cda10c000 rw-p 0000b000 fd:01 2621468                    /lib64/libnss_files-2.17.so
+7f2cda10c000-7f2ce0633000 r--p 00000000 fd:01 2753459                    /usr/lib/locale/locale-archive
+7f2ce0633000-7f2ce07e9000 r-xp 00000000 fd:01 2621452                    /lib64/libc-2.17.so
+7f2ce07e9000-7f2ce09e9000 ---p 001b6000 fd:01 2621452                    /lib64/libc-2.17.so
+7f2ce09e9000-7f2ce09ed000 r--p 001b6000 fd:01 2621452                    /lib64/libc-2.17.so
+7f2ce09ed000-7f2ce09ef000 rw-p 001ba000 fd:01 2621452                    /lib64/libc-2.17.so
+7f2ce09ef000-7f2ce09f4000 rw-p 00000000 00:00 0 
+7f2ce09f4000-7f2ce09f7000 r-xp 00000000 fd:01 2621876                    /lib64/libdl-2.17.so
+7f2ce09f7000-7f2ce0bf6000 ---p 00003000 fd:01 2621876                    /lib64/libdl-2.17.so
+7f2ce0bf6000-7f2ce0bf7000 r--p 00002000 fd:01 2621876                    /lib64/libdl-2.17.so
+7f2ce0bf7000-7f2ce0bf8000 rw-p 00003000 fd:01 2621876                    /lib64/libdl-2.17.so
+7f2ce0bf8000-7f2ce0c15000 r-xp 00000000 fd:01 2621496                    /lib64/libtinfo.so.5.7
+7f2ce0c15000-7f2ce0e15000 ---p 0001d000 fd:01 2621496                    /lib64/libtinfo.so.5.7
+7f2ce0e15000-7f2ce0e19000 rw-p 0001d000 fd:01 2621496                    /lib64/libtinfo.so.5.7
+7f2ce0e19000-7f2ce0e3a000 r-xp 00000000 fd:01 2621480                    /lib64/ld-2.17.so
+7f2ce1028000-7f2ce102b000 rw-p 00000000 00:00 0 
+7f2ce102f000-7f2ce1031000 rw-p 00000000 00:00 0 
+7f2ce1031000-7f2ce1038000 r--s 00000000 fd:01 2753471                    /usr/lib64/gconv/gconv-modules.cache
+7f2ce1038000-7f2ce1039000 rw-p 00000000 00:00 0 
+7f2ce1039000-7f2ce103a000 r--p 00020000 fd:01 2621480                    /lib64/ld-2.17.so
+7f2ce103a000-7f2ce103b000 rw-p 00021000 fd:01 2621480                    /lib64/ld-2.17.so
+7f2ce103b000-7f2ce103c000 rw-p 00000000 00:00 0 
+7fff83c7a000-7fff83c9b000 rw-p 00000000 00:00 0                          [stack]
+7fff83cd0000-7fff83cd2000 r--p 00000000 00:00 0                          [vvar]
+7fff83cd2000-7fff83cd4000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+$ sudo ./pagemap 3576 0x7fd5501b3000
+
+Big endian? 0
+Vaddr: 0x7fd5501b3000, Page_size: 4096, Entry_size: 8
+Reading /proc/3576/pagemap at 0x3feaa80d98
+[0]0x98 [1]0xd5 [2]0x3e [3]0x1 [4]0x0 [5]0x0 [6]0x0 [7]0xa0 
+Result: 0xa0000000013ed598
+PFN: 0x13ed598
+PhyAddr: 0x13ed598000
+PageCount: 48
+
+$ sudo ./pagemap 3619 0x7f2ce0633000
+
+Big endian? 0
+Vaddr: 0x7f2ce0633000, Page_size: 4096, Entry_size: 8
+Reading /proc/3619/pagemap at 0x3f96703198
+[0]0x98 [1]0xd5 [2]0x3e [3]0x1 [4]0x0 [5]0x0 [6]0x0 [7]0xa0 
+Result: 0xa0000000013ed598
+PFN: 0x13ed598
+PhyAddr: 0x13ed598000
+PageCount: 48
