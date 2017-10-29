@@ -23,5 +23,5 @@ do
 done
 
 echo
-echo "Thast's all folks!"
+echo "That's all folks!"
         
