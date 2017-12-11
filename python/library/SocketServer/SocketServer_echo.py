@@ -8,7 +8,7 @@ logging.basicConfig(level=logging.DEBUG,
 
 # Responsibility for processing a request is split between a server class and a request handler class.
 # The server deals with the communication issues (listing on a socket, accepting connections, etc.) 
-# and the request handler deals with the “protocol” issues (interpreting incoming data, processing it, s
+# and the request handler deals with the "protocol" issues (interpreting incoming data, processing it, s
 # ending data back to the client). This division of responsibility means that in many cases you can 
 # simply use one of the existing server classes without any modifications, and provide a request handler
 # class for it to work with your protocol.

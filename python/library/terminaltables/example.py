@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from terminaltables import AsciiTable, SingleTable, DoubleTable, GithubFlavoredMarkdownTable
 
 table_data = [

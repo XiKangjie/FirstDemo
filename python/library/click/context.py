@@ -7,7 +7,8 @@ class Repo(object):
 pass_repo = click.make_pass_decorator(Repo)
 
 @click.group()
-@click.option('--debug/--no-debug', default=False)
+#@click.option('-n', '--debug/--no-debug', default=True)
+@click.option('-d', '--debug', is_flag=True, default=True)
 @click.pass_context
 def cli(ctx, debug):
     ctx.obj = Repo(debug)
