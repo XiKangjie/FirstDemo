@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<version>
+    <allrule_patch>1.2.5.8723</allrule_patch>
+    <support>
+        <product_name name="foo">
+            <production_vesrion bigversion="5.6.9">
+                <!-- prodcut enginename -->
+                <min_version>13</min_version>
+                <max_version>15</max_version>
+                <dataversion>5.6.9.8723</dataversion>
+            </production_vesrion>
+<!--
+            <production_vesrion bigversion="6.0.0">
+                <min_version>13</min_version>
+                <max_version>15</max_version>
+                <dataversion>6.0.0.8723</dataversion>
+            </production_vesrion>
+ -->
+         </product_name>
+<!-- 
+        <product_name name="bar">
+            <production_vesrion bigversion="7.6.9">
+                <min_version>13</min_version>
+                <max_version>15</max_version>
+                <dataversion>7.6.9.8723</dataversion>
+            </production_vesrion>
+            <production_vesrion bigversion="8.6.9">
+                <min_version>13</min_version>
+                <max_version>15</max_version>
+                <dataversion>8.6.9.8723</dataversion>
+            </production_vesrion>
+        </product_name>
+ -->    
+    </support>
+    <action>
+        <update_web>1</update_web>
+        <!-- 1 update  0 not update  -->
+        <update_filesystem>1</update_filesystem>
+        <!-- 1 update  0 not update  -->
+    </action>
+</version>

@@ -1,0 +1,11 @@
+<html>
+  <head>
+    <title>Your page title here</title>
+    <link href="mystyle.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <p>this is first paragraph</p>
+    <p>this is second paragraph</p>
+  </body>
+  <foot/>
+</html>
