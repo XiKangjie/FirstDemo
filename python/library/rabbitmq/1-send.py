@@ -6,7 +6,9 @@ connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost')
 channel = connection.channel()
 
 # Next, before sending we need to make sure the recipient queue exists
-channel.queue_declare(queue='hello')
+queue_info = channel.queue_declare(queue='hello')
+#queue_info = channel.queue_declare(queue='hello', durable=True)
+print queue_info.method.message_count
 
 # In RabbitMQ a message can never be sent directly to the queue, it always need
 # an exchange, the default exchange is identified by an emtpy string.

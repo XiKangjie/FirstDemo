@@ -2,6 +2,7 @@
 
 import pika
 import time
+import logging
 
 connection =pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
 channel = connection.channel()
@@ -12,7 +13,6 @@ channel.queue_declare(queue='task_queue', durable=True)
 def callback(ch, method, properties, body):
     print '[x] Received %r' % body
     time.sleep(body.count('.'))
-    print '[x] Done'
     # Message acknowledgment
 
     # send ack to tell RabbitMQ that a particular message had been received,
@@ -27,7 +27,12 @@ def callback(ch, method, properties, body):
 
     # There aren't any message timeouts, RabbitMQ will redeliver the message
     # only when the worker connection dies.
-    ch.basic_ack(delivery_tag=method.delivery_tag)
+    time.sleep(10)
+    try:
+        ch.basic_ack(delivery_tag=method.delivery_tag)
+    except Exception as e:
+        logging.error('Basic_ack failed: %s.', e, exc_info=1)
+    print '[x] Done'
 
 # Fair dispatch
 # This tell RabbitMQ not to give more than one message to a worker at a time.
