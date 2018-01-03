@@ -1,0 +1,6 @@
+probe module("xfs").function("*").call {
+    printf("%s -> %s\n", thread_indent(1), probefunc())
+}
+probe module("xfs").function("*").return {
+    printf("%s <- %s\n", thread_indent(-1), probefunc())
+}

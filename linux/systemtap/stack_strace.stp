@@ -1,0 +1,8 @@
+probe syscall.stat.return {
+    if($return < 0) {
+        printf("In process [%s]\n", execname())
+        print_regs()
+        print_backtrace()
+        print("-----------------------------------------\n")
+    }
+}
